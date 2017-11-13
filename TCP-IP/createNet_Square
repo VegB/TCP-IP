@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Cleaning previous networks."
+cleanNet ovs-bridge
+
+echo "Create a new network of square shape."
+
+createOVSBridgedPair veth0a veth1a y ovs-bridge
+createOVSBridgedPair veth1b veth2a n ovs-bridge
+createOVSBridgedPair veth1c veth4b n ovs-bridge
+createOVSBridgedPair veth1d veth3a n ovs-bridge
+createOVSBridgedPair veth2b veth4a n ovs-bridge
+createOVSBridgedPair veth3b veth4c n ovs-bridge
+createOVSBridgedPair veth4d veth5a n ovs-bridge

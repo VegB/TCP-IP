@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D131738D1FB91D9F001CA0AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D131738C1FB91D9F001CA0AA /* main.cpp */; };
+		D13173951FB91E8F001CA0AA /* router.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D13173931FB91E8F001CA0AA /* router.cpp */; };
+		D13173981FB9270A001CA0AA /* ReceiverIP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D13173961FB9270A001CA0AA /* ReceiverIP.cpp */; };
+		D131739B1FB9272D001CA0AA /* SenderIP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D13173991FB9272D001CA0AA /* SenderIP.cpp */; };
+		D131739E1FB92745001CA0AA /* ReceiverTCP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D131739C1FB92745001CA0AA /* ReceiverTCP.cpp */; };
+		D13173A11FB9275A001CA0AA /* SenderTCP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D131739F1FB9275A001CA0AA /* SenderTCP.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,17 @@
 
 /* Begin PBXFileReference section */
 		D13173891FB91D9F001CA0AA /* TCP-IP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TCP-IP"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D131738C1FB91D9F001CA0AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D13173931FB91E8F001CA0AA /* router.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = router.cpp; sourceTree = "<group>"; };
+		D13173941FB91E8F001CA0AA /* router.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = router.hpp; sourceTree = "<group>"; };
+		D13173961FB9270A001CA0AA /* ReceiverIP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ReceiverIP.cpp; sourceTree = "<group>"; };
+		D13173971FB9270A001CA0AA /* ReceiverIP.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ReceiverIP.hpp; sourceTree = "<group>"; };
+		D13173991FB9272D001CA0AA /* SenderIP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SenderIP.cpp; sourceTree = "<group>"; };
+		D131739A1FB9272D001CA0AA /* SenderIP.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SenderIP.hpp; sourceTree = "<group>"; };
+		D131739C1FB92745001CA0AA /* ReceiverTCP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ReceiverTCP.cpp; sourceTree = "<group>"; };
+		D131739D1FB92745001CA0AA /* ReceiverTCP.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ReceiverTCP.hpp; sourceTree = "<group>"; };
+		D131739F1FB9275A001CA0AA /* SenderTCP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SenderTCP.cpp; sourceTree = "<group>"; };
+		D13173A01FB9275A001CA0AA /* SenderTCP.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SenderTCP.hpp; sourceTree = "<group>"; };
+		D13173A21FB92B55001CA0AA /* packets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = packets.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +71,17 @@
 		D131738B1FB91D9F001CA0AA /* TCP-IP */ = {
 			isa = PBXGroup;
 			children = (
-				D131738C1FB91D9F001CA0AA /* main.cpp */,
+				D13173931FB91E8F001CA0AA /* router.cpp */,
+				D13173941FB91E8F001CA0AA /* router.hpp */,
+				D13173961FB9270A001CA0AA /* ReceiverIP.cpp */,
+				D13173971FB9270A001CA0AA /* ReceiverIP.hpp */,
+				D13173991FB9272D001CA0AA /* SenderIP.cpp */,
+				D131739A1FB9272D001CA0AA /* SenderIP.hpp */,
+				D131739C1FB92745001CA0AA /* ReceiverTCP.cpp */,
+				D131739D1FB92745001CA0AA /* ReceiverTCP.hpp */,
+				D131739F1FB9275A001CA0AA /* SenderTCP.cpp */,
+				D13173A01FB9275A001CA0AA /* SenderTCP.hpp */,
+				D13173A21FB92B55001CA0AA /* packets.h */,
 			);
 			path = "TCP-IP";
 			sourceTree = "<group>";
@@ -119,7 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D131738D1FB91D9F001CA0AA /* main.cpp in Sources */,
+				D13173981FB9270A001CA0AA /* ReceiverIP.cpp in Sources */,
+				D13173951FB91E8F001CA0AA /* router.cpp in Sources */,
+				D131739B1FB9272D001CA0AA /* SenderIP.cpp in Sources */,
+				D13173A11FB9275A001CA0AA /* SenderTCP.cpp in Sources */,
+				D131739E1FB92745001CA0AA /* ReceiverTCP.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
