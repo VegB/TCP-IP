@@ -6,12 +6,19 @@
 
 CLICK_DECLS
 
+// Connection Type
+typedef enum {
+    CLOSED = 0,
+    CONNECTED,
+    FIN_WAIT
+} connection_types;
+
 class BasicTCP : public Element {
     public:
         BasicTCP();
         ~BasicTCP();
         const char *class_name() const { return "BasicTCP";}
-        const char *port_count() const { return "1/1";}
+        const char *port_count() const { return "2/2";}
         const char *processing() const { return PUSH; }
 		int configure(Vector<String> &conf, ErrorHandler *errh);
 		
@@ -35,7 +42,8 @@ class BasicTCP : public Element {
         // Transmission Control Block
         uint8_t _window_size;
         uint32_t _offset;
-        uint8_t _connection_setup;  // whether the connection has setup
+        uint8_t _my_state;
+        uint8_t _other_state;
         uint32_t _empty_receiver_buffer_size;
         uint32_t _empty_sender_buffer_size;
     

@@ -30,6 +30,7 @@
  19）createDataPacket()直接把packet推走，不用返回值了
  20）检查ack是不是正确的ack应该在buffer里面实现？
  21）connection status
+ 22）how to exit？？？
  */
 
 #include <click/config.h>
@@ -53,7 +54,8 @@ BasicTCP::BasicTCP() : _timerTO(this), _timerHello(this) {
     _my_address = 0;
     _other_address = 0;
     transmissions = 0;
-    _connection_setup = 0;
+    _my_state = 0;
+    
 }
 
 BasicTCP::~BasicTCP(){
@@ -86,33 +88,37 @@ int BasicTCP::configure(Vector<String> &conf, ErrorHandler *errh) {
 
 // Time out
 void BasicTCP::run_timer(Timer *timer) {
-    if(timer == &_timerTO){ // Time out. Retrasmit all the files in sender buffer
-        //click_chatter("Time-Out!");
-        if(_connection_setup == 0){
-            click_chatter("Sending SYN %u. Trying to set up connection with %u", _seq, _other_address);
-            WritablePacket* output_packet = CreateOtherPacket(SYN, NULL);
-            output(0).push(output_packet);
-            transmissions++;
-            _timerTO.schedule_after_sec(_time_out);
+    if(timer == &_timerTO){
+        /* Time out. Retrasmit all the files in sender buffer */
+        if(NeedRetransmission()){
+            click_chatter("Need Retransmission.");
+            output(0).push(CreateOtherPacket(RETRANS, NULL));
         }
-        else{
-            if(transmissions == 0){
-                click_chatter("Send packet %u", _seq);
+        else{  /* Send new packets. */
+            if(_my_state == CLOSED && !_finished_transmission){
+                click_chatter("Sending SYN %u. Trying to set up connection with %u", _seq, _other_address);
+                output(0).push(CreateOtherPacket(SYN, NULL));
+            }
+            else if(_my_state == CONNECTED){
+                click_chatter("Sending DATA packets.");
+                CreateDataPacket();
+            }
+            else if(_my_state == FIN_WAIT){
+                click_chatter("Sending FIN %u. Trying to release connection with %u", _seq, _other_address);
+                output(0).push(CreateOtherPacket(FIN, NULL));
             }
             else{
-                click_chatter("Retransmitting packet %u for %d time", _seq, transmissions);
+                click_chatter("Data transmission probably finished!");
+                // exit();
             }
-            
-            WritablePacket* output_packet = CreateDataPacket();
-            output(0).push(output_packet);
-            transmissions++;
+        }
+        if(!_finished_transmission){
             _timerTO.schedule_after_sec(_time_out);
         }
     }
     else if(timer == &_timerHello){
         click_chatter("Sending new Hello packet");
-        WritablePacket* output_packet = CreateOtherPacket(HELLO, NULL);
-        output(0).push(output_packet);
+        output(0).push(CreateOtherPacket(HELLO, NULL));
         _timerHello.schedule_after_sec(_periodHello);
     }
     else {
@@ -127,11 +133,6 @@ void BasicTCP::push(int port, Packet *income_packet) {
     struct TCP_Header* header = (struct TCP_Header*)(&(packet->header));
     WritablePacket* output_packet = NULL;
     
-    if(header->source == _my_address){
-        income_packet->kill();
-        return;
-    }
-    
     if(header->type == DATA){
         click_chatter("Received DATA: packet %u from %u", header->sequence, header->source);
         output_packet = CreateOtherPacket(ACK, header);
@@ -141,18 +142,18 @@ void BasicTCP::push(int port, Packet *income_packet) {
         click_chatter("Received SYN request: packet %u from %u", header->sequence, header->source);
         output_packet = CreateOtherPacket(ACK, header);
     }
-    else if(header->type == ACK){
+    else if(header->type == ACK){  // 这里接受到的ACK是经过buffer审核的
         _seq++;
         transmissions = 0;
         _timerTO.unschedule();
         _empty_receiver_buffer_size = header->empty_buffer_size;
         
-        if(_connection_setup == 1){  // ACK for DATA
+        if(_my_state == CONNECTED){  // ACK for DATA
             click_chatter("Received ACK for DATA: packet %u from %u", header->sequence, header->source);
             output_packet = CreateDataPacket();
             _timerTO.schedule_after_sec(_period); // 这里当然是不对了！【注意】
         }
-        else{  // ACK for SYN
+        else if(_my_state == CLOSED){  // ACK for SYN
             click_chatter("Received ACK for SYN: packet %u from %u. Connection Established!", header->sequence, header->source);
             output_packet = CreateOtherPacket(ACK, header);
             // 现在自己这边连接建立好了，更改状态，开始发送！
@@ -161,6 +162,9 @@ void BasicTCP::push(int port, Packet *income_packet) {
             if(_delay > 0){
                 _timerTO.schedule_after_sec(_delay);
             }
+        }
+        else if(_my_state == FIN_WAIT){ // 【tbc】
+            
         }
     }
     else if(header->type == INFO){
@@ -171,7 +175,7 @@ void BasicTCP::push(int port, Packet *income_packet) {
         click_chatter("Received HELLO: packet %u from %u", header->sequence, header->source);
         // 好像没啥可干的……不会收到hello吧，应该在router就给drop掉了
     }
-    else if(header->type == FIN){
+    else if(header->type == FIN){ // 【tbc】
         click_chatter("Received FIN: packet %u from %u", header->sequence, header->source);
         // 开始四步握手
     }
@@ -212,10 +216,17 @@ void BasicTCP::CreateDataPacket(){
     for(int i = 0; i < _window_size;++i){
         WritablePacket *packet = CreateOtherPacket(DATA, NULL);
         struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
-        char* data_ptr = &(packet_ptr->data);
-        // Write TCP Data
+        struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
+        header_ptr->more_packets = !(ReadDataFromFile(&(packet_ptr->data)));
         
+        // pass it on to sender buffer
         output(0).push(packet);
+        
+        // might change connection state
+        if(header_ptr->more_packets == false){
+            output(0).push(CreateOtherPacket(FIN, NULL));
+            _my_state = FIN_WAIT;
+        }
     }
     return packet;
 }

@@ -6,10 +6,10 @@
 // Packet Type
 typedef enum {
     DATA = 0,
-    HELLO,
     ACK,
     SYN,
     FIN,
+    HELLO,
     INFO,
     RETRANS
 } packet_types;
