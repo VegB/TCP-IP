@@ -9,19 +9,22 @@ typedef enum {
     HELLO,
     ACK,
     SYN,
-    FIN
+    FIN,
+    INFO,
+    RETRANS
 } packet_types;
 
 // TCP Packet
 struct TCP_Header{
     uint8_t type;
-    uint8_t sequence;  // counting in this TCP client!
-    uint8_t ack; // which packet it has received
-    uint32_t offset;  // offset in current file
-    uint32_t size;  // how many bytes of data this tcp packet contains
     uint8_t source;
     uint8_t destination;
+    uint32_t sequence;  // counting in this TCP client!
+    uint32_t ack; // which packet it has received
+    uint32_t offset;  // offset in current file
+    uint32_t size;  // how many bytes of data this tcp packet contains
     uint8_t more_packets;  // is this the end of file?
+    uint32_t empty_buffer_size;  // number of packets
 };
 
 struct TCP_Packet{

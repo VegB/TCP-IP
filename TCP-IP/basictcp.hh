@@ -11,7 +11,7 @@ class BasicTCP : public Element {
         BasicTCP();
         ~BasicTCP();
         const char *class_name() const { return "BasicTCP";}
-        const char *port_count() const { return "2/1";}
+        const char *port_count() const { return "1/1";}
         const char *processing() const { return PUSH; }
 		int configure(Vector<String> &conf, ErrorHandler *errh);
 		
@@ -33,12 +33,17 @@ class BasicTCP : public Element {
 		int transmissions;
     
         // Transmission Control Block
-        uint32_t _window_size;
+        uint8_t _window_size;
         uint32_t _offset;
         uint8_t _connection_setup;  // whether the connection has setup
+        uint32_t _empty_receiver_buffer_size;
+        uint32_t _empty_sender_buffer_size;
     
         // Generating Packets 
-	WritablePacket* CreatePacket(packet_types type_of_packet, TCP_Header* header);
+        WritablePacket* CreateDataPacket();
+        WritablePacket* CreateOtherPacket(packet_types type_of_packet, TCP_Header* header);
+        bool ReadDataFromFile(char*);
+        bool Valid_ACK(struct TCP_Header* header);
 	//Packet* CreatePacket();
 };
 

@@ -24,19 +24,22 @@ int BasicIP::initialize(ErrorHandler *errh){
 void BasicIP::push(int port, Packet *income_packet) {
 	assert(income_packet);
 	struct TCP_Packet *packet = (struct TCP_Packet *)income_packet->data();
-	if(packet->header.type == 0) {
+    struct TCP_Header header = (struct TCP_Header)packet->header;
+	/*if(header.type == 0) {
 		output(0).push(income_packet);
 	}
-    else if(packet->header.type == 1) {
+    else if(header.type == 1) {
 		output(1).push(income_packet);
 	}
-    else if(packet->header.type == 2) {
+    else if(header.type == 2) {
 		output(2).push(income_packet);
 	}
     else {
-		click_chatter("Wrong packet type");
-		income_packet->kill();
-	}
+		click_chatter("Wrong packet type in IP: %u", header.type);
+	//	income_packet->kill();
+		output(0).push(income_packet);
+	}*/
+	output(0).push(income_packet);
 }
 
 CLICK_ENDDECLS 
