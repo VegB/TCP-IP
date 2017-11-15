@@ -8,7 +8,9 @@ typedef enum {
     DATA = 0,
     ACK,
     SYN,
+    SYNACK,
     FIN,
+    FINACK,
     HELLO,
     INFO,
     RETRANS
