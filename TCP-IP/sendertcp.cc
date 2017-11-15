@@ -69,6 +69,7 @@ SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
 	_empty_sender_buffer_size = SENDER_BUFFER_SIZE - 1;
 	_empty_receiver_buffer_size = 100000; // define big buffer
     _finished_transmission = 0;
+	_data_piece_cnt = 0;
 }
 
 SenderTCP::~SenderTCP(){
@@ -178,7 +179,7 @@ void SenderTCP::push(int port, Packet *income_packet) {
     }
     else if(header->type == FIN){ // 【tbc】
         click_chatter("[SenderTCP]: Received FIN: packet %u from %u", header->sequence, header->source);
-        output(0).push(CreateOtherPacket(ACK, header));
+        output(0).push(CreateOtherPacket(FINACK, header));
         _other_state = CLOSED;
     }
     
@@ -197,13 +198,13 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
     header_ptr->type = type_of_packet;
     header_ptr->source = _my_address;
     header_ptr->destination = _other_address;
-    if(type_of_packet == SYN || type_of_packet == FIN || type_of_packet == DATA || type_of_packet == SYNACK){
+    if(type_of_packet == SYN || type_of_packet == FIN || type_of_packet == DATA || type_of_packet == SYNACK || type_of_packet == FINACK){
         header_ptr->sequence = _seq;
         _seq++;
     }
     
     // Flow Control
-    if(type_of_packet == ACK){
+    if(type_of_packet == ACK || type_of_packet == SYNACK || type_of_packet == FINACK){
         header_ptr->ack = header->sequence;
         //header_ptr->empty_buffer_size = _empty_receiver_buffer_size;
     }
@@ -213,19 +214,20 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
 // send "window_size" piece of TCP packets
 void SenderTCP::CreateDataPacket(){
     _window_size = _empty_sender_buffer_size < _empty_receiver_buffer_size? _empty_sender_buffer_size: _empty_receiver_buffer_size;
-	click_chatter("[SenderTCP]: window_size = %u", _window_size);	
+	click_chatter("[SenderTCP]: window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);	
     
     for(int i = 0; i < _window_size; ++i){
         WritablePacket *packet = CreateOtherPacket(DATA, NULL);
         struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
         struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
         header_ptr->more_packets = !(ReadDataFromFile());
-        
+	uint8_t _more = header_ptr->more_packets;
+	click_chatter("[SenderTCP]: Have more packets? %u", _more);        
         // pass it on to sender buffer
         output(0).push(packet);
         
         // might change connection state
-        if(header_ptr->more_packets == false){
+        if(!_more){
             //output(0).push(CreateOtherPacket(FIN, NULL));
             _my_state = FIN_WAIT; // send FIN later or it might get lost
 		break;
@@ -235,7 +237,8 @@ void SenderTCP::CreateDataPacket(){
 
 // Return whether reaches the end of file. 【tbc】
 bool SenderTCP::ReadDataFromFile(){
-    return true;
+	_data_piece_cnt += 1;
+    return _data_piece_cnt == 10;
 }
 
 bool SenderTCP::NeedRetransmission(){

@@ -84,9 +84,8 @@ void ReceiverBuffer::push(int port, Packet *income_packet) {
 
 void ReceiverBuffer::run_timer(Timer *timer) {
     if (timer == &_timerSend){  // time to send packets stored in ReceiverBuffer to TCP
-        if(!ReceiverBufferEmpty()){
+        while(!ReceiverBufferEmpty()){
             output(0).push(ReadOutDataPacket());
-        	output(0).push(CreateInfoPacket());
 	}
         _timerSend.schedule_after_sec(_send_interval);
     }
@@ -104,6 +103,8 @@ WritablePacket* ReceiverBuffer::ReadOutDataPacket(){
 
     // Update pointer
     _receiver_start_pos = (_receiver_start_pos + 1) % RECEIVER_BUFFER_SIZE;
+	output(0).push(CreateInfoPacket());
+
     return packet;
 }
 

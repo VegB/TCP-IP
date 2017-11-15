@@ -116,7 +116,7 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
         _timerTO.unschedule();
     }
     else if(header->type == FINACK){
-        click_chatter("[ReceiverTCP]: Received ACK for FIN(%u): packet %u from %u", header->ack, header->sequence, header->source);
+        click_chatter("[ReceiverTCP]: Received FINACK for FIN(%u): packet %u from %u", header->ack, header->sequence, header->source);
         click_chatter("[SenderTCP]: =================CONNECTION TORN DOWN================");
         _my_state = CLOSED;
         _timerTO.unschedule();
@@ -133,8 +133,8 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
     else if(header->type == FIN){
         click_chatter("[ReceiverTCP]: Received FIN: packet %u from %u", header->sequence, header->source);
         memcpy((void *)(&_duplicate_packet), (const void *)(packet), sizeof(struct TCP_Packet)); // store a copy
-        click_chatter("[ReceiverTCP]: Send ACK for FIN");
-        output(0).push(CreateOtherPacket(ACK, header));
+        click_chatter("[ReceiverTCP]: Send FINACK for FIN");
+        output(0).push(CreateOtherPacket(FINACK, header));
         _other_state = CLOSED;
         // send FIN for itself
         click_chatter("[ReceiverTCP]: Send FIN");
@@ -161,7 +161,7 @@ WritablePacket* ReceiverTCP::CreateOtherPacket(packet_types type_of_packet, TCP_
     _seq++;
     
     // Flow Control
-    if(type_of_packet == ACK || type_of_packet == SYNACK){
+    if(type_of_packet == ACK || type_of_packet == SYNACK || type_of_packet == FINACK){
         header_ptr->ack = header->sequence;
         header_ptr->empty_buffer_size = _empty_receiver_buffer_size;
     }

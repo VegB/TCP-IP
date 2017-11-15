@@ -47,6 +47,7 @@ class SenderTCP : public Element {
         uint32_t _empty_sender_buffer_size;
         uint32_t _empty_receiver_buffer_size;
         uint8_t _finished_transmission;
+	uint8_t _data_piece_cnt;
     
         // Generating Packets 
         void CreateDataPacket();

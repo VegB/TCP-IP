@@ -58,6 +58,12 @@ void BasicRouter::push(int port, Packet *income_packet) {
                 int next_port = _ports_table.get(header.destination);
                 output(next_port).push(income_packet);
         }
+    else if(header.type == FINACK) {
+                click_chatter("Received FINACK from %u on port %d", packet->header.source, port);
+                _ports_table.set(header.source, port);
+                int next_port = _ports_table.get(header.destination);
+                output(next_port).push(income_packet);
+        }
     else {
 		click_chatter("Wrong packet type: %u", header.type);
 		income_packet->kill();
