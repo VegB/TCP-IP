@@ -94,15 +94,16 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
     struct TCP_Packet* packet = (struct TCP_Packet*)income_packet->data();
     struct TCP_Header* header = (struct TCP_Header*)(&(packet->header));
     WritablePacket* output_packet = NULL;
+    string packet_names[] = {"DATA", "ACK", "SYN", "SYNACK", "FIN", "FINACK", "HELLO", "INFO", "RETRANS"};
     
     if(header->type == DATA){
-        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type], header->sequence, header->source);
+        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type].c_str(), header->sequence, header->source);
         click_chatter("[ReceiverTCP-buffer]: Send ACK(%u) for DATA packet %u", _seq, header->sequence);
 //        output(0).push(CreateOtherPacket(ACK, header));
         // Recover data【tcb】
     }
     else if(header->type == SYN){
-        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type], header->sequence, header->source);
+        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type].c_str(), header->sequence, header->source);
         WritablePacket* packet_synack = CreateOtherPacket(SYNACK, header);
         memcpy((void *)(&_duplicate_packet), (const void *)(packet_synack->data()), sizeof(struct TCP_Packet)); // store a copy
         click_chatter("[ReceiverTCP-buffer]: Send SYNACK for SYN");
@@ -127,7 +128,7 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
 //        click_chatter("[ReceiverTCP]: Room for %u packets in ReceiverBuffer", _empty_receiver_buffer_size);
     }
     else if(header->type == FIN){
-        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type], header->sequence, header->source);
+        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type].c_str(), header->sequence, header->source);
         click_chatter("[ReceiverTCP-buffer]: Send FINACK for FIN");
 //        output(0).push(CreateOtherPacket(FINACK, header));
         _other_state = CLOSED;

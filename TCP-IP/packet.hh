@@ -2,6 +2,8 @@
 #define packets_h
 
 #include <string>
+using namespace std;
+
 #define TCP_MAX_LEN 1024
 #define FAST_RETRANSMIT 3
 
@@ -18,8 +20,6 @@ typedef enum {
     RETRANS
 } packet_types;
 
-string packet_name[] = {"DATA", "ACK", "SYN", "SYNACK", "FIN", "FINACK", "HELLO",
-    "INFO", "RETRANS"};
 
 // TCP Packet
 struct TCP_Header{
