@@ -18,6 +18,7 @@
  12）取消_timeSend这个闹钟
  13）在对buffer排序的过程中，需要去除掉重复的packets！
  14) 垃圾 弄了一晚是因为没有用income_packet->data()
+ 15) 一个很神棍的地方在于……没建立连接的时候就开始往buffer中写东西了
  */
 
 #include <click/config.h>
@@ -214,7 +215,7 @@ WritablePacket* ReceiverBuffer::CreateInfoPacket(){
     header_ptr->type = INFO;
     header_ptr->empty_buffer_size = ReceiverBufferRemainSize(_receiver_start_pos, _receiver_end_pos);
 
-    click_chatter("[ReceiverBuffer]: CreateInfoPacket(): start_pos: %u, end_pos: %u. Remain size: %u", _receiver_start_pos, _receiver_end_pos, header_ptr->empty_buffer_size);
+//    click_chatter("[ReceiverBuffer]: CreateInfoPacket(): start_pos: %u, end_pos: %u. Remain size: %u", _receiver_start_pos, _receiver_end_pos, header_ptr->empty_buffer_size);
 
     return packet;
 }
@@ -242,14 +243,16 @@ WritablePacket* ReceiverBuffer::CreateAckPacket(TCP_Header* header){
     else if(header->type == FIN){
         header_ptr->type = FINACK;
     }
-    
+
+    click_chatter("received: %u, last_acked: %u", header->sequence, _last_acked);    
     /* set ack number */
-    if(header->sequence <= _last_acked){  // have already received this packet
+    /*if(header->sequence <= _last_acked){  // have already received this packet
         header_ptr->ack = header->sequence;
     }
     else{
         header_ptr->ack = _last_acked;
-    }
+    }*/
+	header_ptr->ack = _last_acked;
     return packet;
 }
 

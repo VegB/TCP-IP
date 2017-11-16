@@ -3,6 +3,7 @@
      设置timer咯！只检查这两种类型。
  2）设置一个timer检查一下是不是发fin？
  3）我觉得需要设置一个packet大小的buffer，装可能会重发的东西，比如SYNACK, FIN
+ 4) fin不重发有bug吧
  */
 
 #include <click/config.h>
@@ -132,6 +133,7 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
         click_chatter("[ReceiverTCP-buffer]: Send FINACK for FIN");
 //        output(0).push(CreateOtherPacket(FINACK, header));
         _other_state = CLOSED;
+	_my_state = FIN_WAIT;
         // send FIN for itself
         click_chatter("[ReceiverTCP]: Send FIN");
         WritablePacket* packet_fin = CreateOtherPacket(FIN, header);
