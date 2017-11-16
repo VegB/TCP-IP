@@ -63,11 +63,11 @@ void ReceiverBuffer::push(int port, Packet *income_packet) {
                 int TCP_Packet_size = sizeof(struct TCP_Packet);
                 memcpy((void *)(_receiver_buffer + _receiver_end_pos * TCP_Packet_size), (const void *)packet, TCP_Packet_size);
                 _expected_seq = header.sequence + 1;
-		click_chatter("[ReceiverBuffer]: Received packet %u, store at position %u", header.sequence, _receiver_end_pos);
+                click_chatter("[ReceiverBuffer]: Received packet %u, store at position %u", header.sequence, _receiver_end_pos);
                 
                 // update pointer
                 _receiver_end_pos = (_receiver_end_pos + 1) % RECEIVER_BUFFER_SIZE;
-		// inform TCP of the change in ReceiverBuffer
+                // inform TCP of the change in ReceiverBuffer
                 output(0).push(CreateInfoPacket());
             }
             else{
@@ -86,7 +86,7 @@ void ReceiverBuffer::run_timer(Timer *timer) {
     if (timer == &_timerSend){  // time to send packets stored in ReceiverBuffer to TCP
         while(!ReceiverBufferEmpty()){
             output(0).push(ReadOutDataPacket());
-	}
+        }
         _timerSend.schedule_after_sec(_send_interval);
     }
 }
@@ -97,8 +97,8 @@ WritablePacket* ReceiverBuffer::ReadOutDataPacket(){
     WritablePacket* packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
     memcpy((void *)(packet->data()), (const void *)(_receiver_buffer + _receiver_start_pos * TCP_Packet_size), TCP_Packet_size);
 
-        struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
-        struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
+    struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
+    struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
     click_chatter("[ReceiverBuffer]: Read out packet %u at position %d", header_ptr->sequence, _receiver_start_pos);
 
     // Update pointer

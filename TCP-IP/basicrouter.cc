@@ -41,29 +41,29 @@ void BasicRouter::push(int port, Packet *income_packet) {
 		output(next_port).push(income_packet);
 	}
     else if(header.type == SYNACK) {
-                click_chatter("Received SYNACK from %u on port %d", packet->header.source, port);
-                _ports_table.set(header.source, port);
-                int next_port = _ports_table.get(header.destination);
-                output(next_port).push(income_packet);
-        }
+        click_chatter("Received SYNACK from %u on port %d", packet->header.source, port);
+        _ports_table.set(header.source, port);
+        int next_port = _ports_table.get(header.destination);
+        output(next_port).push(income_packet);
+    }
     else if(header.type == ACK) {
-                click_chatter("Received ACK from %u on port %d", packet->header.source, port);
-                _ports_table.set(header.source, port);
-                int next_port = _ports_table.get(header.destination);
-                output(next_port).push(income_packet);
-        }
+        click_chatter("Received ACK from %u on port %d", packet->header.source, port);
+        _ports_table.set(header.source, port);
+        int next_port = _ports_table.get(header.destination);
+        output(next_port).push(income_packet);
+    }
     else if(header.type == FIN) {
-                click_chatter("Received FIN from %u on port %d", packet->header.source, port);
-                _ports_table.set(header.source, port);
-                int next_port = _ports_table.get(header.destination);
-                output(next_port).push(income_packet);
-        }
+        click_chatter("Received FIN from %u on port %d", packet->header.source, port);
+        _ports_table.set(header.source, port);
+        int next_port = _ports_table.get(header.destination);
+        output(next_port).push(income_packet);
+    }
     else if(header.type == FINACK) {
-                click_chatter("Received FINACK from %u on port %d", packet->header.source, port);
-                _ports_table.set(header.source, port);
-                int next_port = _ports_table.get(header.destination);
-                output(next_port).push(income_packet);
-        }
+        click_chatter("Received FINACK from %u on port %d", packet->header.source, port);
+        _ports_table.set(header.source, port);
+        int next_port = _ports_table.get(header.destination);
+        output(next_port).push(income_packet);
+    }
     else {
 		click_chatter("Wrong packet type: %u", header.type);
 		income_packet->kill();

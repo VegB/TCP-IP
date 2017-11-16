@@ -52,7 +52,7 @@
 CLICK_DECLS 
 
 SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
-        click_chatter("[SenderTCP]: Creating a SenderTCP object.");
+    click_chatter("[SenderTCP]: Creating a SenderTCP object.");
     _seq = 0;
     _period = 3;
     _periodHello = 2;
@@ -128,14 +128,14 @@ void SenderTCP::run_timer(Timer *timer) {
         }
         // schedule timer for next time out
         if(!_finished_transmission){
-//		click_chatter("[SenderTCP]: Set up timer for TO.");
+		    // click_chatter("[SenderTCP]: Set up timer for TO.");
             _timerTO.schedule_after_sec(_time_out);
         }
     }
     else if(timer == &_timerHello){
         click_chatter("[SenderTCP]: Sending new Hello packet");
         output(0).push(CreateOtherPacket(HELLO, NULL));
-       // _timerHello.schedule_after_sec(_periodHello);
+        // _timerHello.schedule_after_sec(_periodHello);
     }
     else {
         assert(false);
@@ -169,15 +169,15 @@ void SenderTCP::push(int port, Packet *income_packet) {
         _finished_transmission = 1;
     }
     else if(header->type == INFO){
-//        click_chatter("[SenderTCP]: Received INFO from SenderBuffer.");
+        // click_chatter("[SenderTCP]: Received INFO from SenderBuffer.");
         _empty_sender_buffer_size = header->empty_buffer_size;
-//	      click_chatter("[SenderTCP]: Room for %u packets in SenderBuffer", _empty_sender_buffer_size);
+        // click_chatter("[SenderTCP]: Room for %u packets in SenderBuffer", _empty_sender_buffer_size);
     }
     else if(header->type == HELLO){
         click_chatter("[SenderTCP]: Received HELLO: packet %u from %u", header->sequence, header->source);
         // 好像没啥可干的……不会收到hello吧，应该在router就给drop掉了
     }
-    else if(header->type == FIN){ // 【tbc】
+    else if(header->type == FIN){
         click_chatter("[SenderTCP]: Received FIN: packet %u from %u", header->sequence, header->source);
         output(0).push(CreateOtherPacket(FINACK, header));
         _other_state = CLOSED;
@@ -221,16 +221,15 @@ void SenderTCP::CreateDataPacket(){
         struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
         struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
         header_ptr->more_packets = !(ReadDataFromFile());
-	uint8_t _more = header_ptr->more_packets;
-	click_chatter("[SenderTCP]: Have more packets? %u", _more);        
+        uint8_t _more = header_ptr->more_packets;
+        click_chatter("[SenderTCP]: Have more packets? %u", _more);
         // pass it on to sender buffer
         output(0).push(packet);
         
         // might change connection state
         if(!_more){
-            //output(0).push(CreateOtherPacket(FIN, NULL));
             _my_state = FIN_WAIT; // send FIN later or it might get lost
-		break;
+            break;
         }
     }
 }
