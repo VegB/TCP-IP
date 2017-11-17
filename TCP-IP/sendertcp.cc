@@ -63,7 +63,7 @@ SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
     _period = 3;
     _periodHello = 2;
     _delay = 0;
-    _time_out = 10;
+    _time_out = 5;
     _my_address = 0;
     _other_address = 0;
     transmissions = 0;
@@ -113,7 +113,7 @@ void SenderTCP::run_timer(Timer *timer) {
     if(timer == &_timerTO){
         /* Time out. Retrasmit all the files in sender buffer */
         if(NeedRetransmission()){
-            _increase_policy = ADDICTIVE_INCREASE;
+            _increase_policy = ADDITIVE_INCREASE;
             if(_slow_start_limit > 1){
                 _slow_start_limit >>= 1;
             }
@@ -167,7 +167,7 @@ void SenderTCP::push(int port, Packet *income_packet) {
         
         // record valid size in receiver buffer
         _empty_receiver_buffer_size = header->empty_buffer_size;
-        click_chatter("[SenderTCP]: Room for %u packets in ReceiverBuffer", _empty_receiver_buffer_size);
+        // click_chatter("[SenderTCP]: Room for %u packets in ReceiverBuffer", _empty_receiver_buffer_size);
     }
     else if(header->type == SYNACK){
         click_chatter("[SenderTCP]: Received SYNACK for SYN(%u): packet %u from %u", header->ack, header->sequence, header->source);
@@ -230,7 +230,7 @@ void SenderTCP::CreateDataPacket(){
     if(_increase_policy == SLOW_START){
         _slow_start_limit <<= 1;
     }
-    else if(_increase_policy == ADDICTIVE_INCREASE){
+    else if(_increase_policy == ADDITIVE_INCREASE){
         _slow_start_limit += 1;
     }
     
@@ -242,7 +242,7 @@ void SenderTCP::CreateDataPacket(){
         struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
         header_ptr->more_packets = !(ReadDataFromFile());
         uint8_t _more = header_ptr->more_packets;
-        click_chatter("[SenderTCP]: Have more packets? %u", _more);
+        // click_chatter("[SenderTCP]: Have more packets? %u", _more);
         // pass it on to sender buffer
         output(0).push(packet);
         
@@ -257,7 +257,7 @@ void SenderTCP::CreateDataPacket(){
 // Return whether reaches the end of file. 【tbc】
 bool SenderTCP::ReadDataFromFile(){
 	_data_piece_cnt += 1;
-    return _data_piece_cnt == 10;
+    return _data_piece_cnt == DATA_PACKET_CNT;
 }
 
 bool SenderTCP::NeedRetransmission(){

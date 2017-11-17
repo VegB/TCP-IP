@@ -5,7 +5,7 @@
 #include "packet.hh"
 
 CLICK_DECLS
-
+#define DATA_PACKET_CNT 100
 // Connection Type
 typedef enum {
     CLOSED = 0,

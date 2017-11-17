@@ -56,7 +56,7 @@ void SenderBuffer::push(int port, Packet *income_packet) {
         if(header.type == DATA || header.type == SYN || header.type == FIN){ // no need to store HELLO or ACK
             int TCP_Packet_size = sizeof(struct TCP_Packet);
             memcpy((void *)(_sender_buffer + _sender_end_pos * TCP_Packet_size), (const void *)packet, TCP_Packet_size);
-            click_chatter("[SenderBuffer]: Store packet %u in buffer at position %u.", header.sequence, _sender_end_pos);
+            // click_chatter("[SenderBuffer]: Store packet %u in buffer at position %u.", header.sequence, _sender_end_pos);
             // update pointer
             _sender_end_pos = (_sender_end_pos + 1) % SENDER_BUFFER_SIZE;
             // inform TCP of the change in sender buffer
@@ -124,7 +124,7 @@ WritablePacket* SenderBuffer::CreateInfoPacket(){
     return packet;
 }
 
-uint8_t SenderBuffer::SenderBufferRemainSize(uint8_t s, uint8_t e){
+uint32_t SenderBuffer::SenderBufferRemainSize(uint32_t s, uint32_t e){
     if(e >= s){
         return SENDER_BUFFER_SIZE - 1 - (e - s);
     }

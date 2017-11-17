@@ -178,7 +178,7 @@ WritablePacket* ReceiverBuffer::ReadOutDataPacket(int pos){
     return packet;
 }
 
-uint8_t ReceiverBuffer::ReceiverBufferRemainSize(uint8_t s, uint8_t e){
+uint32_t ReceiverBuffer::ReceiverBufferRemainSize(uint32_t s, uint32_t e){
     if(e >= s){
         return RECEIVER_BUFFER_SIZE - 1 - (e - s);
     }
