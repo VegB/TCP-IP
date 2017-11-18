@@ -43,35 +43,6 @@ void BasicIP::push(int port, Packet *income_packet) {
 	}
 }
 
-WritablePacket* ReceiverBuffer::CreateAckPacket(TCP_Header* header){
-    WritablePacket *packet = Packet::make(0, 0, sizeof(struct TCP_Header), 0);
-    struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
-    struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
-    
-    memset(packet_ptr, 0, packet->length());
-    click_chatter("[ReceiverBuffer]: Send ACK for DATA packet %u", header->sequence);
-    
-    /* Write TCP_Header */
-    header_ptr->source = header->destination;
-    header_ptr->destination = header->source;
-    header_ptr->empty_buffer_size = ReceiverBufferRemainSize(_receiver_start_pos, _receiver_end_pos);
-    
-    /* choose ACK type */
-    if(header->type == DATA){
-        header_ptr->type = ACK;
-    }
-    else if(header->type == SYN){
-        header_ptr->type = SYNACK;
-    }
-    else if(header->type == FIN){
-        header_ptr->type = FINACK;
-    }
-    
-    /* set ack number */
-    header_ptr->ack = _last_acked;
-    return packet;
-}
-
 WritablePacket* BasicIP::add_IP_header(Packet *income_packet){
     struct TCP_Packet* income_packet_ptr = (struct TCP_Packet*)income_packet->data();
     struct TCP_Header* income_packet_header = (struct TCP_Header*)(&(income_packet_ptr->header));

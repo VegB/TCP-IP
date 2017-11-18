@@ -129,7 +129,7 @@ void SenderTCP::run_timer(Timer *timer) {
             else if(_increase_policy == ADDITIVE_INCREASE){
                 _additive_increase_limit >>= 1;
                 _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
-                click_chatter("[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from %u to %u", _ori_window_size, _window_size)
+                click_chatter("[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from %u to %u", _ori_window_size, _window_size);
             }
             
             output(0).push(CreateOtherPacket(RETRANS, NULL));
@@ -161,7 +161,7 @@ void SenderTCP::run_timer(Timer *timer) {
     else if(timer == &_timerHello){
         click_chatter("[SenderTCP]: Sending new Hello packet");
         output(0).push(CreateOtherPacket(HELLO, NULL));
-        // _timerHello.schedule_after_sec(_periodHello);
+        _timerHello.schedule_after_sec(_periodHello);
     }
     else {
         assert(false);
@@ -240,13 +240,13 @@ void SenderTCP::CreateDataPacket(){
         _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _slow_start_limit);
         _slow_start_limit <<= 1;
         
-        click_chatter("[SenderTCP]: #SLOW START#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size)
+        click_chatter("[SenderTCP]: #SLOW START#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);
     }
     else if(_increase_policy == ADDITIVE_INCREASE){
         _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
         _additive_increase_limit += 1;
         
-        click_chatter("[SenderTCP]: #ADDITIVE INCREASE#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size)
+        click_chatter("[SenderTCP]: #ADDITIVE INCREASE#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);
     }
     
     for(int i = 0; i < _window_size; ++i){

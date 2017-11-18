@@ -84,7 +84,7 @@ void ReceiverTCP::run_timer(Timer *timer) {
     else if(timer == &_timerHello){
         click_chatter("[ReceiverTCP]: Sending new Hello packet");
         output(0).push(CreateOtherPacket(HELLO, NULL));
-//        _timerHello.schedule_after_sec(_periodHello);
+        _timerHello.schedule_after_sec(_periodHello);
     }
     else {
         assert(false);

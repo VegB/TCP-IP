@@ -157,6 +157,9 @@ void ReceiverBuffer::push(int port, Packet *income_packet) {
             }
             output(1).push(CreateAckPacket(&header));  // send ACK anyway
         }
+        else if(header.type == HELLO){
+            income_packet->kill();
+        }
         else{
             income_packet->kill();
             click_chatter("[ReceiverBuffer]: Received 'WRONG' packet %u. Buffer might be full.", header.ack);

@@ -16,7 +16,7 @@ class BasicIP : public Element {
 		void push(int port, Packet *packet);
         int initialize(ErrorHandler*);
         WritablePacket* add_IP_header(Packet *income_packet);
-        WritablePacket* tear_down_header(Packet *income_packet)
+        WritablePacket* tear_down_IP_header(Packet *income_packet);
 }; 
 
 CLICK_ENDDECLS
