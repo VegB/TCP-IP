@@ -127,7 +127,9 @@ void SenderTCP::run_timer(Timer *timer) {
                 click_chatter("[SenderTCP]: 【【changed from SLOW START to ADDITIVE INCREASE!】】, window_size changed from %u to %u", _ori_window_size, _window_size);
             }
             else if(_increase_policy == ADDITIVE_INCREASE){
-                _additive_increase_limit >>= 1;
+                if(_additive_increase_limit > 2){
+                    _additive_increase_limit >>= 2;
+                }
                 _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
                 click_chatter("[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from %u to %u", _ori_window_size, _window_size);
             }
@@ -229,7 +231,9 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
         header_ptr->sequence = _seq;
         _seq++;
     }
-    
+    else{
+        header_ptr->sequence = _seq;
+    }    
     /* Flow Control */
     if(type_of_packet == ACK || type_of_packet == SYNACK || type_of_packet == FINACK){
         header_ptr->ack = header->sequence;

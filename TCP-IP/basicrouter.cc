@@ -223,7 +223,7 @@ void BasicRouter::run_timer(Timer *timer) {
 void BasicRouter::push(int port, Packet *packet) {
 	assert(packet);
 	struct IP_Header *header = (struct IP_Header *)packet->data();
-	if(header->type == DATA || header->type == ACK || header->type == SYN || header->type == SYNACK || header->type == FIN) {
+	if(header->type == FINACK || header->type == DATA || header->type == ACK || header->type == SYN || header->type == SYNACK || header->type == FIN) {
 		click_chatter("[Router %u] Received Data from %u with destination %u",myIP, header->source, header->destination);
 		packetQueue.push(packet);
 		
