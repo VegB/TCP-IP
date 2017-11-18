@@ -34,6 +34,7 @@ void BasicIP::push(int port, Packet *income_packet) {
 		// Wrip IP header
 	}
 	else if(port == 2){ // from router to receiver
+
 		output(3).push(tear_down_IP_header(income_packet));
 		// Wrip IP header
 	}
