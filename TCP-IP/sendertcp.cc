@@ -256,7 +256,7 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
 void SenderTCP::CreateDataPacket(){
     /* adjust window size with regard to increase policy */
     if(_increase_policy == SLOW_START){
-        _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _slow_start_limit);
+        _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _slow_start_limit, _ecn_limit);
         _slow_start_limit <<= 1;
         
         click_chatter("[SenderTCP]: #SLOW START#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);
