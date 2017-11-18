@@ -33,7 +33,7 @@ private:
     int transmissions;
     
     // Transmission Control Block
-    uint8_t _window_size;
+    uint32_t _window_size;
     uint32_t _offset;
     uint8_t _my_state;
     uint8_t _other_state;

@@ -120,8 +120,8 @@ void SenderTCP::run_timer(Timer *timer) {
             if(_increase_policy == SLOW_START){
                 _increase_policy = ADDITIVE_INCREASE;
                 _additive_increase_limit = _slow_start_limit;
-                if(_additive_increase_limit > 1){
-                    _additive_increase_limit >>= 1;
+                if(_additive_increase_limit > 2){
+                    _additive_increase_limit >>= 2;
                 }
                 _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
                 click_chatter("[SenderTCP]: 【【changed from SLOW START to ADDITIVE INCREASE!】】, window_size changed from %u to %u", _ori_window_size, _window_size);
@@ -140,7 +140,12 @@ void SenderTCP::run_timer(Timer *timer) {
                 output(0).push(CreateOtherPacket(SYN, NULL));
             }
             else if(_my_state == CONNECTED){
-                click_chatter("[SenderTCP]: -------Sending DATA packets-------");
+		if(_increase_policy == SLOW_START){
+                click_chatter("[SenderTCP]: -------Sending DATA packets #SLOW START#-------");
+		}
+		else if(_increase_policy == ADDITIVE_INCREASE){
+		click_chatter("[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------");
+		}
                 CreateDataPacket();
             }
             else if(_my_state == FIN_WAIT){

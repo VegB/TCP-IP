@@ -77,7 +77,7 @@ void SenderBuffer::push(int port, Packet *income_packet) {
     if(port == 1){  /* from IP */
         // 需要检查这个ack是不是对应着有效的包，检查RECEIVER buffer是不是空的,相应地更新ReceiverBuffer里面的状态
         if((header.type == ACK || header.type == SYNACK || header.type == FINACK) && !SenderBufferEmpty()){
-            click_chatter("[SenderBuffer]: Received SYN/SYNACK/FINACK for packet %u", header.ack);
+            // click_chatter("[SenderBuffer]: Received SYN/SYNACK/FINACK for packet %u", header.ack);
             
             if(header.ack == _last_acked){
                 _last_acked_cnt += 1;
@@ -89,7 +89,7 @@ void SenderBuffer::push(int port, Packet *income_packet) {
             else if(header.ack > _last_acked){
                 _last_acked_cnt = 0;
                 _last_acked = header.ack;
-                click_chatter("[SenderBuffer]: update last_acked to %u", _last_acked);
+                //click_chatter("[SenderBuffer]: update last_acked to %u", _last_acked);
                 while(!SenderBufferEmpty() && GetSeqInSenderBuffer(_sender_start_pos) <= header.ack){
                     _sender_start_pos = (_sender_start_pos + 1) % SENDER_BUFFER_SIZE;
                 }

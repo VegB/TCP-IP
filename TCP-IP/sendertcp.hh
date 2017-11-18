@@ -5,7 +5,7 @@
 #include "packet.hh"
 
 CLICK_DECLS
-#define DATA_PACKET_CNT 100
+#define DATA_PACKET_CNT 500
 /* Connection Type */
 typedef enum {
     CLOSED = 0,
@@ -40,14 +40,14 @@ class SenderTCP : public Element {
 		int transmissions;
     
         /* Transmission Control Block */
-        uint8_t _window_size;
+        uint32_t _window_size;
         uint32_t _offset;
         uint8_t _my_state;
         uint8_t _other_state;
         uint32_t _empty_sender_buffer_size;
         uint32_t _empty_receiver_buffer_size;
         uint8_t _finished_transmission;
-        uint8_t _data_piece_cnt;
+        uint32_t _data_piece_cnt;
         uint8_t _increase_policy;
         uint32_t _slow_start_limit;
         uint32_t _additive_increase_limit;
