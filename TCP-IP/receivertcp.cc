@@ -97,16 +97,16 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
     
     if(header->type == DATA){
         click_chatter("[ReceiverTCP]: Received DATA: packet %u from %u", header->sequence, header->source);
-        click_chatter("[ReceiverTCP]: Send ACK(%u) for DATA packet %u", _seq, header->sequence);
-        output(0).push(CreateOtherPacket(ACK, header));
+        click_chatter("[ReceiverTCP-buffer]: Send ACK(%u) for DATA packet %u", _seq, header->sequence);
+//        output(0).push(CreateOtherPacket(ACK, header));
         // Recover data【tcb】
     }
     else if(header->type == SYN){
         click_chatter("[ReceiverTCP]: Received SYN request: packet %u from %u", header->sequence, header->source);
         WritablePacket* packet_synack = CreateOtherPacket(SYNACK, header);
         memcpy((void *)(&_duplicate_packet), (const void *)(packet_synack->data()), sizeof(struct TCP_Packet)); // store a copy
-        click_chatter("[ReceiverTCP]: Send SYNACK for SYN");
-        output(0).push(packet_synack);
+        click_chatter("[ReceiverTCP-buffer]: Send SYNACK for SYN");
+//        output(0).push(packet_synack);
         _timerTO.schedule_after_sec(_time_out);
     }
     else if(header->type == ACK){  // ACK for SYNACK
@@ -132,13 +132,14 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
     }
     else if(header->type == FIN){
         click_chatter("[ReceiverTCP]: Received FIN: packet %u from %u", header->sequence, header->source);
-        memcpy((void *)(&_duplicate_packet), (const void *)(packet), sizeof(struct TCP_Packet)); // store a copy
-        click_chatter("[ReceiverTCP]: Send FINACK for FIN");
-        output(0).push(CreateOtherPacket(FINACK, header));
+        click_chatter("[ReceiverTCP-buffer]: Send FINACK for FIN");
+//        output(0).push(CreateOtherPacket(FINACK, header));
         _other_state = CLOSED;
         // send FIN for itself
         click_chatter("[ReceiverTCP]: Send FIN");
-        output(0).push(CreateOtherPacket(FIN, header));
+        WritablePacket* packet_fin = CreateOtherPacket(FIN, header);
+        output(0).push(packet_fin);
+        memcpy((void *)(&_duplicate_packet), (const void *)(packet_fin), sizeof(struct TCP_Packet)); // store a copy
         _timerTO.schedule_after_sec(_time_out);
     }
     

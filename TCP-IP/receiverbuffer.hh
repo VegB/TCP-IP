@@ -23,16 +23,22 @@ public:
 private:
     Timer _timerSend;
     char _receiver_buffer[RECEIVER_BUFFER_SIZE * sizeof(struct TCP_Packet)];
+    char _backup_buffer[RECEIVER_BUFFER_SIZE * sizeof(struct TCP_Packet)];
     uint8_t _receiver_start_pos;
     uint8_t _receiver_end_pos;
-    uint32_t _expected_seq;  // the seq of last received packet seq + 1
+    int32_t _last_acked;  // the seq of last received packet seq in sequence
     uint8_t _send_interval;    
     WritablePacket* CreateInfoPacket();
-    WritablePacket* ReadOutDataPacket();
+    WritablePacket* CreateAckPacket(TCP_Header* header);
+    WritablePacket* ReadOutDataPacket(int pos);
     uint8_t ReceiverBufferRemainSize(uint8_t s, uint8_t e);
     bool ReceiverBufferFull();
     bool ReceiverBufferEmpty();
-    uint32_t GetFirstSeqInReceiverBuffer();
+    uint32_t GetSeqInReceiverBuffer(int pos);
+    void update_buffer(Packet *income_packet);
+    void send_packets_to_tcp();
+    void sort_buffer();
+    void store_in_buffer(Packet *income_packet);
 };
 
 CLICK_ENDDECLS

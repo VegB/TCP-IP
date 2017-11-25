@@ -2,6 +2,7 @@
 #define packets_h
 
 #define TCP_MAX_LEN 1024
+#define FAST_RETRANSMIT 3
 
 // Packet Type
 typedef enum {

@@ -23,6 +23,8 @@ private:
     char _sender_buffer[SENDER_BUFFER_SIZE * sizeof(struct TCP_Packet)];
     uint8_t _sender_start_pos;
     uint8_t _sender_end_pos;
+    uint32_t _last_acked;  // max ACK
+    uint8_t _last_acked_cnt;  // how many times '_last_acked' has been received
     
     WritablePacket* ReadOutDataPacket(int);
     WritablePacket* CreateInfoPacket();
@@ -30,7 +32,8 @@ private:
     bool SenderBufferFull();
     bool SenderBufferEmpty();
     uint32_t GetFirstSeqInSenderBuffer();
-    void Retrasmit();
+    void Retransmit(uint32_t);
+    void RetransmitAll();
 };
 
 CLICK_ENDDECLS

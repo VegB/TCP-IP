@@ -11,6 +11,9 @@
      buffer会在info packet中告知tcp目前buffer中的状态
      tcp则会在retrans packet中通知buffer是否要重传目前buffer中的内容
  8）又是一个惊天大bug……memcpy的时候必须得是->data()这个指针。不然会出错。
+ -------------
+ 9）是不是也应该改成在senderbuffer里面重发？
+     感觉在tcp里面处理也可以。如果timeout之后发现buffer中有东西，那就全部重发？
  */
 
 #include <click/config.h>
@@ -28,6 +31,8 @@ SenderBuffer::SenderBuffer() {
     click_chatter("[SenderBuffer]: Creating a SenderBuffer object.");
     _sender_start_pos = 0;
     _sender_end_pos = 0;
+    _last_acked = 0;
+    _last_acked_cnt = 0;
 }
 
 SenderBuffer::~SenderBuffer(){
@@ -55,7 +60,7 @@ void SenderBuffer::push(int port, Packet *income_packet) {
             output(0).push(CreateInfoPacket());
         }
         else if(header.type == RETRANS){
-            Retrasmit();
+            RetransmitAll();
             income_packet->kill();
         }
         
@@ -68,13 +73,24 @@ void SenderBuffer::push(int port, Packet *income_packet) {
     }
     if(port == 1){  /* from IP */
         // 需要检查这个ack是不是对应着有效的包，检查RECEIVER buffer是不是空的,相应地更新ReceiverBuffer里面的状态
-        if((header.type == ACK || header.type == SYNACK || header.type == FINACK) && !SenderBufferEmpty() && (header.ack == GetFirstSeqInSenderBuffer())){
+        if((header.type == ACK || header.type == SYNACK || header.type == FINACK) && !SenderBufferEmpty()){
             click_chatter("[SenderBuffer]: Received SYN/SYNACK/FINACK for packet %u", header.ack);
-            // update pointer
-            _sender_start_pos = (_sender_start_pos + 1) % SENDER_BUFFER_SIZE;
-            // inform TCP of the change in ReceiverBuffer
-            output(0).push(CreateInfoPacket());
-            // send ACK to TCP
+            
+            if(header.ack == _last_acked){
+                _last_acked_cnt += 1;
+                if(_last_acked_cnt == FAST_RETRANSMIT_BOUND){  // Fast Retransmit
+                    Retransmit(_last_acked);
+                }
+            }
+            else if(header.ack > _last_acked){
+                _last_acked_cnt = 0;
+                while(!SenderBufferEmpty() && GetSeqInSenderBuffer(_sender_start_pos) <= header.ack){
+                    _sender_start_pos = (_sender_start_pos + 1) % SENDER_BUFFER_SIZE;
+                }
+                output(0).push(CreateInfoPacket()); // inform TCP of the change in ReceiverBuffer
+            }
+            
+            // send ACK to TCP 这里这里这里！！！
             output(0).push(income_packet);
         }
         else if(header.type == FIN){
@@ -118,34 +134,42 @@ bool SenderBuffer::SenderBufferEmpty(){
     return _sender_start_pos == _sender_end_pos;
 }
 
-uint32_t SenderBuffer::GetFirstSeqInSenderBuffer(){
+uint32_t SenderBuffer::GetSeqInSenderBuffer(int pos){
     int TCP_Packet_size = sizeof(struct TCP_Packet);
     WritablePacket* packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
     struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
-    memcpy((void *)(packet_ptr), (const void *)(_sender_buffer + _sender_start_pos * TCP_Packet_size), TCP_Packet_size);
+    memcpy((void *)(packet_ptr), (const void *)(_sender_buffer + pos * TCP_Packet_size), TCP_Packet_size);
     uint32_t seq = ((struct TCP_Header*)(&(packet_ptr->header)))->sequence;
     packet->kill();
     return seq;
 }
 
 // Just getting each packet in buffer. Not really reading them out.
-WritablePacket* SenderBuffer::ReadOutDataPacket(int index){
+WritablePacket* SenderBuffer::ReadOutDataPacket(int pos){
     // Readout data
     int TCP_Packet_size = sizeof(struct TCP_Packet);
-    int real_index = (index + _sender_start_pos) % SENDER_BUFFER_SIZE;
     WritablePacket* packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
-    memcpy((void *)(packet->data()), (const void *)(_sender_buffer + real_index * TCP_Packet_size), TCP_Packet_size);
+    memcpy((void *)(packet->data()), (const void *)(_sender_buffer + pos * TCP_Packet_size), TCP_Packet_size);
 
 	struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
-        struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));    
+    struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
     click_chatter("[SenderBuffer]: Read out packet %u at position %d and retransmit.", header_ptr->sequence, real_index);
     return packet;
 }
 
-// retransmit all packets in buffer
-void SenderBuffer::Retrasmit(){
-    int packet_num = SENDER_BUFFER_SIZE - 1 - SenderBufferRemainSize(_sender_start_pos, _sender_end_pos);
-    for(int i = 0;i < packet_num; ++i){
+// retransmit packet with sequence number 'seq' in buffer
+void SenderBuffer::Retransmit(uint32_t seq){
+    for(int i = _sender_start_pos; i < _sender_end_pos; ++i){
+        if(GetSeqInSenderBuffer(i) == seq){
+            output(1).push(ReadOutDataPacket(i));
+            break;
+        }
+    }
+}
+
+// retransmit all packets remained in buffer
+void SenderBuffer::RetransmitAll(){
+    for(int i = _sender_start_pos; i < _sender_end_pos; ++i){
         output(1).push(ReadOutDataPacket(i));
     }
 }
