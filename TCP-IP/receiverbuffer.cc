@@ -17,6 +17,7 @@
  11）等等这就很gg啊。到底是谁发的ack？按照这个设计，好像是buffer发的ack啊
  12）取消_timeSend这个闹钟
  13）在对buffer排序的过程中，需要去除掉重复的packets！
+ 14) 垃圾 弄了一晚是因为没有用income_packet->data()
  */
 
 #include <click/config.h>
@@ -50,20 +51,15 @@ int ReceiverBuffer::initialize(ErrorHandler *errh){
 
 /* store a packet into receiver buffer */
 void ReceiverBuffer::store_in_buffer(Packet *income_packet){
-click_chatter("in store_in_buffer()");
-    int TCP_Packet_size = sizeof(struct TCP_Packet);
-click_chatter("seq in receiver buffer: %u", GetSeqInReceiverBuffer(0));
-    memcpy((void *)(_receiver_buffer + _receiver_end_pos * TCP_Packet_size), (const void *)income_packet, TCP_Packet_size);
-click_chatter("seq in receiver buffer: %u", GetSeqInReceiverBuffer(0));
-    _receiver_end_pos = (_receiver_end_pos + 1) % RECEIVER_BUFFER_SIZE;
-struct TCP_Packet *packet = (struct TCP_Packet *)income_packet->data();
+    struct TCP_Packet *packet = (struct TCP_Packet *)income_packet->data();
     struct TCP_Header header = (struct TCP_Header)packet->header;
-    click_chatter("[ReceiverBuffer]: Received packet %u, store at position %u", header.sequence, _receiver_end_pos);
+    int TCP_Packet_size = sizeof(struct TCP_Packet);
+    memcpy((void *)(_receiver_buffer + _receiver_end_pos * TCP_Packet_size), (const void *)packet, TCP_Packet_size);
+    _receiver_end_pos = (_receiver_end_pos + 1) % RECEIVER_BUFFER_SIZE;
 }
 
 /* sort buffer, update _last_acked */
 void ReceiverBuffer::sort_buffer(){
-    click_chatter("[ReceiverBuffer]: in sort_buffer()");
     map<int, int> store;  // {key:seq, val:pos}, stores the original position of 'seq'
     vector<int> seqes;
     uint32_t seq;
@@ -116,7 +112,6 @@ click_chatter("seq in receiver buffer: %u", GetSeqInReceiverBuffer(0));
 
 /* collect packets in roll and pass them on to TCP, update pointer */
 void ReceiverBuffer::send_packets_to_tcp(){
-	click_chatter("in send_packets_to_tcp()");
     for(int i = 0; i < _receiver_end_pos; ++i){
         uint32_t seq = GetSeqInReceiverBuffer(i);
 	click_chatter("i: %u, seq: %u", i, seq);
@@ -157,11 +152,6 @@ void ReceiverBuffer::push(int port, Packet *income_packet) {
 	    output(0).push(income_packet);  // send to TCP anyway(can only be ACK for SYNACK or FINACK)
         }
         else if((header.type == DATA || header.type == SYN || header.type == FIN) && !ReceiverBufferFull()){
-click_chatter("seq: %u", *((int*)((char*)packet + 3)));
-click_chatter("seq: %u", *((uint32_t*)((uint8_t*)packet + 3)));
-click_chatter("seq: %u", *((uint32_t*)((uint8_t*)_receiver_buffer + 3)));
-click_chatter("seq: %u", ((struct TCP_Header*)(&(packet->header)))->sequence);
-
 	    click_chatter("[ReceiverBuffer]: Received SYN/FIN/DATA packet %u.", header.sequence);
 	    // click_chatter("last acked: %u, received seq: %u", _last_acked, header.sequence);
             if(header.sequence > _last_acked){  // a packet that has not been given to tcp
@@ -208,14 +198,11 @@ bool ReceiverBuffer::ReceiverBufferEmpty(){
 }
 
 uint32_t ReceiverBuffer::GetSeqInReceiverBuffer(int pos){
-	click_chatter("GetSeqInReceiverBuffer");
     int TCP_Packet_size = sizeof(struct TCP_Packet);
     WritablePacket* packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
     struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
-	click_chatter("seq: %u", ((struct TCP_Header*)(&(packet_ptr->header)))->sequence);
     memcpy((void *)(packet_ptr), (const void *)(_receiver_buffer + pos * TCP_Packet_size), TCP_Packet_size);
         click_chatter("seq: %u", ((struct TCP_Header*)(&(packet_ptr->header)))->sequence);
-//	click_chatter("size of TCP Header: %u", sizeof(struct TCP_Header));
     uint32_t seq = ((struct TCP_Header*)(&(packet_ptr->header)))->sequence;
     packet->kill();
     return seq;
