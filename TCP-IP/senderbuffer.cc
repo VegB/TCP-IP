@@ -153,7 +153,7 @@ WritablePacket* SenderBuffer::ReadOutDataPacket(int pos){
 
 	struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
     struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
-    click_chatter("[SenderBuffer]: Read out packet %u at position %d and retransmit.", header_ptr->sequence, real_index);
+    click_chatter("[SenderBuffer]: Read out packet %u at position %d and retransmit.", header_ptr->sequence, pos);
     return packet;
 }
 

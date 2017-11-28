@@ -5,6 +5,7 @@
 #include "packet.hh"
 
 #define SENDER_BUFFER_SIZE 5
+#define FAST_RETRANSMIT_BOUND 3
 
 CLICK_DECLS
 
@@ -31,7 +32,7 @@ private:
     uint8_t SenderBufferRemainSize(uint8_t s, uint8_t e);
     bool SenderBufferFull();
     bool SenderBufferEmpty();
-    uint32_t GetFirstSeqInSenderBuffer();
+    uint32_t GetSeqInSenderBuffer(int);
     void Retransmit(uint32_t);
     void RetransmitAll();
 };

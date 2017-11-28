@@ -53,7 +53,7 @@ CLICK_DECLS
 
 SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
     click_chatter("[SenderTCP]: Creating a SenderTCP object.");
-    _seq = 0;
+    _seq = 1;
     _period = 3;
     _periodHello = 2;
     _delay = 0;

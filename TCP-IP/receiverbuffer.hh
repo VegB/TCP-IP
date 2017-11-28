@@ -16,7 +16,7 @@ public:
     const char *port_count() const { return "2/2";}
     const char *processing() const { return PUSH; }
 
-    void run_timer(Timer*);    
+    //void run_timer(Timer*);    
     void push(int port, Packet *packet);
     int initialize(ErrorHandler*);
     
@@ -26,7 +26,7 @@ private:
     char _backup_buffer[RECEIVER_BUFFER_SIZE * sizeof(struct TCP_Packet)];
     uint8_t _receiver_start_pos;
     uint8_t _receiver_end_pos;
-    int32_t _last_acked;  // the seq of last received packet seq in sequence
+    uint32_t _last_acked;  // the seq of last received packet seq in sequence
     uint8_t _send_interval;    
     WritablePacket* CreateInfoPacket();
     WritablePacket* CreateAckPacket(TCP_Header* header);
