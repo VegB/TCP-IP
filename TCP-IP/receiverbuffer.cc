@@ -96,17 +96,13 @@ void ReceiverBuffer::sort_buffer(){
     _receiver_start_pos = 0;
     _receiver_end_pos = 0;
     int TCP_Packet_size =sizeof(struct TCP_Packet);
-	click_chatter("seq in receiver buffer: %u", GetSeqInReceiverBuffer(0));
     memcpy((void*)_backup_buffer, (const void*)_receiver_buffer, RECEIVER_BUFFER_SIZE * TCP_Packet_size);
-click_chatter("seq in receiver buffer: %u", GetSeqInReceiverBuffer(0));
     for(int i = 0; i < seqes.size(); ++i){
         int ori_pos = store[seqes[i]];
-	click_chatter("i: %u, ori_pos: %u", i, ori_pos);
+        click_chatter("i: %u, ori_pos: %u", i, ori_pos);
         memcpy((void*)(_receiver_buffer + i * TCP_Packet_size), (const void*)(_backup_buffer + ori_pos * TCP_Packet_size), TCP_Packet_size);
-click_chatter("seq in receiver buffer: %u", GetSeqInReceiverBuffer(0));
         _receiver_end_pos += 1;
     }
-	click_chatter("seqes.size(): %u", seqes.size());
 	click_chatter("start_pos: %u, end_pos: %u", _receiver_start_pos, _receiver_end_pos);
 }
 
@@ -114,9 +110,8 @@ click_chatter("seq in receiver buffer: %u", GetSeqInReceiverBuffer(0));
 void ReceiverBuffer::send_packets_to_tcp(){
     for(int i = 0; i < _receiver_end_pos; ++i){
         uint32_t seq = GetSeqInReceiverBuffer(i);
-	click_chatter("i: %u, seq: %u", i, seq);
         if(seq == _last_acked + 1){
-	    click_chatter("[ReceiverBuffer]: Send packet %u to TCP.", seq);
+            click_chatter("[ReceiverBuffer]: Send packet %u at pos %u to TCP.", seq, i);
             _last_acked += 1;
             _receiver_start_pos += 1;
             output(0).push(ReadOutDataPacket(i));
@@ -148,17 +143,17 @@ void ReceiverBuffer::push(int port, Packet *income_packet) {
     /* from IP, use receiver buffer */
     if(port == 1){
         if(header.type == ACK || header.type == FINACK){
-            click_chatter("[ReceiverBuffer]: Received ACK/FINACK packet %u.", header.sequence);
-	    output(0).push(income_packet);  // send to TCP anyway(can only be ACK for SYNACK or FINACK)
+            click_chatter("[ReceiverBuffer]: Received %s packet %u.", packet_names[header.type], header.sequence);
+            output(0).push(income_packet);  // send to TCP anyway(can only be ACK for SYNACK or FINACK)
         }
         else if((header.type == DATA || header.type == SYN || header.type == FIN) && !ReceiverBufferFull()){
-	    click_chatter("[ReceiverBuffer]: Received SYN/FIN/DATA packet %u.", header.sequence);
+            click_chatter("[ReceiverBuffer]: Received %s packet %u.", packet_names[header.type], header.sequence);
 	    // click_chatter("last acked: %u, received seq: %u", _last_acked, header.sequence);
             if(header.sequence > _last_acked){  // a packet that has not been given to tcp
-		click_chatter("[ReceiverBuffer]: Packet %u not been given to TCP.", header.sequence);
+                click_chatter("[ReceiverBuffer]: Packet %u not been given to TCP.", header.sequence);
                 update_buffer(income_packet);
             }
-            output(0).push(CreateAckPacket(&header));  // send ACK anyway
+            output(1).push(CreateAckPacket(&header));  // send ACK anyway
         }
         else{
             income_packet->kill();
@@ -202,7 +197,6 @@ uint32_t ReceiverBuffer::GetSeqInReceiverBuffer(int pos){
     WritablePacket* packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
     struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
     memcpy((void *)(packet_ptr), (const void *)(_receiver_buffer + pos * TCP_Packet_size), TCP_Packet_size);
-        click_chatter("seq: %u", ((struct TCP_Header*)(&(packet_ptr->header)))->sequence);
     uint32_t seq = ((struct TCP_Header*)(&(packet_ptr->header)))->sequence;
     packet->kill();
     return seq;
@@ -230,6 +224,7 @@ WritablePacket* ReceiverBuffer::CreateAckPacket(TCP_Header* header){
     struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
     
     memset(packet_ptr, 0, packet->length());
+    click_chatter("[ReceiverBuffer]: Send ACK for DATA packet %u", header->sequence);
     
     /* Write TCP_Header */
     header_ptr->source = header->destination;
@@ -259,3 +254,4 @@ WritablePacket* ReceiverBuffer::CreateAckPacket(TCP_Header* header){
 
 CLICK_ENDDECLS
 EXPORT_ELEMENT(ReceiverBuffer)
+

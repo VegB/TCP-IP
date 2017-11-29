@@ -96,13 +96,13 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
     WritablePacket* output_packet = NULL;
     
     if(header->type == DATA){
-        click_chatter("[ReceiverTCP]: Received DATA: packet %u from %u", header->sequence, header->source);
+        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type], header->sequence, header->source);
         click_chatter("[ReceiverTCP-buffer]: Send ACK(%u) for DATA packet %u", _seq, header->sequence);
 //        output(0).push(CreateOtherPacket(ACK, header));
         // Recover data【tcb】
     }
     else if(header->type == SYN){
-        click_chatter("[ReceiverTCP]: Received SYN request: packet %u from %u", header->sequence, header->source);
+        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type], header->sequence, header->source);
         WritablePacket* packet_synack = CreateOtherPacket(SYNACK, header);
         memcpy((void *)(&_duplicate_packet), (const void *)(packet_synack->data()), sizeof(struct TCP_Packet)); // store a copy
         click_chatter("[ReceiverTCP-buffer]: Send SYNACK for SYN");
@@ -126,12 +126,8 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
         _empty_receiver_buffer_size = header->empty_buffer_size;
 //        click_chatter("[ReceiverTCP]: Room for %u packets in ReceiverBuffer", _empty_receiver_buffer_size);
     }
-    else if(header->type == HELLO){
-        click_chatter("[ReceiverTCP]: Received HELLO: packet %u from %u", header->sequence, header->source);
-        // 好像没啥可干的……不会收到hello吧，应该在router就给drop掉了
-    }
     else if(header->type == FIN){
-        click_chatter("[ReceiverTCP]: Received FIN: packet %u from %u", header->sequence, header->source);
+        click_chatter("[ReceiverTCP]: Received %s: packet %u from %u", packet_names[header->type], header->sequence, header->source);
         click_chatter("[ReceiverTCP-buffer]: Send FINACK for FIN");
 //        output(0).push(CreateOtherPacket(FINACK, header));
         _other_state = CLOSED;

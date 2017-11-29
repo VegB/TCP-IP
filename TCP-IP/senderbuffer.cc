@@ -159,18 +159,44 @@ WritablePacket* SenderBuffer::ReadOutDataPacket(int pos){
 
 // retransmit packet with sequence number 'seq' in buffer
 void SenderBuffer::Retransmit(uint32_t seq){
-    for(int i = _sender_start_pos; i < _sender_end_pos; ++i){
-        if(GetSeqInSenderBuffer(i) == seq){
-            output(1).push(ReadOutDataPacket(i));
-            break;
+    if(_sender_start_pos < _sender_start_pos){
+        for(int i = _sender_start_pos; i < _sender_end_pos; ++i){
+            if(GetSeqInSenderBuffer(i) == seq){
+                output(1).push(ReadOutDataPacket(i));
+                break;
+            }
+        }
+    }
+    else{
+        for(int i = _sender_end_pos; i < SENDER_BUFFER_SIZE; ++i){
+            if(GetSeqInSenderBuffer(i) == seq){
+                output(1).push(ReadOutDataPacket(i));
+                break;
+            }
+        }
+        for(int i = 0; i < _sender_end_pos; ++i){
+            if(GetSeqInSenderBuffer(i) == seq){
+                output(1).push(ReadOutDataPacket(i));
+                break;
+            }
         }
     }
 }
 
 // retransmit all packets remained in buffer
 void SenderBuffer::RetransmitAll(){
-    for(int i = _sender_start_pos; i < _sender_end_pos; ++i){
-        output(1).push(ReadOutDataPacket(i));
+    if(_sender_start_pos < _sender_end_pos){
+        for(int i = _sender_start_pos; i < _sender_end_pos; ++i){
+            output(1).push(ReadOutDataPacket(i));
+        }
+    }
+    else{
+        for(int i = _sender_start_pos; i < SENDER_BUFFER_SIZE; ++i){
+            output(1).push(ReadOutDataPacket(i));
+        }
+        for(int i = 0; i < _sender_end_pos; ++i){
+            output(1).push(ReadOutDataPacket(i));
+        }
     }
 }
 

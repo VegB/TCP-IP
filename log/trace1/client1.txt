@@ -1,0 +1,155 @@
+loss rate = 0.5
+data packets number = 10
+==============================
+
+[SenderTCP]: Creating a SenderTCP object.
+[SenderBuffer]: Creating a SenderBuffer object.
+[BasicIP]: Creating a BasicIP object.
+[SenderTCP]: Sending SYN 1. Trying to set up connection with 2
+[SenderBuffer]: Store packet 1 in buffer at position 0.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 3
+[SenderBuffer]: Pass packet 1 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 3
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 0 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 3
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 1
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[SenderTCP]: Received SYNACK for SYN(1): packet 0 from 2
+[SenderTCP]: =================CONNECTION ESTABLISHED================
+[SenderBuffer]: Pass packet 0 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 4, SenderBuffer = 4, ReceiverBuffer = 100000
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 2 in buffer at position 1.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 2. Remain size: 3
+[SenderBuffer]: Pass packet 2 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 2. Remain size: 3
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 3 in buffer at position 2.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 3. Remain size: 2
+[SenderBuffer]: Pass packet 3 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 3. Remain size: 2
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 4 in buffer at position 3.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 4. Remain size: 1
+[SenderBuffer]: Pass packet 4 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 4. Remain size: 1
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 5 in buffer at position 4.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 0. Remain size: 0
+[SenderBuffer]: Pass packet 5 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 0. Remain size: 0
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 2
+[SenderBuffer]: CreateInfoPacket(): start_pos: 2, end_pos: 0. Remain size: 1
+[SenderTCP]: Received ACK for DATA(2): packet 0 from 2
+[SenderTCP]: Room for 4 packets in ReceiverBuffer
+[SenderTCP]: Need Retransmission.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 2, end_pos: 0. Remain size: 1
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 5
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 0. Remain size: 4
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 2
+[SenderTCP]: Room for 4 packets in ReceiverBuffer
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 4, SenderBuffer = 4, ReceiverBuffer = 4
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 6 in buffer at position 0.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 3
+[SenderBuffer]: Pass packet 6 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 3
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 7 in buffer at position 1.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 2. Remain size: 2
+[SenderBuffer]: Pass packet 7 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 2. Remain size: 2
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 8 in buffer at position 2.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 3. Remain size: 1
+[SenderBuffer]: Pass packet 8 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 3. Remain size: 1
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 9 in buffer at position 3.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 4. Remain size: 0
+[SenderBuffer]: Pass packet 9 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 4. Remain size: 0
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 5
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 4. Remain size: 0
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 2
+[SenderTCP]: Room for 3 packets in ReceiverBuffer
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 5
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 4. Remain size: 0
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 2
+[SenderTCP]: Room for 2 packets in ReceiverBuffer
+[SenderTCP]: Need Retransmission.
+[SenderBuffer]: Read out packet 6 at position 0 and retransmit.
+[SenderBuffer]: Read out packet 7 at position 1 and retransmit.
+[SenderBuffer]: Read out packet 8 at position 2 and retransmit.
+[SenderBuffer]: Read out packet 9 at position 3 and retransmit.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 4. Remain size: 0
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 6
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 4. Remain size: 1
+[SenderTCP]: Received ACK for DATA(6): packet 0 from 2
+[SenderTCP]: Room for 3 packets in ReceiverBuffer
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 7
+[SenderBuffer]: CreateInfoPacket(): start_pos: 2, end_pos: 4. Remain size: 2
+[SenderTCP]: Received ACK for DATA(7): packet 0 from 2
+[SenderTCP]: Room for 3 packets in ReceiverBuffer
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 8
+[SenderBuffer]: CreateInfoPacket(): start_pos: 3, end_pos: 4. Remain size: 3
+[SenderTCP]: Received ACK for DATA(8): packet 0 from 2
+[SenderTCP]: Room for 4 packets in ReceiverBuffer
+[SenderTCP]: Need Retransmission.
+[SenderBuffer]: Read out packet 9 at position 3 and retransmit.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 3, end_pos: 4. Remain size: 3
+[SenderTCP]: Need Retransmission.
+[SenderBuffer]: Read out packet 9 at position 3 and retransmit.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 3, end_pos: 4. Remain size: 3
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 9
+[SenderBuffer]: CreateInfoPacket(): start_pos: 4, end_pos: 4. Remain size: 4
+[SenderTCP]: Received ACK for DATA(9): packet 0 from 2
+[SenderTCP]: Room for 4 packets in ReceiverBuffer
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 4, SenderBuffer = 4, ReceiverBuffer = 4
+[SenderTCP]: Have more packets? 1
+[SenderBuffer]: Store packet 10 in buffer at position 4.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 4, end_pos: 0. Remain size: 3
+[SenderBuffer]: Pass packet 10 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 4, end_pos: 0. Remain size: 3
+[SenderTCP]: Have more packets? 0
+[SenderBuffer]: Store packet 11 in buffer at position 0.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 4, end_pos: 1. Remain size: 2
+[SenderBuffer]: Pass packet 11 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 4, end_pos: 1. Remain size: 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 10
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 3
+[SenderTCP]: Received ACK for DATA(10): packet 0 from 2
+[SenderTCP]: Room for 4 packets in ReceiverBuffer
+[SenderTCP]: Need Retransmission.
+[SenderBuffer]: Read out packet 11 at position 0 and retransmit.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 3
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 11
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[SenderTCP]: Received ACK for DATA(11): packet 0 from 2
+[SenderTCP]: Room for 4 packets in ReceiverBuffer
+[SenderTCP]: Sending FIN 12. Trying to release connection with 2
+[SenderBuffer]: Store packet 12 in buffer at position 1.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 2. Remain size: 3
+[SenderBuffer]: Pass packet 12 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 2. Remain size: 3
+[SenderTCP]: Need Retransmission.
+[SenderBuffer]: Read out packet 12 at position 1 and retransmit.
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 2. Remain size: 3
+[SenderTCP]: Received FIN: packet 2 from 2
+[SenderBuffer]: Pass packet 13 on to IP
+[SenderBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 2. Remain size: 3
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 12
+[SenderBuffer]: CreateInfoPacket(): start_pos: 2, end_pos: 2. Remain size: 4
+[SenderTCP]: Received FINACK for SYN(12): packet 0 from 2
+[SenderTCP]: =================CONNECTION TORN DOWN================
+[SenderTCP]: Data transmission probably finished!

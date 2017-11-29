@@ -4,7 +4,7 @@
 #include <click/timer.hh>
 #include "packet.hh"
 
-#define SENDER_BUFFER_SIZE 5
+#define SENDER_BUFFER_SIZE 10
 #define FAST_RETRANSMIT_BOUND 3
 
 CLICK_DECLS

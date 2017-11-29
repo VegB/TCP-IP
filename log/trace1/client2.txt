@@ -1,0 +1,150 @@
+loss rate = 0.5
+data packets number = 10
+==============================
+
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 1.
+[ReceiverBuffer]: Packet 1 not been given to TCP.
+i: 0, ori_pos: 0
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 1 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 1 at position 0
+[ReceiverTCP]: Received SYN request: packet 1 from 1
+[ReceiverTCP-buffer]: Send SYNACK for SYN
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 1
+expensive Packet::push; have 0 wanted 14
+[ReceiverBuffer]: Received ACK/FINACK packet 0.
+[ReceiverTCP]: Received ACK for SYNACK(0): packet 0 from 1
+[ReceiverTCP]: ==============CONNECTION ESTABLISHED================
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 2.
+[ReceiverBuffer]: Packet 2 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 2 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 2 at position 0
+[ReceiverTCP]: Received DATA: packet 2 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 2
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 2
+expensive Packet::push; have 0 wanted 14
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 3.
+[ReceiverBuffer]: Packet 3 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 3 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 3 at position 0
+[ReceiverTCP]: Received DATA: packet 3 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 3
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 3
+expensive Packet::push; have 0 wanted 14
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 4.
+[ReceiverBuffer]: Packet 4 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 4 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 4 at position 0
+[ReceiverTCP]: Received DATA: packet 4 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 4
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 4
+expensive Packet::push; have 0 wanted 14
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 5.
+[ReceiverBuffer]: Packet 5 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 5 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 5 at position 0
+[ReceiverTCP]: Received DATA: packet 5 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 5
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 5
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 7.
+[ReceiverBuffer]: Packet 7 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 7
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 9.
+[ReceiverBuffer]: Packet 9 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+start_pos: 0, end_pos: 2
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 2. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 6.
+[ReceiverBuffer]: Packet 6 not been given to TCP.
+i: 0, ori_pos: 2
+i: 1, ori_pos: 0
+i: 2, ori_pos: 1
+start_pos: 0, end_pos: 3
+[ReceiverBuffer]: Send packet 6 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 6 at position 0
+[ReceiverTCP]: Received DATA: packet 6 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 6
+[ReceiverBuffer]: Send packet 7 at pos 1 to TCP.
+[ReceiverBuffer]: Read out packet 7 at position 1
+[ReceiverTCP]: Received DATA: packet 7 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 2, end_pos: 3. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 6
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 7.
+[ReceiverBuffer]: Send ACK for DATA packet 7
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 8.
+[ReceiverBuffer]: Packet 8 not been given to TCP.
+i: 0, ori_pos: 3
+i: 1, ori_pos: 2
+start_pos: 0, end_pos: 2
+[ReceiverBuffer]: Send packet 8 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 8 at position 0
+[ReceiverTCP]: Received DATA: packet 8 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 8
+[ReceiverBuffer]: Send packet 9 at pos 1 to TCP.
+[ReceiverBuffer]: Read out packet 9 at position 1
+[ReceiverTCP]: Received DATA: packet 9 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 9
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 2, end_pos: 2. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 8
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 9.
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 9.
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 9.
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 10.
+[ReceiverBuffer]: Packet 10 not been given to TCP.
+i: 0, ori_pos: 2
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 10 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 10 at position 0
+[ReceiverTCP]: Received DATA: packet 10 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 10
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 10
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 11.
+[ReceiverBuffer]: Packet 11 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 11 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 11 at position 0
+[ReceiverTCP]: Received DATA: packet 11 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 11
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 11
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 11.
+[ReceiverBuffer]: Send ACK for DATA packet 11
+[ReceiverBuffer]: Received SYN/FIN/DATA packet 12.
+[ReceiverBuffer]: Packet 12 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 12 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 12 at position 0
+[ReceiverTCP]: Received FIN: packet 12 from 1
+[ReceiverTCP-buffer]: Send FINACK for FIN
+[ReceiverTCP]: Send FIN
+[ReceiverBuffer]: Pass packet 2 to IP
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 12
+[ReceiverBuffer]: Received ACK/FINACK packet 13.
+[ReceiverTCP]: Received FINACK for FIN(2): packet 13 from 1
+[SenderTCP]: =================CONNECTION TORN DOWN================
