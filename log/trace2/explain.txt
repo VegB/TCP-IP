@@ -1,0 +1,11 @@
+loss rate = 0.5
+data packets number = 10
+REICEIVER_BUFFER_SIZE = SENDER_BUFFER_SIZE = 10
+retransmit time-out = 10
+==============================
+
+Well, still haven't implement FAST RETRANSIT yet.
+Will retransmit all packets in SenderBuffer when time out.
+
+Receive packets in the following orders:
+3 6 7 8 9 3 8 10 3 5 7 8 9 10 3 7 8 10 2(pass 2 3 to tcp) 5 6 9 10 3 4(send 4~10 to tcp).

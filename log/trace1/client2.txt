@@ -1,5 +1,6 @@
 loss rate = 0.5
 data packets number = 10
+REICEIVER_BUFFER_SIZE = SENDER_BUFFER_SIZE = 10
 ==============================
 
 [ReceiverBuffer]: Received SYN/FIN/DATA packet 1.

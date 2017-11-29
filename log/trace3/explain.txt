@@ -1,0 +1,9 @@
+loss rate = 0.5
+data packets number = 10
+REICEIVER_BUFFER_SIZE = SENDER_BUFFER_SIZE = 10
+==============================
+
+Implemented FAST RETRANSMIT.
+
+Receive packets in the following order:
+2 3 5 6 7 8 9 10 4(fast retransmitted)

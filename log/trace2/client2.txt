@@ -1,0 +1,398 @@
+loss rate = 0.5
+data packets number = 10
+REICEIVER_BUFFER_SIZE = SENDER_BUFFER_SIZE = 10
+==============================
+
+[ReceiverTCP]: Creating a ReceiverTCP object.
+Creating a ReceiverBuffer object.
+[BasicIP]: Creating a BasicIP object.
+[ReceiverTCP]: Sending new Hello packet
+expensive Packet::push; have 0 wanted 14
+[ReceiverBuffer]: Pass packet 0 to IP
+
+[ReceiverBuffer]: Received SYN packet 1.
+[ReceiverBuffer]: Packet 1 not been given to TCP.
+i: 0, ori_pos: 0
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 1 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 1 at position 0
+[ReceiverTCP]: Received SYN: packet 1 from 1
+[ReceiverTCP-buffer]: Send SYNACK for SYN
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 9
+[ReceiverBuffer]: Send ACK for DATA packet 1
+expensive Packet::push; have 0 wanted 14
+[ReceiverTCP]: Retransmit SYNACK
+expensive Packet::push; have 0 wanted 14
+[ReceiverBuffer]: Pass packet 1 to IP
+[ReceiverBuffer]: Received ACK packet 0.
+[ReceiverTCP]: Received ACK for SYNACK(1): packet 0 from 1
+[ReceiverTCP]: ==============CONNECTION ESTABLISHED================
+[ReceiverBuffer]: Received DATA packet 3.
+[ReceiverBuffer]: Packet 3 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 1. Remain size: 8
+[ReceiverBuffer]: Send ACK for DATA packet 3
+expensive Packet::push; have 0 wanted 14
+[ReceiverBuffer]: Received DATA packet 6.
+[ReceiverBuffer]: Packet 6 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+start_pos: 0, end_pos: 2
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 2. Remain size: 7
+[ReceiverBuffer]: Send ACK for DATA packet 6
+expensive Packet::push; have 0 wanted 14
+[ReceiverBuffer]: Received DATA packet 7.
+[ReceiverBuffer]: Packet 7 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+start_pos: 0, end_pos: 3
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 3. Remain size: 6
+[ReceiverBuffer]: Send ACK for DATA packet 7
+[ReceiverBuffer]: Received DATA packet 8.
+[ReceiverBuffer]: Packet 8 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+start_pos: 0, end_pos: 4
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 4. Remain size: 5
+[ReceiverBuffer]: Send ACK for DATA packet 8
+[ReceiverBuffer]: Received DATA packet 9.
+[ReceiverBuffer]: Packet 9 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+start_pos: 0, end_pos: 5
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 5. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received DATA packet 3.
+[ReceiverBuffer]: Packet 3 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+start_pos: 0, end_pos: 5
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 5. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 3
+[ReceiverBuffer]: Received DATA packet 8.
+[ReceiverBuffer]: Packet 8 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+start_pos: 0, end_pos: 5
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 5. Remain size: 4
+[ReceiverBuffer]: Send ACK for DATA packet 8
+[ReceiverBuffer]: Received DATA packet 10.
+[ReceiverBuffer]: Packet 10 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+start_pos: 0, end_pos: 6
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 6. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 10
+[ReceiverBuffer]: Received DATA packet 3.
+[ReceiverBuffer]: Packet 3 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+start_pos: 0, end_pos: 6
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 6. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 3
+[ReceiverBuffer]: Received DATA packet 5.
+[ReceiverBuffer]: Packet 5 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 6
+i: 2, ori_pos: 1
+i: 3, ori_pos: 2
+i: 4, ori_pos: 3
+i: 5, ori_pos: 4
+i: 6, ori_pos: 5
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 5
+[ReceiverBuffer]: Received DATA packet 7.
+[ReceiverBuffer]: Packet 7 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 7
+[ReceiverBuffer]: Received DATA packet 8.
+[ReceiverBuffer]: Packet 8 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 8
+[ReceiverBuffer]: Received DATA packet 9.
+[ReceiverBuffer]: Packet 9 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received DATA packet 10.
+[ReceiverBuffer]: Packet 10 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 10
+[ReceiverBuffer]: Received DATA packet 3.
+[ReceiverBuffer]: Packet 3 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 3
+[ReceiverBuffer]: Received DATA packet 5.
+[ReceiverBuffer]: Packet 5 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 5
+[ReceiverBuffer]: Received DATA packet 7.
+[ReceiverBuffer]: Packet 7 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 7
+[ReceiverBuffer]: Received DATA packet 8.
+[ReceiverBuffer]: Packet 8 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 8
+[ReceiverBuffer]: Received DATA packet 10.
+[ReceiverBuffer]: Packet 10 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+i: 6, ori_pos: 6
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 7. Remain size: 2
+[ReceiverBuffer]: Send ACK for DATA packet 10
+[ReceiverBuffer]: Received DATA packet 2.
+[ReceiverBuffer]: Packet 2 not been given to TCP.
+i: 0, ori_pos: 7
+i: 1, ori_pos: 0
+i: 2, ori_pos: 1
+i: 3, ori_pos: 2
+i: 4, ori_pos: 3
+i: 5, ori_pos: 4
+i: 6, ori_pos: 5
+i: 7, ori_pos: 6
+start_pos: 0, end_pos: 8
+[ReceiverBuffer]: Send packet 2 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 2 at position 0
+[ReceiverTCP]: Received DATA: packet 2 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 2
+[ReceiverBuffer]: Send packet 3 at pos 1 to TCP.
+[ReceiverBuffer]: Read out packet 3 at position 1
+[ReceiverTCP]: Received DATA: packet 3 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 3
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 2, end_pos: 8. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 2
+[ReceiverBuffer]: Received DATA packet 5.
+[ReceiverBuffer]: Packet 5 not been given to TCP.
+i: 0, ori_pos: 2
+i: 1, ori_pos: 3
+i: 2, ori_pos: 4
+i: 3, ori_pos: 5
+i: 4, ori_pos: 6
+i: 5, ori_pos: 7
+start_pos: 0, end_pos: 6
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 6. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 5
+[ReceiverBuffer]: Received DATA packet 6.
+[ReceiverBuffer]: Packet 6 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+start_pos: 0, end_pos: 6
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 6. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 6
+[ReceiverBuffer]: Received DATA packet 9.
+[ReceiverBuffer]: Packet 9 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+start_pos: 0, end_pos: 6
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 6. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received DATA packet 10.
+[ReceiverBuffer]: Packet 10 not been given to TCP.
+i: 0, ori_pos: 0
+i: 1, ori_pos: 1
+i: 2, ori_pos: 2
+i: 3, ori_pos: 3
+i: 4, ori_pos: 4
+i: 5, ori_pos: 5
+start_pos: 0, end_pos: 6
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 0, end_pos: 6. Remain size: 3
+[ReceiverBuffer]: Send ACK for DATA packet 10
+[ReceiverBuffer]: Received DATA packet 3.
+[ReceiverBuffer]: Send ACK for DATA packet 3
+[ReceiverBuffer]: Received DATA packet 4.
+[ReceiverBuffer]: Packet 4 not been given to TCP.
+i: 0, ori_pos: 6
+i: 1, ori_pos: 0
+i: 2, ori_pos: 1
+i: 3, ori_pos: 2
+i: 4, ori_pos: 3
+i: 5, ori_pos: 4
+i: 6, ori_pos: 5
+start_pos: 0, end_pos: 7
+[ReceiverBuffer]: Send packet 4 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 4 at position 0
+[ReceiverTCP]: Received DATA: packet 4 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 4
+[ReceiverBuffer]: Send packet 5 at pos 1 to TCP.
+[ReceiverBuffer]: Read out packet 5 at position 1
+[ReceiverTCP]: Received DATA: packet 5 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 5
+[ReceiverBuffer]: Send packet 6 at pos 2 to TCP.
+[ReceiverBuffer]: Read out packet 6 at position 2
+[ReceiverTCP]: Received DATA: packet 6 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 6
+[ReceiverBuffer]: Send packet 7 at pos 3 to TCP.
+[ReceiverBuffer]: Read out packet 7 at position 3
+[ReceiverTCP]: Received DATA: packet 7 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 7
+[ReceiverBuffer]: Send packet 8 at pos 4 to TCP.
+[ReceiverBuffer]: Read out packet 8 at position 4
+[ReceiverTCP]: Received DATA: packet 8 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 8
+[ReceiverBuffer]: Send packet 9 at pos 5 to TCP.
+[ReceiverBuffer]: Read out packet 9 at position 5
+[ReceiverTCP]: Received DATA: packet 9 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 9
+[ReceiverBuffer]: Send packet 10 at pos 6 to TCP.
+[ReceiverBuffer]: Read out packet 10 at position 6
+[ReceiverTCP]: Received DATA: packet 10 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 10
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 7, end_pos: 7. Remain size: 9
+[ReceiverBuffer]: Send ACK for DATA packet 4
+[ReceiverBuffer]: Received DATA packet 5.
+[ReceiverBuffer]: Send ACK for DATA packet 5
+[ReceiverBuffer]: Received DATA packet 6.
+[ReceiverBuffer]: Send ACK for DATA packet 6
+[ReceiverBuffer]: Received DATA packet 9.
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received DATA packet 10.
+[ReceiverBuffer]: Send ACK for DATA packet 10
+[ReceiverBuffer]: Received DATA packet 6.
+[ReceiverBuffer]: Send ACK for DATA packet 6
+[ReceiverBuffer]: Received DATA packet 7.
+[ReceiverBuffer]: Send ACK for DATA packet 7
+[ReceiverBuffer]: Received DATA packet 10.
+[ReceiverBuffer]: Send ACK for DATA packet 10
+[ReceiverBuffer]: Received DATA packet 7.
+[ReceiverBuffer]: Send ACK for DATA packet 7
+[ReceiverBuffer]: Received DATA packet 8.
+[ReceiverBuffer]: Send ACK for DATA packet 8
+[ReceiverBuffer]: Received DATA packet 9.
+[ReceiverBuffer]: Send ACK for DATA packet 9
+[ReceiverBuffer]: Received DATA packet 10.
+[ReceiverBuffer]: Send ACK for DATA packet 10
+[ReceiverBuffer]: Received DATA packet 11.
+[ReceiverBuffer]: Packet 11 not been given to TCP.
+i: 0, ori_pos: 7
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 11 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 11 at position 0
+[ReceiverTCP]: Received DATA: packet 11 from 1
+[ReceiverTCP-buffer]: Send ACK(2) for DATA packet 11
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 9
+[ReceiverBuffer]: Send ACK for DATA packet 11
+[ReceiverBuffer]: Received DATA packet 11.
+[ReceiverBuffer]: Send ACK for DATA packet 11
+[ReceiverBuffer]: Received DATA packet 11.
+[ReceiverBuffer]: Send ACK for DATA packet 11
+[ReceiverBuffer]: Received FIN packet 12.
+[ReceiverBuffer]: Packet 12 not been given to TCP.
+i: 0, ori_pos: 1
+start_pos: 0, end_pos: 1
+[ReceiverBuffer]: Send packet 12 at pos 0 to TCP.
+[ReceiverBuffer]: Read out packet 12 at position 0
+[ReceiverTCP]: Received FIN: packet 12 from 1
+[ReceiverTCP-buffer]: Send FINACK for FIN
+[ReceiverTCP]: Send FIN
+[ReceiverBuffer]: Pass packet 2 to IP
+[ReceiverBuffer]: CreateInfoPacket(): start_pos: 1, end_pos: 1. Remain size: 9
+[ReceiverBuffer]: Send ACK for DATA packet 12
+[ReceiverBuffer]: Received FINACK packet 13.
+[ReceiverTCP]: Received FINACK for FIN(2): packet 13 from 1
+[SenderTCP]: =================CONNECTION TORN DOWN================
+[ReceiverBuffer]: Received FIN packet 12.
+[ReceiverBuffer]: Send ACK for DATA packet 12
+[ReceiverBuffer]: Received FIN packet 12.
+[ReceiverBuffer]: Send ACK for DATA packet 12
+^CKilling a ReceiverBuffer object.
+[ReceiverTCP]: Killing a ReceiverTCP object.
+[BasicIP]: Killing a BasicIP object.

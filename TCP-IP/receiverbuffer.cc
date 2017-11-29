@@ -242,6 +242,7 @@ WritablePacket* ReceiverBuffer::CreateAckPacket(TCP_Header* header){
     else if(header->type == FIN){
         header_ptr->type = FINACK;
     }
+    click_chatter("received: %u, last_acked: %u", header->sequence, _last_acked);
     
     /* set ack number */
     if(header->sequence <= _last_acked){  // have already received this packet
