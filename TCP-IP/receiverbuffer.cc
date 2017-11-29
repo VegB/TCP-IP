@@ -134,7 +134,8 @@ void ReceiverBuffer::push(int port, Packet *income_packet) {
     assert(income_packet);
     struct TCP_Packet *packet = (struct TCP_Packet *)income_packet->data();
     struct TCP_Header header = (struct TCP_Header)packet->header;
-    
+	string packet_names[] = {"DATA", "ACK", "SYN", "SYNACK", "FIN", "FINACK", "HELLO", "INFO", "RETRANS"};    
+
     /* from TCP */
     if(port == 0){
         output(1).push(income_packet);  // pass on to IP
@@ -143,11 +144,11 @@ void ReceiverBuffer::push(int port, Packet *income_packet) {
     /* from IP, use receiver buffer */
     if(port == 1){
         if(header.type == ACK || header.type == FINACK){
-            click_chatter("[ReceiverBuffer]: Received %s packet %u.", packet_names[header.type], header.sequence);
+            click_chatter("[ReceiverBuffer]: Received %s packet %u.", packet_names[header.type].c_str(), header.sequence);
             output(0).push(income_packet);  // send to TCP anyway(can only be ACK for SYNACK or FINACK)
         }
         else if((header.type == DATA || header.type == SYN || header.type == FIN) && !ReceiverBufferFull()){
-            click_chatter("[ReceiverBuffer]: Received %s packet %u.", packet_names[header.type], header.sequence);
+            click_chatter("[ReceiverBuffer]: Received %s packet %u.", packet_names[header.type].c_str(), header.sequence);
 	    // click_chatter("last acked: %u, received seq: %u", _last_acked, header.sequence);
             if(header.sequence > _last_acked){  // a packet that has not been given to tcp
                 click_chatter("[ReceiverBuffer]: Packet %u not been given to TCP.", header.sequence);
