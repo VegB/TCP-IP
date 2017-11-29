@@ -14,6 +14,7 @@
  -------------
  9）是不是也应该改成在senderbuffer里面重发？
      感觉在tcp里面处理也可以。如果timeout之后发现buffer中有东西，那就全部重发？
+ 10）_last_acked这个还没设置！
  */
 
 #include <click/config.h>
@@ -159,6 +160,7 @@ WritablePacket* SenderBuffer::ReadOutDataPacket(int pos){
 
 // retransmit packet with sequence number 'seq' in buffer
 void SenderBuffer::Retransmit(uint32_t seq){
+    click_chatter("[SenderBuffer]: FAST RETRANSMIT");
     if(_sender_start_pos < _sender_start_pos){
         for(int i = _sender_start_pos; i < _sender_end_pos; ++i){
             if(GetSeqInSenderBuffer(i) == seq){
@@ -185,6 +187,7 @@ void SenderBuffer::Retransmit(uint32_t seq){
 
 // retransmit all packets remained in buffer
 void SenderBuffer::RetransmitAll(){
+    click_chatter("[SenderBuffer]: Retransmit ALL");
     if(_sender_start_pos < _sender_end_pos){
         for(int i = _sender_start_pos; i < _sender_end_pos; ++i){
             output(1).push(ReadOutDataPacket(i));
