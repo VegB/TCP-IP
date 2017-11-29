@@ -79,12 +79,15 @@ void SenderBuffer::push(int port, Packet *income_packet) {
             
             if(header.ack == _last_acked){
                 _last_acked_cnt += 1;
+                click_chatter("[SenderBuffer]: last_acked: %u, receiving for the %u th time.", _last_acked, _last_acked_cnt);
                 if(_last_acked_cnt == FAST_RETRANSMIT_BOUND){  // Fast Retransmit
-                    Retransmit(_last_acked);
+                    Retransmit(_last_acked + 1);
                 }
             }
             else if(header.ack > _last_acked){
                 _last_acked_cnt = 0;
+                _last_acked = header.ack;
+                click_chatter("[SenderBuffer]: update last_acked to %u", _last_acked);
                 while(!SenderBufferEmpty() && GetSeqInSenderBuffer(_sender_start_pos) <= header.ack){
                     _sender_start_pos = (_sender_start_pos + 1) % SENDER_BUFFER_SIZE;
                 }
