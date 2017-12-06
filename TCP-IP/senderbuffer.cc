@@ -15,6 +15,8 @@
  9）是不是也应该改成在senderbuffer里面重发？
      感觉在tcp里面处理也可以。如果timeout之后发现buffer中有东西，那就全部重发？
  10）_last_acked这个还没设置！
+ -------------
+ 11）slow start咋写啊？
  */
 
 #include <click/config.h>
@@ -80,7 +82,7 @@ void SenderBuffer::push(int port, Packet *income_packet) {
             if(header.ack == _last_acked){
                 _last_acked_cnt += 1;
                 click_chatter("[SenderBuffer]: last_acked: %u, receiving for the %u th time.", _last_acked, _last_acked_cnt);
-                if(_last_acked_cnt == FAST_RETRANSMIT_BOUND){  // Fast Retransmit
+                if(_last_acked_cnt >= FAST_RETRANSMIT_BOUND){  // Fast Retransmit
                     Retransmit(_last_acked + 1);
                 }
             }
@@ -117,7 +119,7 @@ WritablePacket* SenderBuffer::CreateInfoPacket(){
     header_ptr->type = INFO;
     header_ptr->empty_buffer_size = SenderBufferRemainSize(_sender_start_pos, _sender_end_pos);
     
-    click_chatter("[SenderBuffer]: CreateInfoPacket(): start_pos: %u, end_pos: %u. Remain size: %u", _sender_start_pos, _sender_end_pos, header_ptr->empty_buffer_size);
+    // click_chatter("[SenderBuffer]: CreateInfoPacket(): start_pos: %u, end_pos: %u. Remain size: %u", _sender_start_pos, _sender_end_pos, header_ptr->empty_buffer_size);
     
     return packet;
 }

@@ -5,7 +5,7 @@
 #include "packet.hh"
 
 #define SENDER_BUFFER_SIZE 10
-#define FAST_RETRANSMIT_BOUND 3
+#define FAST_RETRANSMIT_BOUND 2
 
 CLICK_DECLS
 

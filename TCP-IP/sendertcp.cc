@@ -57,7 +57,7 @@ SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
     _period = 3;
     _periodHello = 2;
     _delay = 0;
-    _time_out = 1;
+    _time_out = 10;
     _my_address = 0;
     _other_address = 0;
     transmissions = 0;
