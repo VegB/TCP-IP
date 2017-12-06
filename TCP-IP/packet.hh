@@ -6,6 +6,8 @@ using namespace std;
 
 #define TCP_MAX_LEN 1024
 #define FAST_RETRANSMIT 3
+#define SLOW_START 0
+#define ADDITIVE_INCREASE 1
 
 // Packet Type
 typedef enum {

@@ -51,6 +51,12 @@
 
 CLICK_DECLS 
 
+uint32_t find_smallest(uint32_t a, uint32_t b, uint32_t c){
+    uint32_t rst = a < b? a : b;
+    rst = rst < c? rst : c;
+    return rst;
+}
+
 SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
     click_chatter("[SenderTCP]: Creating a SenderTCP object.");
     _seq = 1;
@@ -70,6 +76,8 @@ SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
 	_empty_receiver_buffer_size = 100000; // define big buffer
     _finished_transmission = 0;
 	_data_piece_cnt = 0;
+    _slow_start_limit = 1;
+    _increase_policy = SLOW_START;
 }
 
 SenderTCP::~SenderTCP(){
@@ -105,6 +113,11 @@ void SenderTCP::run_timer(Timer *timer) {
     if(timer == &_timerTO){
         /* Time out. Retrasmit all the files in sender buffer */
         if(NeedRetransmission()){
+            _increase_policy = ADDICTIVE_INCREASE;
+            if(_slow_start_limit > 1){
+                _slow_start_limit >>= 1;
+            }
+            click_chatter("[SenderTCP]: 【【CHANGED TO ADDICTIVE INCREASE!】】, window_size = %u", _window_size);
             click_chatter("[SenderTCP]: Need Retransmission.");
             output(0).push(CreateOtherPacket(RETRANS, NULL));
         }
@@ -213,7 +226,14 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
 
 // send "window_size" piece of TCP packets
 void SenderTCP::CreateDataPacket(){
-    _window_size = _empty_sender_buffer_size < _empty_receiver_buffer_size? _empty_sender_buffer_size: _empty_receiver_buffer_size;
+    _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _slow_start_limit);
+    if(_increase_policy == SLOW_START){
+        _slow_start_limit <<= 1;
+    }
+    else if(_increase_policy == ADDICTIVE_INCREASE){
+        _slow_start_limit += 1;
+    }
+    
 	click_chatter("[SenderTCP]: window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);	
     
     for(int i = 0; i < _window_size; ++i){
