@@ -211,7 +211,7 @@ WritablePacket* ReceiverBuffer::CreateInfoPacket(){
     
     memset(packet_ptr, 0, packet->length());
     
-    // Write TCP_Header
+    /* Write TCP_Header */
     header_ptr->type = INFO;
     header_ptr->empty_buffer_size = ReceiverBufferRemainSize(_receiver_start_pos, _receiver_end_pos);
 

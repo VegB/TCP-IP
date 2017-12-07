@@ -6,7 +6,7 @@
 
 CLICK_DECLS
 #define DATA_PACKET_CNT 100
-// Connection Type
+/* Connection Type */
 typedef enum {
     CLOSED = 0,
     CONNECTED,
@@ -39,7 +39,7 @@ class SenderTCP : public Element {
 		uint32_t _other_address;
 		int transmissions;
     
-        // Transmission Control Block
+        /* Transmission Control Block */
         uint8_t _window_size;
         uint32_t _offset;
         uint8_t _my_state;
@@ -50,14 +50,14 @@ class SenderTCP : public Element {
         uint8_t _data_piece_cnt;
         uint8_t _increase_policy;
         uint32_t _slow_start_limit;
+        uint32_t _additive_increase_limit;
     
-        // Generating Packets 
+        /* Generating Packets  */
         void CreateDataPacket();
         WritablePacket* CreateOtherPacket(packet_types type_of_packet, TCP_Header* header);
         bool ReadDataFromFile();
         bool Valid_ACK(struct TCP_Header* header);
         bool NeedRetransmission();
-	//Packet* CreatePacket();
 };
 
 CLICK_ENDDECLS

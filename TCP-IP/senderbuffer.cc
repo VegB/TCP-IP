@@ -52,14 +52,14 @@ void SenderBuffer::push(int port, Packet *income_packet) {
     struct TCP_Header header = (struct TCP_Header)packet->header;
     
     if(port == 0){  /* from TCP, use sender buffer */
-        // Store in buffer
+        /* Store in buffer */
         if(header.type == DATA || header.type == SYN || header.type == FIN){ // no need to store HELLO or ACK
             int TCP_Packet_size = sizeof(struct TCP_Packet);
             memcpy((void *)(_sender_buffer + _sender_end_pos * TCP_Packet_size), (const void *)packet, TCP_Packet_size);
             // click_chatter("[SenderBuffer]: Store packet %u in buffer at position %u.", header.sequence, _sender_end_pos);
-            // update pointer
+            /* update pointer */
             _sender_end_pos = (_sender_end_pos + 1) % SENDER_BUFFER_SIZE;
-            // inform TCP of the change in sender buffer
+            /* inform TCP of the change in sender buffer */
             output(0).push(CreateInfoPacket());
         }
         else if(header.type == RETRANS){
@@ -67,7 +67,7 @@ void SenderBuffer::push(int port, Packet *income_packet) {
             income_packet->kill();
         }
         
-        // Route
+        /* Route */
         if(header.type != RETRANS){
             click_chatter("[SenderBuffer]: Pass packet %u on to IP", header.sequence);
             output(1).push(income_packet);  // to IP
@@ -96,7 +96,7 @@ void SenderBuffer::push(int port, Packet *income_packet) {
                 output(0).push(CreateInfoPacket()); // inform TCP of the change in ReceiverBuffer
             }
             
-            // send ACK to TCP 这里这里这里！！！
+            /* send ACK to TCP */
             output(0).push(income_packet);
         }
         else if(header.type == FIN){
@@ -115,7 +115,7 @@ WritablePacket* SenderBuffer::CreateInfoPacket(){
     
     memset(packet_ptr, 0, packet->length());
     
-    // Write TCP_Header
+    /* Write TCP_Header */
     header_ptr->type = INFO;
     header_ptr->empty_buffer_size = SenderBufferRemainSize(_sender_start_pos, _sender_end_pos);
     
@@ -131,7 +131,7 @@ uint32_t SenderBuffer::SenderBufferRemainSize(uint32_t s, uint32_t e){
     return s - e - 1;
 }
 
-// Return receive_buffer full or not
+/* Return receive_buffer full or not */
 bool SenderBuffer::SenderBufferFull(){
     return _sender_start_pos == (_sender_end_pos + 1) % SENDER_BUFFER_SIZE;
 }
@@ -150,9 +150,9 @@ uint32_t SenderBuffer::GetSeqInSenderBuffer(int pos){
     return seq;
 }
 
-// Just getting each packet in buffer. Not really reading them out.
+/* Just getting each packet in buffer. */
 WritablePacket* SenderBuffer::ReadOutDataPacket(int pos){
-    // Readout data
+    /* Readout data */
     int TCP_Packet_size = sizeof(struct TCP_Packet);
     WritablePacket* packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
     memcpy((void *)(packet->data()), (const void *)(_sender_buffer + pos * TCP_Packet_size), TCP_Packet_size);
@@ -163,7 +163,7 @@ WritablePacket* SenderBuffer::ReadOutDataPacket(int pos){
     return packet;
 }
 
-// retransmit packet with sequence number 'seq' in buffer
+/* retransmit packet with sequence number 'seq' in buffer */
 void SenderBuffer::Retransmit(uint32_t seq){
     click_chatter("[SenderBuffer]: FAST RETRANSMIT");
     if(_sender_start_pos < _sender_start_pos){
@@ -190,7 +190,7 @@ void SenderBuffer::Retransmit(uint32_t seq){
     }
 }
 
-// retransmit all packets remained in buffer
+/* retransmit all packets remained in buffer */
 void SenderBuffer::RetransmitAll(){
     click_chatter("[SenderBuffer]: Retransmit ALL");
     if(_sender_start_pos < _sender_end_pos){

@@ -108,17 +108,30 @@ int SenderTCP::configure(Vector<String> &conf, ErrorHandler *errh) {
     return 0;
 }
 
-// Time out
+/* Time out */
 void SenderTCP::run_timer(Timer *timer) {
     if(timer == &_timerTO){
         /* Time out. Retrasmit all the files in sender buffer */
         if(NeedRetransmission()){
-            _increase_policy = ADDITIVE_INCREASE;
-            if(_slow_start_limit > 1){
-                _slow_start_limit >>= 1;
-            }
-            click_chatter("[SenderTCP]: 【【CHANGED TO ADDICTIVE INCREASE!】】, window_size = %u", _window_size);
             click_chatter("[SenderTCP]: Need Retransmission.");
+            
+            uint32_t _ori_window_size = _window_size;
+            
+            if(_increase_policy == SLOW_START){
+                _increase_policy = ADDITIVE_INCREASE;
+                _additive_increase_limit = _slow_start_limit;
+                if(_additive_increase_limit > 1){
+                    _additive_increase_limit >>= 1;
+                }
+                _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
+                click_chatter("[SenderTCP]: 【【changed from SLOW START to ADDITIVE INCREASE!】】, window_size changed from %u to %u", _ori_window_size, _window_size);
+            }
+            else if(_increase_policy == ADDITIVE_INCREASE){
+                _additive_increase_limit >>= 1;
+                _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
+                click_chatter("[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from %u to %u", _ori_window_size, _window_size)
+            }
+            
             output(0).push(CreateOtherPacket(RETRANS, NULL));
         }
         else{  /* Send new packets. */
@@ -139,7 +152,7 @@ void SenderTCP::run_timer(Timer *timer) {
                 // exit();
             }
         }
-        // schedule timer for next time out
+        /* schedule timer for next time out */
         if(!_finished_transmission){
 		    // click_chatter("[SenderTCP]: Set up timer for TO.");
             _timerTO.schedule_after_sec(_time_out);
@@ -155,17 +168,17 @@ void SenderTCP::run_timer(Timer *timer) {
     }
 }
 
-// Received Packets
+/* Received Packets */
 void SenderTCP::push(int port, Packet *income_packet) {
     assert(income_packet);
     struct TCP_Packet* packet = (struct TCP_Packet*)income_packet->data();
     struct TCP_Header* header = (struct TCP_Header*)(&(packet->header));
     WritablePacket* output_packet = NULL;
     
-    if(header->type == ACK){  // 这里接受到的ACK是经过buffer审核的（只有那些待收的ack才会发上来)_my_state == CONNECTED or FIN_WAIT
+    if(header->type == ACK){
         click_chatter("[SenderTCP]: Received ACK for DATA(%u): packet %u from %u", header->ack, header->sequence, header->source);
         
-        // record valid size in receiver buffer
+        /* record valid size in receiver buffer */
         _empty_receiver_buffer_size = header->empty_buffer_size;
         // click_chatter("[SenderTCP]: Room for %u packets in ReceiverBuffer", _empty_receiver_buffer_size);
     }
@@ -186,17 +199,13 @@ void SenderTCP::push(int port, Packet *income_packet) {
         _empty_sender_buffer_size = header->empty_buffer_size;
         // click_chatter("[SenderTCP]: Room for %u packets in SenderBuffer", _empty_sender_buffer_size);
     }
-    else if(header->type == HELLO){
-        click_chatter("[SenderTCP]: Received HELLO: packet %u from %u", header->sequence, header->source);
-        // 好像没啥可干的……不会收到hello吧，应该在router就给drop掉了
-    }
     else if(header->type == FIN){
         click_chatter("[SenderTCP]: Received FIN: packet %u from %u", header->sequence, header->source);
         output(0).push(CreateOtherPacket(FINACK, header));
         _other_state = CLOSED;
     }
     
-    // delete original packet
+    /* delete original packet */
     income_packet->kill();
 }
 
@@ -207,7 +216,7 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
     
     memset(packet_ptr, 0, packet->length());
     
-    // Write TCP_Header
+    /* Write TCP_Header */
     header_ptr->type = type_of_packet;
     header_ptr->source = _my_address;
     header_ptr->destination = _other_address;
@@ -216,7 +225,7 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
         _seq++;
     }
     
-    // Flow Control
+    /* Flow Control */
     if(type_of_packet == ACK || type_of_packet == SYNACK || type_of_packet == FINACK){
         header_ptr->ack = header->sequence;
         //header_ptr->empty_buffer_size = _empty_receiver_buffer_size;
@@ -224,17 +233,21 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
     return packet;
 }
 
-// send "window_size" piece of TCP packets
+/* send "window_size" piece of TCP packets */
 void SenderTCP::CreateDataPacket(){
-    _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _slow_start_limit);
+    /* adjust window size with regard to increase policy */
     if(_increase_policy == SLOW_START){
+        _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _slow_start_limit);
         _slow_start_limit <<= 1;
+        
+        click_chatter("[SenderTCP]: #SLOW START#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size)
     }
     else if(_increase_policy == ADDITIVE_INCREASE){
-        _slow_start_limit += 1;
+        _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
+        _additive_increase_limit += 1;
+        
+        click_chatter("[SenderTCP]: #ADDITIVE INCREASE#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size)
     }
-    
-	click_chatter("[SenderTCP]: window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);	
     
     for(int i = 0; i < _window_size; ++i){
         WritablePacket *packet = CreateOtherPacket(DATA, NULL);
@@ -243,10 +256,10 @@ void SenderTCP::CreateDataPacket(){
         header_ptr->more_packets = !(ReadDataFromFile());
         uint8_t _more = header_ptr->more_packets;
         // click_chatter("[SenderTCP]: Have more packets? %u", _more);
-        // pass it on to sender buffer
+        /* pass it on to sender buffer */
         output(0).push(packet);
         
-        // might change connection state
+        /* might change connection state */
         if(!_more){
             _my_state = FIN_WAIT; // send FIN later or it might get lost
             break;
@@ -254,7 +267,7 @@ void SenderTCP::CreateDataPacket(){
     }
 }
 
-// Return whether reaches the end of file. 【tbc】
+/* Return whether reaches the end of file. 【tbc】 */
 bool SenderTCP::ReadDataFromFile(){
 	_data_piece_cnt += 1;
     return _data_piece_cnt == DATA_PACKET_CNT;

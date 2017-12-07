@@ -63,7 +63,8 @@ int ReceiverTCP::configure(Vector<String> &conf, ErrorHandler *errh) {
 }
 
 void ReceiverTCP::run_timer(Timer *timer) {
-    if(timer == &_timerTO){  // retransmit
+    /* retransmit */
+    if(timer == &_timerTO){
         if(_my_state == CLOSED && !_finished_transmission){
 		click_chatter("[ReceiverTCP]: Retransmit SYNACK");
             	WritablePacket *packet = Packet::make(0, 0, sizeof(struct TCP_Header), 0);
@@ -79,6 +80,7 @@ void ReceiverTCP::run_timer(Timer *timer) {
             _timerTO.schedule_after_sec(_time_out);
         }
     }
+    /* hello packets */
     else if(timer == &_timerHello){
         click_chatter("[ReceiverTCP]: Sending new Hello packet");
         output(0).push(CreateOtherPacket(HELLO, NULL));
@@ -89,7 +91,7 @@ void ReceiverTCP::run_timer(Timer *timer) {
     }
 }
 
-// Received Packets 能传到这里的包，都是精选集了！在buffer 里面有顺序地拿到的耶！
+// Received Packets 能传到这里的包，都是精选集了！在buffer 里面有顺序地拿到的！ */
 void ReceiverTCP::push(int port, Packet *income_packet) {
     assert(income_packet);
     struct TCP_Packet* packet = (struct TCP_Packet*)income_packet->data();
@@ -142,7 +144,7 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
         _timerTO.schedule_after_sec(_time_out);
     }
     
-    // delete original packet
+    /* delete original packet */
     income_packet->kill();
 }
 
@@ -153,14 +155,14 @@ WritablePacket* ReceiverTCP::CreateOtherPacket(packet_types type_of_packet, TCP_
     
     memset(packet_ptr, 0, packet->length());
     
-    // Write TCP_Header
+    /* Write TCP_Header */
     header_ptr->type = type_of_packet;
     header_ptr->source = _my_address;
     header_ptr->destination = _other_address;
     header_ptr->sequence = _seq;
     _seq++;
     
-    // Flow Control
+    /* Flow Control */
     if(type_of_packet == ACK || type_of_packet == SYNACK || type_of_packet == FINACK){
         header_ptr->ack = header->sequence;
         header_ptr->empty_buffer_size = _empty_receiver_buffer_size;
@@ -168,7 +170,7 @@ WritablePacket* ReceiverTCP::CreateOtherPacket(packet_types type_of_packet, TCP_
     return packet;
 }
 
-// Return whether reaches the end of file. 【tbc】
+/* Return whether reaches the end of file. 【tbc】 */
 bool ReceiverTCP::ReadDataFromFile(char* ptr){
     return true;
 }
