@@ -120,16 +120,18 @@ void SenderTCP::run_timer(Timer *timer) {
             if(_increase_policy == SLOW_START){
                 _increase_policy = ADDITIVE_INCREASE;
                 _additive_increase_limit = _slow_start_limit;
-                if(_additive_increase_limit > 1){
-                    _additive_increase_limit >>= 1;
+                if(_additive_increase_limit > 2){
+                    _additive_increase_limit >>= 2;
                 }
                 _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
                 click_chatter("[SenderTCP]: 【【changed from SLOW START to ADDITIVE INCREASE!】】, window_size changed from %u to %u", _ori_window_size, _window_size);
             }
             else if(_increase_policy == ADDITIVE_INCREASE){
-                _additive_increase_limit >>= 1;
+                if(_additive_increase_limit > 2){
+                    _additive_increase_limit >>= 2;
+                }
                 _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
-                click_chatter("[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from %u to %u", _ori_window_size, _window_size)
+                click_chatter("[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from %u to %u", _ori_window_size, _window_size);
             }
             
             output(0).push(CreateOtherPacket(RETRANS, NULL));
@@ -140,7 +142,12 @@ void SenderTCP::run_timer(Timer *timer) {
                 output(0).push(CreateOtherPacket(SYN, NULL));
             }
             else if(_my_state == CONNECTED){
-                click_chatter("[SenderTCP]: -------Sending DATA packets-------");
+		if(_increase_policy == SLOW_START){
+                click_chatter("[SenderTCP]: -------Sending DATA packets #SLOW START#-------");
+		}
+		else if(_increase_policy == ADDITIVE_INCREASE){
+		click_chatter("[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------");
+		}
                 CreateDataPacket();
             }
             else if(_my_state == FIN_WAIT){
@@ -161,7 +168,7 @@ void SenderTCP::run_timer(Timer *timer) {
     else if(timer == &_timerHello){
         click_chatter("[SenderTCP]: Sending new Hello packet");
         output(0).push(CreateOtherPacket(HELLO, NULL));
-        // _timerHello.schedule_after_sec(_periodHello);
+        _timerHello.schedule_after_sec(_periodHello);
     }
     else {
         assert(false);
@@ -224,7 +231,9 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
         header_ptr->sequence = _seq;
         _seq++;
     }
-    
+    else{
+        header_ptr->sequence = _seq;
+    }    
     /* Flow Control */
     if(type_of_packet == ACK || type_of_packet == SYNACK || type_of_packet == FINACK){
         header_ptr->ack = header->sequence;
@@ -240,13 +249,13 @@ void SenderTCP::CreateDataPacket(){
         _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _slow_start_limit);
         _slow_start_limit <<= 1;
         
-        click_chatter("[SenderTCP]: #SLOW START#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size)
+        click_chatter("[SenderTCP]: #SLOW START#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);
     }
     else if(_increase_policy == ADDITIVE_INCREASE){
         _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
         _additive_increase_limit += 1;
         
-        click_chatter("[SenderTCP]: #ADDITIVE INCREASE#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size)
+        click_chatter("[SenderTCP]: #ADDITIVE INCREASE#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);
     }
     
     for(int i = 0; i < _window_size; ++i){
