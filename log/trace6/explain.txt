@@ -1,0 +1,10 @@
+client1: routerport
+client2: loss rate = 0.97
+data packets number = 100
+RECEIVER_BUFFER_SIZE = SENDER_BUFFER_SIZE = 1000
+==========================
+
+Implement ECN.
+
+In router, ECN threshold = 10.
+window size in SenderTCP changed to 16 and then being limited to 10.

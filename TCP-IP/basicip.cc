@@ -62,7 +62,7 @@ WritablePacket* BasicIP::add_IP_header(Packet *income_packet){
 
 WritablePacket* BasicIP::tear_down_IP_header(Packet *income_packet){
     struct IP_Packet *income_packet_ptr = (struct IP_Packet*)income_packet->data();
-    struct IP_Header* income_packet_header = (struct IP_Header*)(&(income_packet_header->header));
+    struct IP_Header* income_packet_header = (struct IP_Header*)(&(income_packet_ptr->header));
     
     WritablePacket *packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
     struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();

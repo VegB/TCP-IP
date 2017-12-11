@@ -1,0 +1,461 @@
+[Router 2] Sends Hello to adjacent nodes for the 1-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 2] Sends Hello to adjacent nodes for the 2-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 2] Sends Hello to adjacent nodes for the 3-th time
+expensive Packet::push; have 0 wanted 14
+[Router 2] Sends Hello to adjacent nodes for the 4-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 2] Recalculates routing table for the 1-th time
+[Router 2] Forwarding table is updated
+(0 -1)
+(1 -1)
+(2 2)
+[Router 2] Sends Hello to adjacent nodes for the 5-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 2] Received Hello from 1 on port 1 with seq 0
+[Router 2] Sends Hello to adjacent nodes for the 6-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 2] Sends Hello to adjacent nodes for the 7-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 2] Received Hello from 1 on port 1 with seq 1
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 8-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Hello from 0 on port 0 with seq 2
+[Router 2] Receive EDGE from 0 to 2
+[Router 2] Queue size = 1
+[Router 2] Fail to transfer Data from 0 to destination 1 because of disconnection with 1
+[Router 2] Sends Hello to adjacent nodes for the 9-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 2] Received Hello from 1 on port 1 with seq 2
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Recalculates routing table for the 2-th time
+[Router 2] Forwarding table is updated
+(0 0)
+(1 1)
+(2 2)
+[Router 2] Sends Hello to adjacent nodes for the 10-th time
+[Router 2] Received Hello from 0 on port 0 with seq 2
+[Router 2] Sends Hello to adjacent nodes for the 11-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 3
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 12-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 2
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 13-th time
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 5
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 14-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 3
+[Router 2] Receive EDGE from 0 to 2
+[Router 2] Recalculates routing table for the 3-th time
+[Router 2] But nothing changed
+[Router 2] Sends Hello to adjacent nodes for the 15-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 6
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 16-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 3
+[Router 2] Sends Hello to adjacent nodes for the 17-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 7
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 18-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 2
+[Router 2] Received Hello from 0 on port 0 with seq 5
+[Router 2] Receive EDGE from 0 to 2
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 19-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 8
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Recalculates routing table for the 4-th time
+[Router 2] But nothing changed
+[Router 2] Sends Hello to adjacent nodes for the 20-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 5
+[Router 2] Sends Hello to adjacent nodes for the 21-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 9
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 22-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 5
+[Router 2] Sends Hello to adjacent nodes for the 23-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 4
+[Router 2] Queue size = 3
+[Router 2] Queue size = 2
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 24-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 10
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Received Hello from 0 on port 0 with seq 9
+[Router 2] Receive EDGE from 0 to 2
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Recalculates routing table for the 5-th time
+[Router 2] But nothing changed
+[Router 2] Sends Hello to adjacent nodes for the 25-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 11
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 26-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 9
+[Router 2] Sends Hello to adjacent nodes for the 27-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 12
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 28-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Hello from 0 on port 0 with seq 17
+[Router 2] Receive EDGE from 0 to 2
+[Router 2] Queue size = 7
+[Router 2] Queue size = 6
+[Router 2] Queue size = 5
+[Router 2] Queue size = 4
+[Router 2] Queue size = 3
+[Router 2] Queue size = 2
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 29-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Recalculates routing table for the 6-th time
+[Router 2] But nothing changed
+[Router 2] Sends Hello to adjacent nodes for the 30-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 13
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Received Hello from 0 on port 0 with seq 17
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 31-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 14
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 32-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 17
+[Router 2] Sends Hello to adjacent nodes for the 33-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 3
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 5
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 9
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 13
+[Router 4294967295]: Exceed ECN threshold! Start ECN!
+[Router 2] Queue size = 12
+[Router 4294967295]: Exceed ECN threshold! Start ECN!
+[Router 2] Queue size = 11
+[Router 4294967295]: Exceed ECN threshold! Start ECN!
+[Router 2] Queue size = 10
+[Router 2] Queue size = 9
+[Router 2] Queue size = 8
+[Router 2] Queue size = 7
+[Router 2] Queue size = 6
+[Router 2] Queue size = 5
+[Router 2] Queue size = 4
+[Router 2] Queue size = 3
+[Router 2] Queue size = 2
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 34-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 33
+[Router 2] Receive EDGE from 0 to 2
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Recalculates routing table for the 7-th time
+[Router 2] But nothing changed
+[Router 2] Sends Hello to adjacent nodes for the 35-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 36-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Received Hello from 0 on port 0 with seq 33
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 15
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 37-th time
+[Router 2] Received Hello from 1 on port 1 with seq 16
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 17
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 38-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 3
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 8
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Hello from 0 on port 0 with seq 43
+[Router 2] Receive EDGE from 0 to 2
+[Router 2] Queue size = 8
+[Router 2] Queue size = 7
+[Router 2] Queue size = 6
+[Router 2] Queue size = 5
+[Router 2] Queue size = 4
+[Router 2] Queue size = 3
+[Router 2] Queue size = 2
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 39-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Recalculates routing table for the 8-th time
+[Router 2] But nothing changed
+[Router 2] Sends Hello to adjacent nodes for the 40-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Received Hello from 0 on port 0 with seq 43
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 18
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 41-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 19
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 42-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 0 on port 0 with seq 43
+[Router 2] Sends Hello to adjacent nodes for the 43-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Received Data from 0 with destination 1
+[Router 2] Queue size = 10
+[Router 2] Queue size = 9
+[Router 2] Queue size = 8
+[Router 2] Queue size = 7
+[Router 2] Queue size = 6
+[Router 2] Queue size = 5
+[Router 2] Queue size = 4
+[Router 2] Queue size = 3
+[Router 2] Queue size = 2
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 44-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Received Hello from 0 on port 0 with seq 53
+[Router 2] Receive EDGE from 0 to 2
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Recalculates routing table for the 9-th time
+[Router 2] But nothing changed
+[Router 2] Sends Hello to adjacent nodes for the 45-th time
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 1 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 20
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 46-th time
+[Router 2] Received Hello from 1 on port 1 with seq 21
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Received Hello from 0 on port 0 with seq 53
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 47-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 22
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Sends Hello to adjacent nodes for the 48-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Sends Hello to adjacent nodes for the 49-th time
+[Router 2] Received Data from 0 with destination 0
+[Router 2] Queue size = 1
+[Router 2] Received Hello from 1 on port 1 with seq 23
+[Router 2] Receive EDGE from 1 to 2
+[Router 2] Recalculates routing table for the 10-th time
+[Router 2] But nothing changed
+[Router 2] Sends Hello to adjacent nodes for the 50-th time
+[Router 2] Sends Hello to adjacent nodes for the 51-th time

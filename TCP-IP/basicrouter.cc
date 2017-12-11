@@ -98,7 +98,11 @@ void BasicRouter::run_timer(Timer *timer) {
 			Packet * packet = packetQueue.front();
 			packetQueue.pop();
 			struct IP_Header *header = (struct IP_Header *)packet->data();
-			if (size > ECNthre) header->ECN = true;
+			if (size > ECNthre){
+                            header->ECN = true;
+                            header->ecn_limit = ECNthre;
+                            click_chatter("[Router %u]: Exceed ECN threshold! Start ECN!", myIP);
+                        }
 			if (forwardTable[header->destination] == -1) {
 				click_chatter("[Router %u] Fail to transfer Data from %u to destination %u because of disconnection with %u", myIP, header->source, header->destination, header->destination);
 			}

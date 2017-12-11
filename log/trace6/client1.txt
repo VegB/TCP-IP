@@ -1,0 +1,182 @@
+[SenderTCP]: Creating a SenderTCP object.
+[SenderBuffer]: Creating a SenderBuffer object.
+[BasicIP]: Creating a BasicIP object.
+[SenderTCP]: Sending SYN 1. Trying to set up connection with 1
+[SenderBuffer]: Pass packet 1 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 2 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 2 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: last_acked: 0, receiving for the 1 th time.
+[SenderTCP]: Received ACK for DATA(0): packet 0 from 0
+[SenderBuffer]: last_acked: 0, receiving for the 2 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 1 at position 0 and retransmit.
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Received ACK for DATA(0): packet 0 from 0
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 2 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Received SYNACK for SYN(1): packet 0 from 1
+[SenderTCP]: =================CONNECTION ESTABLISHED================
+[SenderBuffer]: Pass packet 2 on to IP
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: #SLOW START#, window_size = 1, SenderBuffer = 999, ReceiverBuffer = 998
+[SenderBuffer]: Pass packet 2 on to IP
+[SenderTCP]: Received ACK for DATA(2): packet 0 from 0
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 3 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 3 on to IP
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: #SLOW START#, window_size = 2, SenderBuffer = 999, ReceiverBuffer = 998
+[SenderBuffer]: Pass packet 3 on to IP
+[SenderBuffer]: Pass packet 4 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 5 on to IP
+[SenderTCP]: Received ACK for DATA(3): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(4): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 5 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 5 on to IP
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: #SLOW START#, window_size = 4, SenderBuffer = 999, ReceiverBuffer = 998
+[SenderBuffer]: Pass packet 5 on to IP
+[SenderBuffer]: Pass packet 6 on to IP
+[SenderBuffer]: Pass packet 7 on to IP
+[SenderBuffer]: Pass packet 8 on to IP
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(6): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(7): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(8): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 9 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 9 on to IP
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: #SLOW START#, window_size = 8, SenderBuffer = 999, ReceiverBuffer = 998
+[SenderBuffer]: Pass packet 9 on to IP
+[SenderBuffer]: Pass packet 10 on to IP
+[SenderBuffer]: Pass packet 11 on to IP
+[SenderBuffer]: Pass packet 12 on to IP
+[SenderBuffer]: Pass packet 13 on to IP
+[SenderBuffer]: Pass packet 14 on to IP
+[SenderBuffer]: Pass packet 15 on to IP
+[SenderBuffer]: Pass packet 16 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 17 on to IP
+[SenderTCP]: Received ACK for DATA(9): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(10): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(11): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(12): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(13): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(14): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(15): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(16): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 17 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 17 on to IP
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: #SLOW START#, window_size = 16, SenderBuffer = 999, ReceiverBuffer = 998
+[SenderBuffer]: Pass packet 17 on to IP
+[SenderBuffer]: Pass packet 18 on to IP
+[SenderBuffer]: Pass packet 19 on to IP
+[SenderBuffer]: Pass packet 20 on to IP
+[SenderBuffer]: Pass packet 21 on to IP
+[SenderBuffer]: Pass packet 22 on to IP
+[SenderBuffer]: Pass packet 23 on to IP
+[SenderBuffer]: Pass packet 24 on to IP
+[SenderBuffer]: Pass packet 25 on to IP
+[SenderBuffer]: Pass packet 26 on to IP
+[SenderBuffer]: Pass packet 27 on to IP
+[SenderBuffer]: Pass packet 28 on to IP
+[SenderBuffer]: Pass packet 29 on to IP
+[SenderBuffer]: Pass packet 30 on to IP
+[SenderBuffer]: Pass packet 31 on to IP
+[SenderBuffer]: Pass packet 32 on to IP
+[SenderTCP]: Received ACK for DATA(17): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(18): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(19): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(20): packet 0 from 1
+[SenderTCP]: #ECN#. Update ECN limit from 100000 to 10.
+[SenderTCP]: Received ACK for DATA(21): packet 0 from 1
+[SenderTCP]: #ECN#. Update ECN limit from 10 to 10.
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 33 on to IP
+[SenderTCP]: Received ACK for DATA(22): packet 0 from 1
+[SenderTCP]: #ECN#. Update ECN limit from 10 to 10.
+[SenderTCP]: Received ACK for DATA(23): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(24): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(25): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(26): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(27): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(28): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(29): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(30): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 33 on to IP
+[SenderTCP]: Received ACK for DATA(31): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(32): packet 0 from 1
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: #SLOW START#, window_size = 10, SenderBuffer = 999, ReceiverBuffer = 998
+[SenderBuffer]: Pass packet 33 on to IP
+[SenderBuffer]: Pass packet 34 on to IP
+[SenderBuffer]: Pass packet 35 on to IP
+[SenderBuffer]: Pass packet 36 on to IP
+[SenderBuffer]: Pass packet 37 on to IP
+[SenderBuffer]: Pass packet 38 on to IP
+[SenderBuffer]: Pass packet 39 on to IP
+[SenderBuffer]: Pass packet 40 on to IP
+[SenderBuffer]: Pass packet 41 on to IP
+[SenderBuffer]: Pass packet 42 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 43 on to IP
+[SenderTCP]: Received ACK for DATA(33): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(34): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(35): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(36): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(37): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(38): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(39): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(40): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(41): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 43 on to IP
+[SenderTCP]: Received ACK for DATA(42): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 43 on to IP
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: #SLOW START#, window_size = 10, SenderBuffer = 999, ReceiverBuffer = 998
+[SenderBuffer]: Pass packet 43 on to IP
+[SenderBuffer]: Pass packet 44 on to IP
+[SenderBuffer]: Pass packet 45 on to IP
+[SenderBuffer]: Pass packet 46 on to IP
+[SenderBuffer]: Pass packet 47 on to IP
+[SenderBuffer]: Pass packet 48 on to IP
+[SenderBuffer]: Pass packet 49 on to IP
+[SenderBuffer]: Pass packet 50 on to IP
+[SenderBuffer]: Pass packet 51 on to IP
+[SenderBuffer]: Pass packet 52 on to IP
+[SenderTCP]: Received ACK for DATA(43): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(44): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(45): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(46): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 53 on to IP
+[SenderTCP]: Received ACK for DATA(47): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(48): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(49): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(50): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(51): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(52): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 53 on to IP
+^C[SenderBuffer]: Killing a SenderBuffer object.
+[SenderTCP]: Killing a SenderTCP object.
+[BasicIP]: Killing a BasicIP object.
+
