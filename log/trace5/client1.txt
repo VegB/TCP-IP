@@ -1,0 +1,1084 @@
+[SenderTCP]: Creating a SenderTCP object.
+[SenderBuffer]: Creating a SenderBuffer object.
+[BasicIP]: Creating a BasicIP object.
+[SenderTCP]: Sending SYN 1. Trying to set up connection with 2
+[SenderBuffer]: Pass packet 1 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 0 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Received SYNACK for SYN(1): packet 0 from 2
+[SenderTCP]: =================CONNECTION ESTABLISHED================
+[SenderBuffer]: Pass packet 0 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: window_size = 1, SenderBuffer = 999, ReceiverBuffer = 100000
+[SenderBuffer]: Pass packet 2 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Received ACK for DATA(2): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: window_size = 2, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 3 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: Pass packet 4 on to IP
+[SenderTCP]: Received ACK for DATA(3): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(4): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: window_size = 4, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 5 on to IP
+[SenderBuffer]: Pass packet 6 on to IP
+[SenderBuffer]: Pass packet 7 on to IP
+[SenderBuffer]: Pass packet 8 on to IP
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(6): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(7): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(8): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: window_size = 8, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 9 on to IP
+[SenderBuffer]: Pass packet 10 on to IP
+[SenderBuffer]: Pass packet 11 on to IP
+[SenderBuffer]: Pass packet 12 on to IP
+[SenderBuffer]: Pass packet 13 on to IP
+[SenderBuffer]: Pass packet 14 on to IP
+[SenderBuffer]: Pass packet 15 on to IP
+[SenderBuffer]: Pass packet 16 on to IP
+[SenderTCP]: Received ACK for DATA(9): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(10): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(11): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(12): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(13): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(14): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(15): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(16): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: window_size = 16, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 17 on to IP
+[SenderBuffer]: Pass packet 18 on to IP
+[SenderBuffer]: Pass packet 19 on to IP
+[SenderBuffer]: Pass packet 20 on to IP
+[SenderBuffer]: Pass packet 21 on to IP
+[SenderBuffer]: Pass packet 22 on to IP
+[SenderBuffer]: Pass packet 23 on to IP
+[SenderBuffer]: Pass packet 24 on to IP
+[SenderBuffer]: Pass packet 25 on to IP
+[SenderBuffer]: Pass packet 26 on to IP
+[SenderBuffer]: Pass packet 27 on to IP
+[SenderBuffer]: Pass packet 28 on to IP
+[SenderBuffer]: Pass packet 29 on to IP
+[SenderBuffer]: Pass packet 30 on to IP
+[SenderBuffer]: Pass packet 31 on to IP
+[SenderBuffer]: Pass packet 32 on to IP
+[SenderTCP]: Received ACK for DATA(17): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(18): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(19): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(20): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(21): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(22): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(23): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(24): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(25): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(26): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(27): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(28): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(29): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(30): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(31): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(32): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #SLOW START#-------
+[SenderTCP]: window_size = 32, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 33 on to IP
+[SenderBuffer]: Pass packet 34 on to IP
+[SenderBuffer]: Pass packet 35 on to IP
+[SenderBuffer]: Pass packet 36 on to IP
+[SenderBuffer]: Pass packet 37 on to IP
+[SenderBuffer]: Pass packet 38 on to IP
+[SenderBuffer]: Pass packet 39 on to IP
+[SenderBuffer]: Pass packet 40 on to IP
+[SenderBuffer]: Pass packet 41 on to IP
+[SenderBuffer]: Pass packet 42 on to IP
+[SenderBuffer]: Pass packet 43 on to IP
+[SenderBuffer]: Pass packet 44 on to IP
+[SenderBuffer]: Pass packet 45 on to IP
+[SenderBuffer]: Pass packet 46 on to IP
+[SenderBuffer]: Pass packet 47 on to IP
+[SenderBuffer]: Pass packet 48 on to IP
+[SenderBuffer]: Pass packet 49 on to IP
+[SenderBuffer]: Pass packet 50 on to IP
+[SenderBuffer]: Pass packet 51 on to IP
+[SenderBuffer]: Pass packet 52 on to IP
+[SenderBuffer]: Pass packet 53 on to IP
+[SenderBuffer]: Pass packet 54 on to IP
+[SenderBuffer]: Pass packet 55 on to IP
+[SenderBuffer]: Pass packet 56 on to IP
+[SenderBuffer]: Pass packet 57 on to IP
+[SenderBuffer]: Pass packet 58 on to IP
+[SenderBuffer]: Pass packet 59 on to IP
+[SenderBuffer]: Pass packet 60 on to IP
+[SenderBuffer]: Pass packet 61 on to IP
+[SenderBuffer]: Pass packet 62 on to IP
+[SenderBuffer]: Pass packet 63 on to IP
+[SenderBuffer]: Pass packet 64 on to IP
+[SenderTCP]: Received ACK for DATA(33): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(34): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(35): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(36): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(37): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(38): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(39): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(40): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(41): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(42): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(43): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(44): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(45): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(46): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(47): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(48): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(49): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(50): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(51): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(52): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(53): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(54): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(55): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(56): packet 0 from 2
+[SenderTCP]: Need Retransmission.
+[SenderTCP]: 【【changed from SLOW START to ADDITIVE INCREASE!】】, window_size changed from 32 to 16
+[SenderBuffer]: Retransmit ALL
+[SenderBuffer]: Read out packet 57 at position 56 and retransmit.
+[SenderBuffer]: Read out packet 58 at position 57 and retransmit.
+[SenderBuffer]: Read out packet 59 at position 58 and retransmit.
+[SenderBuffer]: Read out packet 60 at position 59 and retransmit.
+[SenderBuffer]: Read out packet 61 at position 60 and retransmit.
+[SenderBuffer]: Read out packet 62 at position 61 and retransmit.
+[SenderBuffer]: Read out packet 63 at position 62 and retransmit.
+[SenderBuffer]: Read out packet 64 at position 63 and retransmit.
+[SenderTCP]: Received ACK for DATA(57): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(58): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(59): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(60): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(61): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(62): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(63): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(64): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 16, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 65 on to IP
+[SenderBuffer]: Pass packet 66 on to IP
+[SenderBuffer]: Pass packet 67 on to IP
+[SenderBuffer]: Pass packet 68 on to IP
+[SenderBuffer]: Pass packet 69 on to IP
+[SenderBuffer]: Pass packet 70 on to IP
+[SenderBuffer]: Pass packet 71 on to IP
+[SenderBuffer]: Pass packet 72 on to IP
+[SenderBuffer]: Pass packet 73 on to IP
+[SenderBuffer]: Pass packet 74 on to IP
+[SenderBuffer]: Pass packet 75 on to IP
+[SenderBuffer]: Pass packet 76 on to IP
+[SenderBuffer]: Pass packet 77 on to IP
+[SenderBuffer]: Pass packet 78 on to IP
+[SenderBuffer]: Pass packet 79 on to IP
+[SenderBuffer]: Pass packet 80 on to IP
+[SenderTCP]: Received ACK for DATA(65): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(66): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(67): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(68): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(69): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(70): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(71): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(72): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(73): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(74): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(75): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(76): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(77): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(78): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(79): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(80): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 17, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 81 on to IP
+[SenderBuffer]: Pass packet 82 on to IP
+[SenderBuffer]: Pass packet 83 on to IP
+[SenderBuffer]: Pass packet 84 on to IP
+[SenderBuffer]: Pass packet 85 on to IP
+[SenderBuffer]: Pass packet 86 on to IP
+[SenderBuffer]: Pass packet 87 on to IP
+[SenderBuffer]: Pass packet 88 on to IP
+[SenderBuffer]: Pass packet 89 on to IP
+[SenderBuffer]: Pass packet 90 on to IP
+[SenderBuffer]: Pass packet 91 on to IP
+[SenderBuffer]: Pass packet 92 on to IP
+[SenderBuffer]: Pass packet 93 on to IP
+[SenderBuffer]: Pass packet 94 on to IP
+[SenderBuffer]: Pass packet 95 on to IP
+[SenderBuffer]: Pass packet 96 on to IP
+[SenderBuffer]: Pass packet 97 on to IP
+[SenderTCP]: Received ACK for DATA(81): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(82): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(83): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(84): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(85): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(86): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(87): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(89): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(90): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(91): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(92): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(93): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(94): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(95): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(96): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(97): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 18, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 98 on to IP
+[SenderBuffer]: Pass packet 99 on to IP
+[SenderBuffer]: Pass packet 100 on to IP
+[SenderBuffer]: Pass packet 101 on to IP
+[SenderBuffer]: Pass packet 102 on to IP
+[SenderBuffer]: Pass packet 103 on to IP
+[SenderBuffer]: Pass packet 104 on to IP
+[SenderBuffer]: Pass packet 105 on to IP
+[SenderBuffer]: Pass packet 106 on to IP
+[SenderBuffer]: Pass packet 107 on to IP
+[SenderBuffer]: Pass packet 108 on to IP
+[SenderBuffer]: Pass packet 109 on to IP
+[SenderBuffer]: Pass packet 110 on to IP
+[SenderBuffer]: Pass packet 111 on to IP
+[SenderBuffer]: Pass packet 112 on to IP
+[SenderBuffer]: Pass packet 113 on to IP
+[SenderBuffer]: Pass packet 114 on to IP
+[SenderBuffer]: Pass packet 115 on to IP
+[SenderTCP]: Received ACK for DATA(98): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(99): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(100): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(101): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(102): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(103): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(104): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(105): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(106): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(107): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(108): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(109): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(110): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(111): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(112): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(113): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(114): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(115): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 19, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 116 on to IP
+[SenderBuffer]: Pass packet 117 on to IP
+[SenderBuffer]: Pass packet 118 on to IP
+[SenderBuffer]: Pass packet 119 on to IP
+[SenderBuffer]: Pass packet 120 on to IP
+[SenderBuffer]: Pass packet 121 on to IP
+[SenderBuffer]: Pass packet 122 on to IP
+[SenderBuffer]: Pass packet 123 on to IP
+[SenderBuffer]: Pass packet 124 on to IP
+[SenderBuffer]: Pass packet 125 on to IP
+[SenderBuffer]: Pass packet 126 on to IP
+[SenderBuffer]: Pass packet 127 on to IP
+[SenderBuffer]: Pass packet 128 on to IP
+[SenderBuffer]: Pass packet 129 on to IP
+[SenderBuffer]: Pass packet 130 on to IP
+[SenderBuffer]: Pass packet 131 on to IP
+[SenderBuffer]: Pass packet 132 on to IP
+[SenderBuffer]: Pass packet 133 on to IP
+[SenderBuffer]: Pass packet 134 on to IP
+[SenderTCP]: Received ACK for DATA(116): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(117): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(118): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(119): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(120): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(121): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(122): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(123): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(124): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(125): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(126): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(127): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(128): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(129): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(130): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(131): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(132): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(133): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(134): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 20, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 135 on to IP
+[SenderBuffer]: Pass packet 136 on to IP
+[SenderBuffer]: Pass packet 137 on to IP
+[SenderBuffer]: Pass packet 138 on to IP
+[SenderBuffer]: Pass packet 139 on to IP
+[SenderBuffer]: Pass packet 140 on to IP
+[SenderBuffer]: Pass packet 141 on to IP
+[SenderBuffer]: Pass packet 142 on to IP
+[SenderBuffer]: Pass packet 143 on to IP
+[SenderBuffer]: Pass packet 144 on to IP
+[SenderBuffer]: Pass packet 145 on to IP
+[SenderBuffer]: Pass packet 146 on to IP
+[SenderBuffer]: Pass packet 147 on to IP
+[SenderBuffer]: Pass packet 148 on to IP
+[SenderBuffer]: Pass packet 149 on to IP
+[SenderBuffer]: Pass packet 150 on to IP
+[SenderBuffer]: Pass packet 151 on to IP
+[SenderBuffer]: Pass packet 152 on to IP
+[SenderBuffer]: Pass packet 153 on to IP
+[SenderBuffer]: Pass packet 154 on to IP
+[SenderTCP]: Received ACK for DATA(135): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(136): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(137): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(138): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(139): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(140): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(141): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(142): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(143): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(144): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(145): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(146): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(147): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(148): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(149): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(150): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(151): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(152): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(153): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(154): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 21, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 155 on to IP
+[SenderBuffer]: Pass packet 156 on to IP
+[SenderBuffer]: Pass packet 157 on to IP
+[SenderBuffer]: Pass packet 158 on to IP
+[SenderBuffer]: Pass packet 159 on to IP
+[SenderBuffer]: Pass packet 160 on to IP
+[SenderBuffer]: Pass packet 161 on to IP
+[SenderBuffer]: Pass packet 162 on to IP
+[SenderBuffer]: Pass packet 163 on to IP
+[SenderBuffer]: Pass packet 164 on to IP
+[SenderBuffer]: Pass packet 165 on to IP
+[SenderBuffer]: Pass packet 166 on to IP
+[SenderBuffer]: Pass packet 167 on to IP
+[SenderBuffer]: Pass packet 168 on to IP
+[SenderBuffer]: Pass packet 169 on to IP
+[SenderBuffer]: Pass packet 170 on to IP
+[SenderBuffer]: Pass packet 171 on to IP
+[SenderBuffer]: Pass packet 172 on to IP
+[SenderBuffer]: Pass packet 173 on to IP
+[SenderBuffer]: Pass packet 174 on to IP
+[SenderBuffer]: Pass packet 175 on to IP
+[SenderTCP]: Received ACK for DATA(155): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(156): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(157): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(158): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(159): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(161): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(162): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(163): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(164): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(165): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(166): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(167): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(168): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(169): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(170): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(171): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(172): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(173): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(174): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(175): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 22, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 176 on to IP
+[SenderBuffer]: Pass packet 177 on to IP
+[SenderBuffer]: Pass packet 178 on to IP
+[SenderBuffer]: Pass packet 179 on to IP
+[SenderBuffer]: Pass packet 180 on to IP
+[SenderBuffer]: Pass packet 181 on to IP
+[SenderBuffer]: Pass packet 182 on to IP
+[SenderBuffer]: Pass packet 183 on to IP
+[SenderBuffer]: Pass packet 184 on to IP
+[SenderBuffer]: Pass packet 185 on to IP
+[SenderBuffer]: Pass packet 186 on to IP
+[SenderBuffer]: Pass packet 187 on to IP
+[SenderBuffer]: Pass packet 188 on to IP
+[SenderBuffer]: Pass packet 189 on to IP
+[SenderBuffer]: Pass packet 190 on to IP
+[SenderBuffer]: Pass packet 191 on to IP
+[SenderBuffer]: Pass packet 192 on to IP
+[SenderBuffer]: Pass packet 193 on to IP
+[SenderBuffer]: Pass packet 194 on to IP
+[SenderBuffer]: Pass packet 195 on to IP
+[SenderBuffer]: Pass packet 196 on to IP
+[SenderBuffer]: Pass packet 197 on to IP
+[SenderTCP]: Received ACK for DATA(176): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(177): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(178): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(179): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(180): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(181): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(182): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(183): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(184): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(186): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(187): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(188): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(189): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(190): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(191): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(192): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(193): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(195): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(196): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(197): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 23, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 198 on to IP
+[SenderBuffer]: Pass packet 199 on to IP
+[SenderBuffer]: Pass packet 200 on to IP
+[SenderBuffer]: Pass packet 201 on to IP
+[SenderBuffer]: Pass packet 202 on to IP
+[SenderBuffer]: Pass packet 203 on to IP
+[SenderBuffer]: Pass packet 204 on to IP
+[SenderBuffer]: Pass packet 205 on to IP
+[SenderBuffer]: Pass packet 206 on to IP
+[SenderBuffer]: Pass packet 207 on to IP
+[SenderBuffer]: Pass packet 208 on to IP
+[SenderBuffer]: Pass packet 209 on to IP
+[SenderBuffer]: Pass packet 210 on to IP
+[SenderBuffer]: Pass packet 211 on to IP
+[SenderBuffer]: Pass packet 212 on to IP
+[SenderBuffer]: Pass packet 213 on to IP
+[SenderBuffer]: Pass packet 214 on to IP
+[SenderBuffer]: Pass packet 215 on to IP
+[SenderBuffer]: Pass packet 216 on to IP
+[SenderBuffer]: Pass packet 217 on to IP
+[SenderBuffer]: Pass packet 218 on to IP
+[SenderBuffer]: Pass packet 219 on to IP
+[SenderBuffer]: Pass packet 220 on to IP
+[SenderTCP]: Received ACK for DATA(198): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(199): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(200): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(201): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(202): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(203): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(204): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(205): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(206): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(207): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(208): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(209): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(210): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(211): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(212): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(213): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(214): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(215): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(216): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(217): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(218): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(219): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(220): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 24, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 221 on to IP
+[SenderBuffer]: Pass packet 222 on to IP
+[SenderBuffer]: Pass packet 223 on to IP
+[SenderBuffer]: Pass packet 224 on to IP
+[SenderBuffer]: Pass packet 225 on to IP
+[SenderBuffer]: Pass packet 226 on to IP
+[SenderBuffer]: Pass packet 227 on to IP
+[SenderBuffer]: Pass packet 228 on to IP
+[SenderBuffer]: Pass packet 229 on to IP
+[SenderBuffer]: Pass packet 230 on to IP
+[SenderBuffer]: Pass packet 231 on to IP
+[SenderBuffer]: Pass packet 232 on to IP
+[SenderBuffer]: Pass packet 233 on to IP
+[SenderBuffer]: Pass packet 234 on to IP
+[SenderBuffer]: Pass packet 235 on to IP
+[SenderBuffer]: Pass packet 236 on to IP
+[SenderBuffer]: Pass packet 237 on to IP
+[SenderBuffer]: Pass packet 238 on to IP
+[SenderBuffer]: Pass packet 239 on to IP
+[SenderBuffer]: Pass packet 240 on to IP
+[SenderBuffer]: Pass packet 241 on to IP
+[SenderBuffer]: Pass packet 242 on to IP
+[SenderBuffer]: Pass packet 243 on to IP
+[SenderBuffer]: Pass packet 244 on to IP
+[SenderTCP]: Received ACK for DATA(221): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(222): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(223): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(224): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(226): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(227): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(228): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(229): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(230): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(232): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(233): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(234): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(235): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(236): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(237): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(238): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(239): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(240): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(241): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(243): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(244): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 25, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 245 on to IP
+[SenderBuffer]: Pass packet 246 on to IP
+[SenderBuffer]: Pass packet 247 on to IP
+[SenderBuffer]: Pass packet 248 on to IP
+[SenderBuffer]: Pass packet 249 on to IP
+[SenderBuffer]: Pass packet 250 on to IP
+[SenderBuffer]: Pass packet 251 on to IP
+[SenderBuffer]: Pass packet 252 on to IP
+[SenderBuffer]: Pass packet 253 on to IP
+[SenderBuffer]: Pass packet 254 on to IP
+[SenderBuffer]: Pass packet 255 on to IP
+[SenderBuffer]: Pass packet 256 on to IP
+[SenderBuffer]: Pass packet 257 on to IP
+[SenderBuffer]: Pass packet 258 on to IP
+[SenderBuffer]: Pass packet 259 on to IP
+[SenderBuffer]: Pass packet 260 on to IP
+[SenderBuffer]: Pass packet 261 on to IP
+[SenderBuffer]: Pass packet 262 on to IP
+[SenderBuffer]: Pass packet 263 on to IP
+[SenderBuffer]: Pass packet 264 on to IP
+[SenderBuffer]: Pass packet 265 on to IP
+[SenderBuffer]: Pass packet 266 on to IP
+[SenderBuffer]: Pass packet 267 on to IP
+[SenderBuffer]: Pass packet 268 on to IP
+[SenderBuffer]: Pass packet 269 on to IP
+[SenderTCP]: Received ACK for DATA(245): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(246): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(247): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(248): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(249): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(250): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(251): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(252): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(253): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(254): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(256): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(257): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(258): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(259): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(260): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(261): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(262): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(263): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(264): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(265): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(266): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(267): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(268): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(269): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 26, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 270 on to IP
+[SenderBuffer]: Pass packet 271 on to IP
+[SenderBuffer]: Pass packet 272 on to IP
+[SenderBuffer]: Pass packet 273 on to IP
+[SenderBuffer]: Pass packet 274 on to IP
+[SenderBuffer]: Pass packet 275 on to IP
+[SenderBuffer]: Pass packet 276 on to IP
+[SenderBuffer]: Pass packet 277 on to IP
+[SenderBuffer]: Pass packet 278 on to IP
+[SenderBuffer]: Pass packet 279 on to IP
+[SenderBuffer]: Pass packet 280 on to IP
+[SenderBuffer]: Pass packet 281 on to IP
+[SenderBuffer]: Pass packet 282 on to IP
+[SenderBuffer]: Pass packet 283 on to IP
+[SenderBuffer]: Pass packet 284 on to IP
+[SenderBuffer]: Pass packet 285 on to IP
+[SenderBuffer]: Pass packet 286 on to IP
+[SenderBuffer]: Pass packet 287 on to IP
+[SenderBuffer]: Pass packet 288 on to IP
+[SenderBuffer]: Pass packet 289 on to IP
+[SenderBuffer]: Pass packet 290 on to IP
+[SenderBuffer]: Pass packet 291 on to IP
+[SenderBuffer]: Pass packet 292 on to IP
+[SenderBuffer]: Pass packet 293 on to IP
+[SenderBuffer]: Pass packet 294 on to IP
+[SenderBuffer]: Pass packet 295 on to IP
+[SenderTCP]: Received ACK for DATA(270): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(271): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(272): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(273): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(274): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(275): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(276): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(277): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(278): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(279): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(280): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(281): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(282): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(283): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(284): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(285): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(286): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(287): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(288): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(289): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(290): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(291): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(292): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(293): packet 0 from 2
+[SenderTCP]: Need Retransmission.
+[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from 26 to 13
+[SenderBuffer]: Retransmit ALL
+[SenderBuffer]: Read out packet 294 at position 293 and retransmit.
+[SenderBuffer]: Read out packet 295 at position 294 and retransmit.
+[SenderTCP]: Received ACK for DATA(294): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(295): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 13, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 296 on to IP
+[SenderBuffer]: Pass packet 297 on to IP
+[SenderBuffer]: Pass packet 298 on to IP
+[SenderBuffer]: Pass packet 299 on to IP
+[SenderBuffer]: Pass packet 300 on to IP
+[SenderBuffer]: Pass packet 301 on to IP
+[SenderBuffer]: Pass packet 302 on to IP
+[SenderBuffer]: Pass packet 303 on to IP
+[SenderBuffer]: Pass packet 304 on to IP
+[SenderBuffer]: Pass packet 305 on to IP
+[SenderBuffer]: Pass packet 306 on to IP
+[SenderBuffer]: Pass packet 307 on to IP
+[SenderBuffer]: Pass packet 308 on to IP
+[SenderTCP]: Received ACK for DATA(296): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(297): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(298): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(299): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(300): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(301): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(303): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(304): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(305): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(306): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(307): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(308): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 14, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 309 on to IP
+[SenderBuffer]: Pass packet 310 on to IP
+[SenderBuffer]: Pass packet 311 on to IP
+[SenderBuffer]: Pass packet 312 on to IP
+[SenderBuffer]: Pass packet 313 on to IP
+[SenderBuffer]: Pass packet 314 on to IP
+[SenderBuffer]: Pass packet 315 on to IP
+[SenderBuffer]: Pass packet 316 on to IP
+[SenderBuffer]: Pass packet 317 on to IP
+[SenderBuffer]: Pass packet 318 on to IP
+[SenderBuffer]: Pass packet 319 on to IP
+[SenderBuffer]: Pass packet 320 on to IP
+[SenderBuffer]: Pass packet 321 on to IP
+[SenderBuffer]: Pass packet 322 on to IP
+[SenderTCP]: Received ACK for DATA(309): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(310): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(311): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(312): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(313): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(314): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(315): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(316): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(317): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(318): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(319): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(320): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(321): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(322): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 15, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 323 on to IP
+[SenderBuffer]: Pass packet 324 on to IP
+[SenderBuffer]: Pass packet 325 on to IP
+[SenderBuffer]: Pass packet 326 on to IP
+[SenderBuffer]: Pass packet 327 on to IP
+[SenderBuffer]: Pass packet 328 on to IP
+[SenderBuffer]: Pass packet 329 on to IP
+[SenderBuffer]: Pass packet 330 on to IP
+[SenderBuffer]: Pass packet 331 on to IP
+[SenderBuffer]: Pass packet 332 on to IP
+[SenderBuffer]: Pass packet 333 on to IP
+[SenderBuffer]: Pass packet 334 on to IP
+[SenderBuffer]: Pass packet 335 on to IP
+[SenderBuffer]: Pass packet 336 on to IP
+[SenderBuffer]: Pass packet 337 on to IP
+[SenderTCP]: Received ACK for DATA(323): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(324): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(325): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(326): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(327): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(328): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(329): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(330): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(331): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(332): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(333): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(334): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(335): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(336): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(337): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 16, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 338 on to IP
+[SenderBuffer]: Pass packet 339 on to IP
+[SenderBuffer]: Pass packet 340 on to IP
+[SenderBuffer]: Pass packet 341 on to IP
+[SenderBuffer]: Pass packet 342 on to IP
+[SenderBuffer]: Pass packet 343 on to IP
+[SenderBuffer]: Pass packet 344 on to IP
+[SenderBuffer]: Pass packet 345 on to IP
+[SenderBuffer]: Pass packet 346 on to IP
+[SenderBuffer]: Pass packet 347 on to IP
+[SenderBuffer]: Pass packet 348 on to IP
+[SenderBuffer]: Pass packet 349 on to IP
+[SenderBuffer]: Pass packet 350 on to IP
+[SenderBuffer]: Pass packet 351 on to IP
+[SenderBuffer]: Pass packet 352 on to IP
+[SenderBuffer]: Pass packet 353 on to IP
+[SenderTCP]: Received ACK for DATA(338): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(339): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(340): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(341): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(342): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(343): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(344): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(345): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(346): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(347): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(348): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(349): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(350): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(351): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(352): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(353): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 17, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 354 on to IP
+[SenderBuffer]: Pass packet 355 on to IP
+[SenderBuffer]: Pass packet 356 on to IP
+[SenderBuffer]: Pass packet 357 on to IP
+[SenderBuffer]: Pass packet 358 on to IP
+[SenderBuffer]: Pass packet 359 on to IP
+[SenderBuffer]: Pass packet 360 on to IP
+[SenderBuffer]: Pass packet 361 on to IP
+[SenderBuffer]: Pass packet 362 on to IP
+[SenderBuffer]: Pass packet 363 on to IP
+[SenderBuffer]: Pass packet 364 on to IP
+[SenderBuffer]: Pass packet 365 on to IP
+[SenderBuffer]: Pass packet 366 on to IP
+[SenderBuffer]: Pass packet 367 on to IP
+[SenderBuffer]: Pass packet 368 on to IP
+[SenderBuffer]: Pass packet 369 on to IP
+[SenderBuffer]: Pass packet 370 on to IP
+[SenderTCP]: Received ACK for DATA(354): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(355): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(356): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(357): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(358): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(359): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(360): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(361): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(362): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(363): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(364): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(365): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(367): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(368): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(369): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(370): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 18, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 371 on to IP
+[SenderBuffer]: Pass packet 372 on to IP
+[SenderBuffer]: Pass packet 373 on to IP
+[SenderBuffer]: Pass packet 374 on to IP
+[SenderBuffer]: Pass packet 375 on to IP
+[SenderBuffer]: Pass packet 376 on to IP
+[SenderBuffer]: Pass packet 377 on to IP
+[SenderBuffer]: Pass packet 378 on to IP
+[SenderBuffer]: Pass packet 379 on to IP
+[SenderBuffer]: Pass packet 380 on to IP
+[SenderBuffer]: Pass packet 381 on to IP
+[SenderBuffer]: Pass packet 382 on to IP
+[SenderBuffer]: Pass packet 383 on to IP
+[SenderBuffer]: Pass packet 384 on to IP
+[SenderBuffer]: Pass packet 385 on to IP
+[SenderBuffer]: Pass packet 386 on to IP
+[SenderBuffer]: Pass packet 387 on to IP
+[SenderBuffer]: Pass packet 388 on to IP
+[SenderTCP]: Received ACK for DATA(371): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(372): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(373): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(374): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(375): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(376): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(377): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(378): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(379): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(381): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(382): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(383): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(384): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(385): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(386): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(387): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(388): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 19, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 389 on to IP
+[SenderBuffer]: Pass packet 390 on to IP
+[SenderBuffer]: Pass packet 391 on to IP
+[SenderBuffer]: Pass packet 392 on to IP
+[SenderBuffer]: Pass packet 393 on to IP
+[SenderBuffer]: Pass packet 394 on to IP
+[SenderBuffer]: Pass packet 395 on to IP
+[SenderBuffer]: Pass packet 396 on to IP
+[SenderBuffer]: Pass packet 397 on to IP
+[SenderBuffer]: Pass packet 398 on to IP
+[SenderBuffer]: Pass packet 399 on to IP
+[SenderBuffer]: Pass packet 400 on to IP
+[SenderBuffer]: Pass packet 401 on to IP
+[SenderBuffer]: Pass packet 402 on to IP
+[SenderBuffer]: Pass packet 403 on to IP
+[SenderBuffer]: Pass packet 404 on to IP
+[SenderBuffer]: Pass packet 405 on to IP
+[SenderBuffer]: Pass packet 406 on to IP
+[SenderBuffer]: Pass packet 407 on to IP
+[SenderTCP]: Received ACK for DATA(389): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(390): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(391): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(392): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(393): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(394): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(395): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(396): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(397): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(398): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(399): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(400): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(401): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(402): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(403): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(404): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(405): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(406): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(407): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 20, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 408 on to IP
+[SenderBuffer]: Pass packet 409 on to IP
+[SenderBuffer]: Pass packet 410 on to IP
+[SenderBuffer]: Pass packet 411 on to IP
+[SenderBuffer]: Pass packet 412 on to IP
+[SenderBuffer]: Pass packet 413 on to IP
+[SenderBuffer]: Pass packet 414 on to IP
+[SenderBuffer]: Pass packet 415 on to IP
+[SenderBuffer]: Pass packet 416 on to IP
+[SenderBuffer]: Pass packet 417 on to IP
+[SenderBuffer]: Pass packet 418 on to IP
+[SenderBuffer]: Pass packet 419 on to IP
+[SenderBuffer]: Pass packet 420 on to IP
+[SenderBuffer]: Pass packet 421 on to IP
+[SenderBuffer]: Pass packet 422 on to IP
+[SenderBuffer]: Pass packet 423 on to IP
+[SenderBuffer]: Pass packet 424 on to IP
+[SenderBuffer]: Pass packet 425 on to IP
+[SenderBuffer]: Pass packet 426 on to IP
+[SenderBuffer]: Pass packet 427 on to IP
+[SenderTCP]: Received ACK for DATA(408): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(409): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(410): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(411): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(412): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(413): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(414): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(415): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(416): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(417): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(418): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(419): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(420): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(421): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(422): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(423): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(424): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(425): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(426): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(427): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 21, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 428 on to IP
+[SenderBuffer]: Pass packet 429 on to IP
+[SenderBuffer]: Pass packet 430 on to IP
+[SenderBuffer]: Pass packet 431 on to IP
+[SenderBuffer]: Pass packet 432 on to IP
+[SenderBuffer]: Pass packet 433 on to IP
+[SenderBuffer]: Pass packet 434 on to IP
+[SenderBuffer]: Pass packet 435 on to IP
+[SenderBuffer]: Pass packet 436 on to IP
+[SenderBuffer]: Pass packet 437 on to IP
+[SenderBuffer]: Pass packet 438 on to IP
+[SenderBuffer]: Pass packet 439 on to IP
+[SenderBuffer]: Pass packet 440 on to IP
+[SenderBuffer]: Pass packet 441 on to IP
+[SenderBuffer]: Pass packet 442 on to IP
+[SenderBuffer]: Pass packet 443 on to IP
+[SenderBuffer]: Pass packet 444 on to IP
+[SenderBuffer]: Pass packet 445 on to IP
+[SenderBuffer]: Pass packet 446 on to IP
+[SenderBuffer]: Pass packet 447 on to IP
+[SenderBuffer]: Pass packet 448 on to IP
+[SenderTCP]: Received ACK for DATA(428): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(429): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(430): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(431): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(432): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(434): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(435): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(436): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(437): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(438): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(439): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(440): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(441): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(442): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(443): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(444): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(445): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(446): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(447): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(448): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 22, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 449 on to IP
+[SenderBuffer]: Pass packet 450 on to IP
+[SenderBuffer]: Pass packet 451 on to IP
+[SenderBuffer]: Pass packet 452 on to IP
+[SenderBuffer]: Pass packet 453 on to IP
+[SenderBuffer]: Pass packet 454 on to IP
+[SenderBuffer]: Pass packet 455 on to IP
+[SenderBuffer]: Pass packet 456 on to IP
+[SenderBuffer]: Pass packet 457 on to IP
+[SenderBuffer]: Pass packet 458 on to IP
+[SenderBuffer]: Pass packet 459 on to IP
+[SenderBuffer]: Pass packet 460 on to IP
+[SenderBuffer]: Pass packet 461 on to IP
+[SenderBuffer]: Pass packet 462 on to IP
+[SenderBuffer]: Pass packet 463 on to IP
+[SenderBuffer]: Pass packet 464 on to IP
+[SenderBuffer]: Pass packet 465 on to IP
+[SenderBuffer]: Pass packet 466 on to IP
+[SenderBuffer]: Pass packet 467 on to IP
+[SenderBuffer]: Pass packet 468 on to IP
+[SenderBuffer]: Pass packet 469 on to IP
+[SenderBuffer]: Pass packet 470 on to IP
+[SenderTCP]: Received ACK for DATA(449): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(450): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(451): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(452): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(453): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(454): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(455): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(456): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(457): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(458): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(459): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(460): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(461): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(462): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(463): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(464): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(465): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(466): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(467): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(468): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(469): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(470): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 23, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 471 on to IP
+[SenderBuffer]: Pass packet 472 on to IP
+[SenderBuffer]: Pass packet 473 on to IP
+[SenderBuffer]: Pass packet 474 on to IP
+[SenderBuffer]: Pass packet 475 on to IP
+[SenderBuffer]: Pass packet 476 on to IP
+[SenderBuffer]: Pass packet 477 on to IP
+[SenderBuffer]: Pass packet 478 on to IP
+[SenderBuffer]: Pass packet 479 on to IP
+[SenderBuffer]: Pass packet 480 on to IP
+[SenderBuffer]: Pass packet 481 on to IP
+[SenderBuffer]: Pass packet 482 on to IP
+[SenderBuffer]: Pass packet 483 on to IP
+[SenderBuffer]: Pass packet 484 on to IP
+[SenderBuffer]: Pass packet 485 on to IP
+[SenderBuffer]: Pass packet 486 on to IP
+[SenderBuffer]: Pass packet 487 on to IP
+[SenderBuffer]: Pass packet 488 on to IP
+[SenderBuffer]: Pass packet 489 on to IP
+[SenderBuffer]: Pass packet 490 on to IP
+[SenderBuffer]: Pass packet 491 on to IP
+[SenderBuffer]: Pass packet 492 on to IP
+[SenderBuffer]: Pass packet 493 on to IP
+[SenderTCP]: Received ACK for DATA(471): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(472): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(473): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(474): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(475): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(476): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(477): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(478): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(479): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(480): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(481): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(482): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(483): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(484): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(485): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(486): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(487): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(488): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(489): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(490): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(491): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(492): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(493): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: window_size = 24, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 494 on to IP
+[SenderBuffer]: Pass packet 495 on to IP
+[SenderBuffer]: Pass packet 496 on to IP
+[SenderBuffer]: Pass packet 497 on to IP
+[SenderBuffer]: Pass packet 498 on to IP
+[SenderBuffer]: Pass packet 499 on to IP
+[SenderBuffer]: Pass packet 500 on to IP
+[SenderBuffer]: Pass packet 501 on to IP
+[SenderTCP]: Received ACK for DATA(494): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(495): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(496): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(497): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(498): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(499): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(500): packet 0 from 2
+[SenderTCP]: Received ACK for DATA(501): packet 0 from 2
+[SenderTCP]: Sending FIN 502. Trying to release connection with 2
+[SenderBuffer]: Pass packet 502 on to IP
+[SenderTCP]: Received FIN: packet 2 from 2
+[SenderBuffer]: Pass packet 503 on to IP
+[SenderTCP]: Received FINACK for SYN(502): packet 0 from 2
+[SenderTCP]: =================CONNECTION TORN DOWN================
+[SenderTCP]: Data transmission probably finished!

@@ -1,0 +1,282 @@
+[SenderTCP]: Creating a SenderTCP object.
+[SenderBuffer]: Creating a SenderBuffer object.
+[BasicIP]: Creating a BasicIP object.
+[SenderTCP]: Sending SYN 1. Trying to set up connection with 2
+[SenderBuffer]: Pass packet 1 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 0 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 1
+[SenderBuffer]: update last_acked to 1
+[SenderTCP]: Received SYNACK for SYN(1): packet 0 from 2
+[SenderTCP]: =================CONNECTION ESTABLISHED================
+[SenderBuffer]: Pass packet 0 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 1, SenderBuffer = 999, ReceiverBuffer = 100000
+[SenderBuffer]: Pass packet 2 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 2
+[SenderBuffer]: update last_acked to 2
+[SenderTCP]: Received ACK for DATA(2): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 2, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 3 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderBuffer]: Pass packet 4 on to IP
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 3
+[SenderBuffer]: update last_acked to 3
+[SenderTCP]: Received ACK for DATA(3): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 4
+[SenderBuffer]: update last_acked to 4
+[SenderTCP]: Received ACK for DATA(4): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 4, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 5 on to IP
+[SenderBuffer]: Pass packet 6 on to IP
+[SenderBuffer]: Pass packet 7 on to IP
+[SenderBuffer]: Pass packet 8 on to IP
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 5
+[SenderBuffer]: update last_acked to 5
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 7
+[SenderBuffer]: update last_acked to 7
+[SenderTCP]: Received ACK for DATA(7): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 8
+[SenderBuffer]: update last_acked to 8
+[SenderTCP]: Received ACK for DATA(8): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 8, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 9 on to IP
+[SenderBuffer]: Pass packet 10 on to IP
+[SenderBuffer]: Pass packet 11 on to IP
+[SenderBuffer]: Pass packet 12 on to IP
+[SenderBuffer]: Pass packet 13 on to IP
+[SenderBuffer]: Pass packet 14 on to IP
+[SenderBuffer]: Pass packet 15 on to IP
+[SenderBuffer]: Pass packet 16 on to IP
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 9
+[SenderBuffer]: update last_acked to 9
+[SenderTCP]: Received ACK for DATA(9): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 10
+[SenderBuffer]: update last_acked to 10
+[SenderTCP]: Received ACK for DATA(10): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 11
+[SenderBuffer]: update last_acked to 11
+[SenderTCP]: Received ACK for DATA(11): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 12
+[SenderBuffer]: update last_acked to 12
+[SenderTCP]: Received ACK for DATA(12): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 13
+[SenderBuffer]: update last_acked to 13
+[SenderTCP]: Received ACK for DATA(13): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 14
+[SenderBuffer]: update last_acked to 14
+[SenderTCP]: Received ACK for DATA(14): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 15
+[SenderBuffer]: update last_acked to 15
+[SenderTCP]: Received ACK for DATA(15): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 16
+[SenderBuffer]: update last_acked to 16
+[SenderTCP]: Received ACK for DATA(16): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 16, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 17 on to IP
+[SenderBuffer]: Pass packet 18 on to IP
+[SenderBuffer]: Pass packet 19 on to IP
+[SenderBuffer]: Pass packet 20 on to IP
+[SenderBuffer]: Pass packet 21 on to IP
+[SenderBuffer]: Pass packet 22 on to IP
+[SenderBuffer]: Pass packet 23 on to IP
+[SenderBuffer]: Pass packet 24 on to IP
+[SenderBuffer]: Pass packet 25 on to IP
+[SenderBuffer]: Pass packet 26 on to IP
+[SenderBuffer]: Pass packet 27 on to IP
+[SenderBuffer]: Pass packet 28 on to IP
+[SenderBuffer]: Pass packet 29 on to IP
+[SenderBuffer]: Pass packet 30 on to IP
+[SenderBuffer]: Pass packet 31 on to IP
+[SenderBuffer]: Pass packet 32 on to IP
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 17
+[SenderBuffer]: update last_acked to 17
+[SenderTCP]: Received ACK for DATA(17): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 18
+[SenderBuffer]: update last_acked to 18
+[SenderTCP]: Received ACK for DATA(18): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 19
+[SenderBuffer]: update last_acked to 19
+[SenderTCP]: Received ACK for DATA(19): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 20
+[SenderBuffer]: update last_acked to 20
+[SenderTCP]: Received ACK for DATA(20): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 21
+[SenderBuffer]: update last_acked to 21
+[SenderTCP]: Received ACK for DATA(21): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 22
+[SenderBuffer]: update last_acked to 22
+[SenderTCP]: Received ACK for DATA(22): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 23
+[SenderBuffer]: update last_acked to 23
+[SenderTCP]: Received ACK for DATA(23): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 24
+[SenderBuffer]: update last_acked to 24
+[SenderTCP]: Received ACK for DATA(24): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 25
+[SenderBuffer]: update last_acked to 25
+[SenderTCP]: Received ACK for DATA(25): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 26
+[SenderBuffer]: update last_acked to 26
+[SenderTCP]: Received ACK for DATA(26): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 27
+[SenderBuffer]: update last_acked to 27
+[SenderTCP]: Received ACK for DATA(27): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 29
+[SenderBuffer]: update last_acked to 29
+[SenderTCP]: Received ACK for DATA(29): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 30
+[SenderBuffer]: update last_acked to 30
+[SenderTCP]: Received ACK for DATA(30): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 31
+[SenderBuffer]: update last_acked to 31
+[SenderTCP]: Received ACK for DATA(31): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 32
+[SenderBuffer]: update last_acked to 32
+[SenderTCP]: Received ACK for DATA(32): packet 0 from 2
+[SenderTCP]: -------Sending DATA packets-------
+[SenderTCP]: window_size = 32, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 33 on to IP
+[SenderBuffer]: Pass packet 34 on to IP
+[SenderBuffer]: Pass packet 35 on to IP
+[SenderBuffer]: Pass packet 36 on to IP
+[SenderBuffer]: Pass packet 37 on to IP
+[SenderBuffer]: Pass packet 38 on to IP
+[SenderBuffer]: Pass packet 39 on to IP
+[SenderBuffer]: Pass packet 40 on to IP
+[SenderBuffer]: Pass packet 41 on to IP
+[SenderBuffer]: Pass packet 42 on to IP
+[SenderBuffer]: Pass packet 43 on to IP
+[SenderBuffer]: Pass packet 44 on to IP
+[SenderBuffer]: Pass packet 45 on to IP
+[SenderBuffer]: Pass packet 46 on to IP
+[SenderBuffer]: Pass packet 47 on to IP
+[SenderBuffer]: Pass packet 48 on to IP
+[SenderBuffer]: Pass packet 49 on to IP
+[SenderBuffer]: Pass packet 50 on to IP
+[SenderBuffer]: Pass packet 51 on to IP
+[SenderBuffer]: Pass packet 52 on to IP
+[SenderBuffer]: Pass packet 53 on to IP
+[SenderBuffer]: Pass packet 54 on to IP
+[SenderBuffer]: Pass packet 55 on to IP
+[SenderBuffer]: Pass packet 56 on to IP
+[SenderBuffer]: Pass packet 57 on to IP
+[SenderBuffer]: Pass packet 58 on to IP
+[SenderBuffer]: Pass packet 59 on to IP
+[SenderBuffer]: Pass packet 60 on to IP
+[SenderBuffer]: Pass packet 61 on to IP
+[SenderBuffer]: Pass packet 62 on to IP
+[SenderBuffer]: Pass packet 63 on to IP
+[SenderBuffer]: Pass packet 64 on to IP
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 33
+[SenderBuffer]: update last_acked to 33
+[SenderTCP]: Received ACK for DATA(33): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 34
+[SenderBuffer]: update last_acked to 34
+[SenderTCP]: Received ACK for DATA(34): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 35
+[SenderBuffer]: update last_acked to 35
+[SenderTCP]: Received ACK for DATA(35): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 36
+[SenderBuffer]: update last_acked to 36
+[SenderTCP]: Received ACK for DATA(36): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 37
+[SenderBuffer]: update last_acked to 37
+[SenderTCP]: Received ACK for DATA(37): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 38
+[SenderBuffer]: update last_acked to 38
+[SenderTCP]: Received ACK for DATA(38): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 39
+[SenderBuffer]: update last_acked to 39
+[SenderTCP]: Received ACK for DATA(39): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 40
+[SenderBuffer]: update last_acked to 40
+[SenderTCP]: Received ACK for DATA(40): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 41
+[SenderBuffer]: update last_acked to 41
+[SenderTCP]: Received ACK for DATA(41): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 42
+[SenderBuffer]: update last_acked to 42
+[SenderTCP]: Received ACK for DATA(42): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 43
+[SenderBuffer]: update last_acked to 43
+[SenderTCP]: Received ACK for DATA(43): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 44
+[SenderBuffer]: update last_acked to 44
+[SenderTCP]: Received ACK for DATA(44): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 45
+[SenderBuffer]: update last_acked to 45
+[SenderTCP]: Received ACK for DATA(45): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 46
+[SenderBuffer]: update last_acked to 46
+[SenderTCP]: Received ACK for DATA(46): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 47
+[SenderBuffer]: update last_acked to 47
+[SenderTCP]: Received ACK for DATA(47): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 48
+[SenderBuffer]: update last_acked to 48
+[SenderTCP]: Received ACK for DATA(48): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 49
+[SenderBuffer]: update last_acked to 49
+[SenderTCP]: Received ACK for DATA(49): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 50
+[SenderBuffer]: update last_acked to 50
+[SenderTCP]: Received ACK for DATA(50): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 52
+[SenderBuffer]: update last_acked to 52
+[SenderTCP]: Received ACK for DATA(52): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 53
+[SenderBuffer]: update last_acked to 53
+[SenderTCP]: Received ACK for DATA(53): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 54
+[SenderBuffer]: update last_acked to 54
+[SenderTCP]: Received ACK for DATA(54): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 55
+[SenderBuffer]: update last_acked to 55
+[SenderTCP]: Received ACK for DATA(55): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 56
+[SenderBuffer]: update last_acked to 56
+[SenderTCP]: Received ACK for DATA(56): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 57
+[SenderBuffer]: update last_acked to 57
+[SenderTCP]: Received ACK for DATA(57): packet 0 from 2
+[SenderTCP]: 【【CHANGED TO ADDICTIVE INCREASE!】】, window_size = 32
+[SenderTCP]: Need Retransmission.
+[SenderBuffer]: Retransmit ALL
+[SenderBuffer]: Read out packet 58 at position 57 and retransmit.
+[SenderBuffer]: Read out packet 59 at position 58 and retransmit.
+[SenderBuffer]: Read out packet 60 at position 59 and retransmit.
+[SenderBuffer]: Read out packet 61 at position 60 and retransmit.
+[SenderBuffer]: Read out packet 62 at position 61 and retransmit.
+[SenderBuffer]: Read out packet 63 at position 62 and retransmit.
+[SenderBuffer]: Read out packet 64 at position 63 and retransmit.
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 58
+[SenderBuffer]: update last_acked to 58
+[SenderTCP]: Received ACK for DATA(58): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 59
+[SenderBuffer]: update last_acked to 59
+[SenderTCP]: Received ACK for DATA(59): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 60
+[SenderBuffer]: update last_acked to 60
+[SenderTCP]: Received ACK for DATA(60): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 61
+[SenderBuffer]: update last_acked to 61
+[SenderTCP]: Received ACK for DATA(61): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 62
+[SenderBuffer]: update last_acked to 62
+[SenderTCP]: Received ACK for DATA(62): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 63
+[SenderBuffer]: update last_acked to 63
+[SenderTCP]: Received ACK for DATA(63): packet 0 from 2
+[SenderBuffer]: Received SYN/SYNACK/FINACK for packet 64
+[SenderBuffer]: update last_acked to 64
+[SenderTCP]: Received ACK for DATA(64): packet 0 from 2

@@ -1,0 +1,12 @@
+client1: routerport
+client2: loss rate = 0.97
+data packets number = 100
+RECEIVER_BUFFER_SIZE = SENDER_BUFFER_SIZE = 1000
+==========================
+
+Implemented SLOW START & FAST RECOVERY
+
+congestion(miss) occurred when window_size = 32
+changed to 16
+Additively increased to 26, then congestion occurred again.
+changed to 13.
