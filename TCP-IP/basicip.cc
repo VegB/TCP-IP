@@ -27,33 +27,26 @@ void BasicIP::push(int port, Packet *income_packet) {
 	struct TCP_Header header = (struct TCP_Header)packet->header;
 	if(port == 0){ // from SenderBuffer
 		output(1).push(add_IP_header(income_packet));
-		// add IP header
 	}
 	else if(port == 1){ // from router to sender
-		output(0).push(tear_down_IP_header(income_packet)); 
-		// Wrip IP header
+		output(0).push(tear_down_IP_header(income_packet));
 	}
 	else if(port == 2){ // from router to receiver
-
 		output(3).push(tear_down_IP_header(income_packet));
-		// Wrip IP header
 	}
 	else if(port == 3){ // from Receiver buffer
-    		output(2).push(add_IP_header(income_packet));
-		// add IP header
+        output(2).push(add_IP_header(income_packet));
 	}
 }
 
 WritablePacket* BasicIP::add_IP_header(Packet *income_packet){
-//    click_chatter("[BasicIP]: Adding IP header.");
     struct TCP_Packet* income_packet_ptr = (struct TCP_Packet*)income_packet->data();
     struct TCP_Header* income_packet_header = (struct TCP_Header*)(&(income_packet_ptr->header));
 
-//    click_chatter("[BasicIP]: income packet pointers ok.");    
     WritablePacket *packet = Packet::make(0, 0, sizeof(struct IP_Packet), 0);
     struct IP_Packet* packet_ptr = (struct IP_Packet*)packet->data();
     struct IP_Header* header_ptr = (struct IP_Header*)(&(packet_ptr->header));
-//    click_chatter("[BasicIP]: output packet pointers ok.");
+    
     int TCP_Packet_size =sizeof(struct TCP_Packet);
     memcpy((void*)(packet_ptr->data), (const void*)income_packet_ptr, TCP_Packet_size);
     
@@ -68,15 +61,23 @@ WritablePacket* BasicIP::add_IP_header(Packet *income_packet){
 }
 
 WritablePacket* BasicIP::tear_down_IP_header(Packet *income_packet){
-//    click_chatter("[BasicIP]: Tearing down IP header.");
     struct IP_Packet *income_packet_ptr = (struct IP_Packet*)income_packet->data();
+    struct IP_Header* income_packet_header = (struct IP_Header*)(&(income_packet_header->header));
     
     WritablePacket *packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
     struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
+    struct TCP_Header* packet_header = (struct TCP_Header*)(&(packet_ptr->header));
     
     int TCP_Packet_size =sizeof(struct TCP_Packet);
     memcpy((void*)packet_ptr, (const void*)(income_packet_ptr->data), TCP_Packet_size);
+    
+    /* ECN */
+    if(income_packet_header->ECN == true){
+        packet_header->ECN = true;
+        packet_header->ecn_limit = income_packet_header->ecn_limit;
+    }
     return packet;
 }
+
 CLICK_ENDDECLS
 EXPORT_ELEMENT(BasicIP)

@@ -161,6 +161,7 @@ WritablePacket* ReceiverTCP::CreateOtherPacket(packet_types type_of_packet, TCP_
     header_ptr->destination = _other_address;
     header_ptr->sequence = _seq;
     _seq++;
+    header_ptr->ECN = false;
     
     /* Flow Control */
     if(type_of_packet == ACK || type_of_packet == SYNACK || type_of_packet == FINACK){

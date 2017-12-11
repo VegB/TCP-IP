@@ -35,6 +35,8 @@ struct TCP_Header{
     uint32_t size;  // how many bytes of data this tcp packet contains
     uint8_t more_packets;  // is this the end of file?
     uint32_t empty_buffer_size;  // number of packets
+    bool ECN;
+    uint32_t ecn_limit;
 };
 
 struct TCP_Packet{
@@ -53,6 +55,7 @@ struct IP_Header{
     uint32_t size;
     uint8_t ttl;
     bool ECN;
+    uint32_t ecn_limit;
 };
 
 struct IP_Packet{

@@ -51,6 +51,7 @@ class SenderTCP : public Element {
         uint8_t _increase_policy;
         uint32_t _slow_start_limit;
         uint32_t _additive_increase_limit;
+        uint32_t _ecn_limit;
     
         /* Generating Packets  */
         void CreateDataPacket();

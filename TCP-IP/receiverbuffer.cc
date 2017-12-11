@@ -235,7 +235,14 @@ WritablePacket* ReceiverBuffer::CreateAckPacket(TCP_Header* header){
     header_ptr->source = header->destination;
     header_ptr->destination = header->source;
     header_ptr->empty_buffer_size = ReceiverBufferRemainSize(_receiver_start_pos, _receiver_end_pos);
-    
+    /* ECN fields */
+    if(header->ECN == true){
+        header_ptr->ECN = true;
+        header_ptr->ecn_limit = header->ecn_limit;
+    }
+    else{
+        header_ptr->ECN = false;
+    }
     /* choose ACK type */
     if(header->type == DATA){
         header_ptr->type = ACK;

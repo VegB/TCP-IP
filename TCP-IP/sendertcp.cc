@@ -51,10 +51,11 @@
 
 CLICK_DECLS 
 
-uint32_t find_smallest(uint32_t a, uint32_t b, uint32_t c){
-    uint32_t rst = a < b? a : b;
-    rst = rst < c? rst : c;
-    return rst;
+uint32_t find_smallest(uint32_t a, uint32_t b, uint32_t c, uint32_t d){
+    uint32_t rst1 = a < b? a : b;
+    uint32_t rst2 = c < d? c: d;
+    rst1 = rst1 < rst2? rst1 : rst2;
+    return rst1;
 }
 
 SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
@@ -78,6 +79,7 @@ SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
 	_data_piece_cnt = 0;
     _slow_start_limit = 1;
     _increase_policy = SLOW_START;
+    _ecn_limit = 100000;
 }
 
 SenderTCP::~SenderTCP(){
@@ -123,14 +125,14 @@ void SenderTCP::run_timer(Timer *timer) {
                 if(_additive_increase_limit > 2){
                     _additive_increase_limit >>= 2;
                 }
-                _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
+                _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit, _ecn_limit);
                 click_chatter("[SenderTCP]: 【【changed from SLOW START to ADDITIVE INCREASE!】】, window_size changed from %u to %u", _ori_window_size, _window_size);
             }
             else if(_increase_policy == ADDITIVE_INCREASE){
                 if(_additive_increase_limit > 2){
                     _additive_increase_limit >>= 2;
                 }
-                _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
+                _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit, _ecn_limit);
                 click_chatter("[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from %u to %u", _ori_window_size, _window_size);
             }
             
@@ -188,6 +190,12 @@ void SenderTCP::push(int port, Packet *income_packet) {
         /* record valid size in receiver buffer */
         _empty_receiver_buffer_size = header->empty_buffer_size;
         // click_chatter("[SenderTCP]: Room for %u packets in ReceiverBuffer", _empty_receiver_buffer_size);
+        
+        if(header->ECN == true){
+            uint32_t old_limit = _ecn_limit;
+            _ecn_limit = header->ecn_limit;
+            click_chatter("[SenderTCP]: #ECN#. Update ECN limit from %u to %u.", old_limit, _ecn_limit);
+        }
     }
     else if(header->type == SYNACK){
         click_chatter("[SenderTCP]: Received SYNACK for SYN(%u): packet %u from %u", header->ack, header->sequence, header->source);
@@ -233,7 +241,9 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
     }
     else{
         header_ptr->sequence = _seq;
-    }    
+    }
+    header_ptr->ECN = false;
+    
     /* Flow Control */
     if(type_of_packet == ACK || type_of_packet == SYNACK || type_of_packet == FINACK){
         header_ptr->ack = header->sequence;
@@ -252,7 +262,7 @@ void SenderTCP::CreateDataPacket(){
         click_chatter("[SenderTCP]: #SLOW START#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);
     }
     else if(_increase_policy == ADDITIVE_INCREASE){
-        _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit);
+        _window_size = find_smallest(_empty_sender_buffer_size, _empty_receiver_buffer_size, _additive_increase_limit, _ecn_limit);
         _additive_increase_limit += 1;
         
         click_chatter("[SenderTCP]: #ADDITIVE INCREASE#, window_size = %u, SenderBuffer = %u, ReceiverBuffer = %u", _window_size, _empty_sender_buffer_size, _empty_receiver_buffer_size);
@@ -263,6 +273,7 @@ void SenderTCP::CreateDataPacket(){
         struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
         struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
         header_ptr->more_packets = !(ReadDataFromFile());
+        header_ptr->ECN = false;
         uint8_t _more = header_ptr->more_packets;
         // click_chatter("[SenderTCP]: Have more packets? %u", _more);
         /* pass it on to sender buffer */
