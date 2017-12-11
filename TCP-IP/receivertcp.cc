@@ -149,7 +149,7 @@ void ReceiverTCP::push(int port, Packet *income_packet) {
 }
 
 WritablePacket* ReceiverTCP::CreateOtherPacket(packet_types type_of_packet, TCP_Header* header){
-    WritablePacket *packet = Packet::make(0, 0, sizeof(struct TCP_Header), 0);
+    WritablePacket *packet = Packet::make(0, 0, sizeof(struct TCP_Packet), 0);
     struct TCP_Packet* packet_ptr = (struct TCP_Packet*)packet->data();
     struct TCP_Header* header_ptr = (struct TCP_Header*)(&(packet_ptr->header));
     

@@ -19,7 +19,8 @@ typedef enum {
     FINACK,
     HELLO,
     INFO,
-    RETRANS
+    RETRANS,
+    EDGE
 } packet_types;
 
 
@@ -51,6 +52,7 @@ struct IP_Header{
     uint8_t destination;
     uint32_t size;
     uint8_t ttl;
+    bool ECN;
 };
 
 struct IP_Packet{
