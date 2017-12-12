@@ -61,6 +61,7 @@ uint32_t find_smallest(uint32_t a, uint32_t b, uint32_t c, uint32_t d){
 SenderTCP::SenderTCP() : _timerTO(this), _timerHello(this) {
     click_chatter("[SenderTCP]: Creating a SenderTCP object.");
     _seq = 1;
+    _hello_seq = 999999;
     _period = 3;
     _periodHello = 2;
     _delay = 0;
@@ -239,8 +240,9 @@ WritablePacket* SenderTCP::CreateOtherPacket(packet_types type_of_packet, TCP_He
         header_ptr->sequence = _seq;
         _seq++;
     }
-    else{
-        header_ptr->sequence = _seq;
+    else if(type_of_packet == HELLO){
+        header_ptr->sequence = _hello_seq;
+        _hello_seq++;
     }
     header_ptr->ECN = false;
     

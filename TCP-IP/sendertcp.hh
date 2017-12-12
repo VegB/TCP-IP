@@ -31,6 +31,7 @@ class SenderTCP : public Element {
         Timer _timerTO;
     
         uint32_t _seq;  // counting in this client
+        uint32_t _hello_seq;
 		uint32_t _delay;
 		uint32_t _period;
 		uint32_t _periodHello;

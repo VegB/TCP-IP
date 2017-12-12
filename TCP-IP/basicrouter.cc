@@ -199,12 +199,18 @@ void BasicRouter::run_timer(Timer *timer) {
 			for (int i = 0; i < nodeNum; ++i)
 				forwardTable[i] = next[i];
 		}
-		else
-			click_chatter("[Router %u] But nothing changed",myIP);
+		else{
+for (int i = 0; i < nodeNum; ++i)
+                                click_chatter("(%d %d)\n", i, next[i]);
+                        for (int i = 0; i < nodeNum; ++i)
+                                forwardTable[i] = next[i];		
+	click_chatter("[Router %u] But nothing changed",myIP);
+		}
 		for (int i = 0; i < nodeNum; i++) {
 			for (int j = 0; j < nodeNum; j++) {
 				if (i == j) topology[i][j] = 0;
 				else topology[i][j] = MAX;
+				updated[i][j] = 0;
 			}
 		}
 		timerRouting.schedule_after_sec(periodRouting);
