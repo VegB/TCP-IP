@@ -98,11 +98,11 @@ void BasicRouter::run_timer(Timer *timer) {
 			Packet * packet = packetQueue.front();
 			packetQueue.pop();
 			struct IP_Header *header = (struct IP_Header *)packet->data();
-			if (size > ECNthre){
-                            header->ECN = true;
-                            header->ecn_limit = ECNthre;
-                            click_chatter("[Router %u]: Exceed ECN threshold! Start ECN!", myIP);
-                        }
+			if (size > ECNthre) {
+				header->ECN = true;
+				header->ecn_limit = ECNthre;
+                click_chatter("[Router %u]: Exceed ECN threshold! Start ECN!", myIP);
+			}
 			if (forwardTable[header->destination] == -1) {
 				click_chatter("[Router %u] Fail to transfer Data from %u to destination %u because of disconnection with %u", myIP, header->source, header->destination, header->destination);
 			}
@@ -131,15 +131,7 @@ void BasicRouter::run_timer(Timer *timer) {
 		timerHello.schedule_after_sec(periodHello);
 	}
 	else if (timer == &timerRouting){
-		click_chatter("[Router %u] Recalculates routing table for the %u-th time", myIP, ++roundRouting);
-		/*click_chatter("topology is:");
-		for (int i = 0; i < nodeNum; i++) {
-			for (int j = 0; j < nodeNum; j++) {
-				click_chatter("%u ",topology[i][j]);
-			}
-			click_chatter("\n");
-		}
-		*/
+		click_chatter("[Router %u] ========== Recalculates routing table for the %u-th time ==========", myIP, ++roundRouting);
 		bool *flag=new bool[nodeNum];
 		for (int i = 0; i<nodeNum; ++i){
 			dist[i] = topology[myIP][i];
@@ -175,13 +167,7 @@ void BasicRouter::run_timer(Timer *timer) {
 				}
 			}
 		}
-		/*
-		click_chatter("complete dijkstra\n");
-		for (int i = 0; i < nodeNum; ++i)
-			click_chatter("(i,dist[i])=(%d %d)\n", i, dist[i]);
-		for (int i = 0; i < nodeNum; ++i)
-			click_chatter("(i,prev[i])=(%d %d)\n", i, prev[i]);
-	   */
+		
 		int * next = new int[nodeNum];
 		for (int u = 0; u < nodeNum; u++) {
 			if (prev[u] == -1) {
@@ -202,10 +188,7 @@ void BasicRouter::run_timer(Timer *timer) {
 				next[u] = que[tot - 1];
 			}
 		}
-		/*
-		for (int i = 0; i < nodeNum; ++i)
-			click_chatter("(i,next[i])=(%d %d)\n", i, next[i]);
-		*/
+		
 		bool change = false;
 		for (int i = 0; i < nodeNum; ++i)
 			if (next[i] != forwardTable[i]) change = true;
@@ -218,6 +201,12 @@ void BasicRouter::run_timer(Timer *timer) {
 		}
 		else
 			click_chatter("[Router %u] But nothing changed",myIP);
+		for (int i = 0; i < nodeNum; i++) {
+			for (int j = 0; j < nodeNum; j++) {
+				if (i == j) topology[i][j] = 0;
+				else topology[i][j] = MAX;
+			}
+		}
 		timerRouting.schedule_after_sec(periodRouting);
 	}
 	else {
@@ -227,7 +216,7 @@ void BasicRouter::run_timer(Timer *timer) {
 void BasicRouter::push(int port, Packet *packet) {
 	assert(packet);
 	struct IP_Header *header = (struct IP_Header *)packet->data();
-	if(header->type == FINACK || header->type == DATA || header->type == ACK || header->type == SYN || header->type == SYNACK || header->type == FIN) {
+	if(header->type == DATA || header->type == ACK || header->type == SYN || header->type == SYNACK || header->type == FIN || header->type == FINACK) {
 		click_chatter("[Router %u] Received Data from %u with destination %u",myIP, header->source, header->destination);
 		packetQueue.push(packet);
 		
