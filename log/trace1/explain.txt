@@ -1,7 +1,0 @@
-loss rate = 0.5
-data packets number = 10
-==============================
-
-Packet 6 is probably lost and being retransmitted.
-Time-out and trigger retransmit.
-Probably should have set time-out longer and try fast retransmit.

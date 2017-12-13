@@ -1,0 +1,837 @@
+Last login: Tue Dec 12 22:10:02 on ttys002
+% ssh comnetsii@192.168.56.101                                                ~
+]comnetsii@192.168.56.101's password: 
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-32-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Nov 18 18:53:12 EST 2017
+
+  System load:  0.07              Processes:           83
+  Usage of /:   35.4% of 5.51GB   Users logged in:     1
+  Memory usage: 7%                IP address for eth0: 10.0.2.15
+  Swap usage:   0%                IP address for eth1: 192.168.56.101
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+283 packages can be updated.
+183 updates are security updates.
+
+New release '16.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Sat Nov 18 18:53:14 2017 from 192.168.56.1
+comnetsii@comnetsII:~$ cd ~/TCP-IP/TCP-IP/
+comnetsii@comnetsII:~/TCP-IP/TCP-IP$ sudo ~/click/userlevel/click ./router2.click 
+[sudo] password for comnetsii: 
+[Router 3] Sends Hello to adjacent nodes for the 1-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 3] Sends Hello to adjacent nodes for the 2-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 3] Sends Hello to adjacent nodes for the 3-th time
+expensive Packet::push; have 0 wanted 14
+[Router 3] Sends Hello to adjacent nodes for the 4-th time
+^Ccomnetsii@comnetsII:~/TCP-IP/TCP-IP$ 
+comnetsii@comnetsII:~/TCP-IP/TCP-IP$ sudo ~/click/userlevel/click ./router2.click 
+[Router 3] Received Hello from 2 on port 0 with seq 5
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Sends Hello to adjacent nodes for the 1-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 8
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Sends Hello to adjacent nodes for the 2-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 11
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 14
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Sends Hello to adjacent nodes for the 3-th time
+expensive Packet::push; have 0 wanted 14
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 17
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Sends Hello to adjacent nodes for the 4-th time
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Hello from 5 on port 1 with seq 1
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] ========== Recalculates routing table for the 1-th time ==========
+[Router 3] Forwarding table is updated
+(0 2)
+(1 5)
+(2 2)
+(3 3)
+(4 2)
+(5 5)
+[Router 3] Received Hello from 2 on port 0 with seq 20
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Sends Hello to adjacent nodes for the 5-th time
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Hello from 5 on port 1 with seq 4
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 23
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Sends Hello to adjacent nodes for the 6-th time
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 7
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 26
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Sends Hello to adjacent nodes for the 7-th time
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 10
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Hello from 2 on port 0 with seq 29
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Sends Hello to adjacent nodes for the 8-th time
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 13
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 1 with destination 0
+[Router 3] Received Data from 1 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 32
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Sends Hello to adjacent nodes for the 9-th time
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 16
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] ========== Recalculates routing table for the 2-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 3)
+(4 2)
+(5 5)
+[Router 3] But nothing changed
+[Router 3] Received Hello from 2 on port 0 with seq 35
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Sends Hello to adjacent nodes for the 10-th time
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 4
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 19
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 38
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Sends Hello to adjacent nodes for the 11-th time
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 22
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Queue size = 1
+[Router 3] Received Data from 1 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 41
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 4
+[Router 3] Sends Hello to adjacent nodes for the 12-th time
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 25
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 44
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Sends Hello to adjacent nodes for the 13-th time
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 5
+[Router 3] Queue size = 4
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 28
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 47
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Sends Hello to adjacent nodes for the 14-th time
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 31
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] ========== Recalculates routing table for the 3-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 3)
+(4 2)
+(5 5)
+[Router 3] But nothing changed
+[Router 3] Received Hello from 2 on port 0 with seq 50
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 3
+[Router 3] Sends Hello to adjacent nodes for the 15-th time
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 34
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 53
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Sends Hello to adjacent nodes for the 16-th time
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 4
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 37
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 1 with destination 0
+[Router 3] Received Data from 1 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 2 on port 0 with seq 56
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Sends Hello to adjacent nodes for the 17-th time
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 40
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 59
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Sends Hello to adjacent nodes for the 18-th time
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 43
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 62
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Sends Hello to adjacent nodes for the 19-th time
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 46
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] ========== Recalculates routing table for the 4-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 3)
+(4 2)
+(5 5)
+[Router 3] But nothing changed
+[Router 3] Received Hello from 2 on port 0 with seq 65
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Sends Hello to adjacent nodes for the 20-th time
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 49
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+^Ccomnetsii@comnetsII:~/TCP-IP/TCP-IP$ sudo ~/click/userlevel/click ./router2.click 
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 107
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 91
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Sends Hello to adjacent nodes for the 1-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 110
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 94
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Sends Hello to adjacent nodes for the 2-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 113
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 97
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Sends Hello to adjacent nodes for the 3-th time
+expensive Packet::push; have 0 wanted 14
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 116
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 100
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Sends Hello to adjacent nodes for the 4-th time
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 119
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 103
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 3] Queue size = 1
+[Router 3] Fail to transfer Data from 0 to destination 0 because of disconnection with 0
+[Router 3] ========== Recalculates routing table for the 1-th time ==========
+[Router 3] Forwarding table is updated
+(0 2)
+(1 5)
+(2 2)
+(3 3)
+(4 2)
+(5 5)
+[Router 3] Sends Hello to adjacent nodes for the 5-th time
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 2 on port 0 with seq 122
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 106
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Sends Hello to adjacent nodes for the 6-th time
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 125
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 109
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Sends Hello to adjacent nodes for the 7-th time
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 2 on port 0 with seq 128
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 112
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Queue size = 1
+[Router 3] Sends Hello to adjacent nodes for the 8-th time
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Received Data from 0 with destination 1
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 1 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Received Data from 1 with destination 0
+[Router 3] Received Data from 1 with destination 0
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 131
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 115
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 0 to 2
+[Router 3] Sends Hello to adjacent nodes for the 9-th time
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 2 on port 0 with seq 134
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 3
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 118
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] ========== Recalculates routing table for the 2-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 3)
+(4 2)
+(5 5)
+[Router 3] But nothing changed
+[Router 3] Sends Hello to adjacent nodes for the 10-th time
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 1 to 5
+[Router 3] Received Hello from 2 on port 0 with seq 137
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Received Data from 0 with destination 0
+[Router 3] Queue size = 2
+[Router 3] Queue size = 1
+[Router 3] Received Hello from 5 on port 1 with seq 121
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Sends Hello to adjacent nodes for the 11-th time
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Received Hello from 2 on port 0 with seq 140
+[Router 3] Receive EDGE from 2 to 3
+[Router 3] Receive EDGE from 2 to 4
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Receive EDGE from 4 to 2
+[Router 3] Received Hello from 5 on port 1 with seq 124
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Sends Hello to adjacent nodes for the 12-th time
+[Router 3] Receive EDGE from 3 to 5
+[Router 3] Receive EDGE from 3 to 2
+[Router 3] Receive EDGE from 4 to 5
+[Router 3] Received Hello from 5 on port 1 with seq 127
+[Router 3] Receive EDGE from 5 to 3
+[Router 3] Receive EDGE from 5 to 4
+[Router 3] Sends Hello to adjacent nodes for the 13-th time
+[Router 3] Receive EDGE from 3 to 5
+^Ccomnetsii@comnetsII:~/TCP-IP/TCP-IP$ 
+

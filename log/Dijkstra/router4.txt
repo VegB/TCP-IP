@@ -1,0 +1,752 @@
+Last login: Tue Dec 12 22:09:34 on ttys000
+% ssh comnetsii@192.168.56.101                                                ~
+comnetsii@192.168.56.101's password: 
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-32-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Nov 18 18:52:49 EST 2017
+
+  System load:  0.0               Processes:           77
+  Usage of /:   35.4% of 5.51GB   Users logged in:     1
+  Memory usage: 7%                IP address for eth0: 10.0.2.15
+  Swap usage:   0%                IP address for eth1: 192.168.56.101
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+283 packages can be updated.
+183 updates are security updates.
+
+New release '16.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Sat Nov 18 18:52:51 2017 from 192.168.56.1
+comnetsii@comnetsII:~$ cd ~/TCP-IP/TCP-IP/
+comnetsii@comnetsII:~/TCP-IP/TCP-IP$ sudo ~/click/userlevel/click ./router3.click 
+[sudo] password for comnetsii: 
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 12
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Sends Hello to adjacent nodes for the 1-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 15
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Sends Hello to adjacent nodes for the 2-th time
+expensive Packet::push; have 0 wanted 14
+expensive Packet::push; have 0 wanted 14
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 18
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 2
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 21
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 3-th time
+expensive Packet::push; have 0 wanted 14
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 5
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 24
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 4-th time
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 8
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] ========== Recalculates routing table for the 1-th time ==========
+[Router 4] Forwarding table is updated
+(0 2)
+(1 5)
+(2 2)
+(3 2)
+(4 4)
+(5 5)
+[Router 4] Received Hello from 2 on port 0 with seq 27
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 5-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 11
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 30
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 6-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 14
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 33
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Sends Hello to adjacent nodes for the 7-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 17
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Received Hello from 2 on port 0 with seq 36
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 8-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 20
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 39
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Sends Hello to adjacent nodes for the 9-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 23
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] ========== Recalculates routing table for the 2-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 2)
+(4 4)
+(5 5)
+[Router 4] But nothing changed
+[Router 4] Received Hello from 2 on port 0 with seq 42
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 10-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 26
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 45
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 11-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 29
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 48
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 12-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 32
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 51
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 13-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 35
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 54
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 14-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 38
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] ========== Recalculates routing table for the 3-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 2)
+(4 4)
+(5 5)
+[Router 4] But nothing changed
+[Router 4] Received Hello from 2 on port 0 with seq 57
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 15-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 41
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Received Hello from 2 on port 0 with seq 60
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 16-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 44
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 63
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 17-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 47
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 66
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 18-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 50
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 69
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 19-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 53
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] ========== Recalculates routing table for the 4-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 2)
+(4 4)
+(5 5)
+[Router 4] But nothing changed
+[Router 4] Received Hello from 2 on port 0 with seq 72
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 20-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 56
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 75
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 21-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 59
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 78
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 22-th time
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 62
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 81
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 23-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 65
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 84
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 24-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 68
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] ========== Recalculates routing table for the 5-th time ==========
+[Router 4] Forwarding table is updated
+(0 2)
+(1 5)
+(2 2)
+(3 -1)
+(4 4)
+(5 5)
+[Router 4] Received Hello from 2 on port 0 with seq 87
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 25-th time
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 71
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 90
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 26-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 74
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Queue size = 1
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 93
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 27-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Queue size = 1
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 77
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 96
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 28-th time
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 3
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 80
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 99
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 29-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 83
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Queue size = 1
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] ========== Recalculates routing table for the 6-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 -1)
+(4 4)
+(5 5)
+[Router 4] But nothing changed
+[Router 4] Received Hello from 2 on port 0 with seq 102
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 30-th time
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 3
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 86
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 105
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Sends Hello to adjacent nodes for the 31-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 89
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 108
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Sends Hello to adjacent nodes for the 32-th time
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 92
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 111
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Sends Hello to adjacent nodes for the 33-th time
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 95
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 114
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Sends Hello to adjacent nodes for the 34-th time
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 98
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Received Data from 0 with destination 1
+[Router 4] Queue size = 3
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Received Data from 1 with destination 0
+[Router 4] Queue size = 3
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] ========== Recalculates routing table for the 7-th time ==========
+[Router 4] Forwarding table is updated
+(0 2)
+(1 5)
+(2 2)
+(3 2)
+(4 4)
+(5 5)
+[Router 4] Received Hello from 2 on port 0 with seq 117
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Sends Hello to adjacent nodes for the 35-th time
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 101
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 120
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 2
+[Router 4] Sends Hello to adjacent nodes for the 36-th time
+[Router 4] Queue size = 1
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Data from 0 with destination 0
+[Router 4] Queue size = 1
+[Router 4] Received Hello from 5 on port 1 with seq 104
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 123
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 37-th time
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 107
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 126
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Sends Hello to adjacent nodes for the 38-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 110
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 129
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Sends Hello to adjacent nodes for the 39-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 113
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] ========== Recalculates routing table for the 8-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 2)
+(4 4)
+(5 5)
+[Router 4] But nothing changed
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Received Hello from 2 on port 0 with seq 132
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 40-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 116
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 0 to 2
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Received Hello from 2 on port 0 with seq 135
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Sends Hello to adjacent nodes for the 41-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 119
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Receive EDGE from 1 to 5
+[Router 4] Received Hello from 2 on port 0 with seq 138
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Sends Hello to adjacent nodes for the 42-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 122
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Received Hello from 2 on port 0 with seq 141
+[Router 4] Receive EDGE from 2 to 4
+[Router 4] Receive EDGE from 2 to 3
+[Router 4] Sends Hello to adjacent nodes for the 43-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Receive EDGE from 4 to 2
+[Router 4] Received Hello from 5 on port 1 with seq 125
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] Receive EDGE from 3 to 2
+[Router 4] Sends Hello to adjacent nodes for the 44-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 128
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Receive EDGE from 5 to 3
+[Router 4] Receive EDGE from 3 to 5
+[Router 4] ========== Recalculates routing table for the 9-th time ==========
+(0 2)
+(1 5)
+(2 2)
+(3 2)
+(4 4)
+(5 5)
+[Router 4] But nothing changed
+[Router 4] Sends Hello to adjacent nodes for the 45-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 131
+[Router 4] Receive EDGE from 5 to 4
+[Router 4] Sends Hello to adjacent nodes for the 46-th time
+[Router 4] Receive EDGE from 4 to 5
+[Router 4] Received Hello from 5 on port 1 with seq 134
+[Router 4] Receive EDGE from 5 to 4
+^Ccomnetsii@comnetsII:~/TCP-IP/TCP-IP$ 
+

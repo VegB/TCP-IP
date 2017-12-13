@@ -1,0 +1,189 @@
+Last login: Tue Dec 12 22:10:12 on ttys003
+% ssh comnetsii@192.168.56.101                                                ~
+comnetsii@192.168.56.101's password: 
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-32-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Nov 18 18:53:23 EST 2017
+
+  System load:  0.06              Processes:           86
+  Usage of /:   35.4% of 5.51GB   Users logged in:     1
+  Memory usage: 8%                IP address for eth0: 10.0.2.15
+  Swap usage:   0%                IP address for eth1: 192.168.56.101
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+283 packages can be updated.
+183 updates are security updates.
+
+New release '16.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Sat Nov 18 18:53:24 2017 from 192.168.56.1
+comnetsii@comnetsII:~$ cd ~/TCP-IP/TCP-IP/
+comnetsii@comnetsII:~/TCP-IP/TCP-IP$ ^C
+comnetsii@comnetsII:~/TCP-IP/TCP-IP$ 
+comnetsii@comnetsII:~/TCP-IP/TCP-IP$ sudo ~/click/userlevel/click ./client1.click 
+[sudo] password for comnetsii: 
+[SenderTCP]: Creating a SenderTCP object.
+[SenderBuffer]: Creating a SenderBuffer object.
+[BasicIP]: Creating a BasicIP object.
+[SenderTCP]: Sending SYN 1. Trying to set up connection with 1
+[SenderBuffer]: Pass packet 1 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 999999 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000000 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000001 on to IP
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Need Retransmission.
+[SenderTCP]: 【【changed from SLOW START to ADDITIVE INCREASE!】】, window_size changed from 1 to 1
+[SenderBuffer]: Retransmit ALL
+[SenderBuffer]: Read out packet 1 at position 0 and retransmit.
+expensive Packet::push; have 0 wanted 14
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000002 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000003 on to IP
+[SenderTCP]: Need Retransmission.
+[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from 1 to 1
+[SenderBuffer]: Retransmit ALL
+[SenderBuffer]: Read out packet 1 at position 0 and retransmit.
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000004 on to IP
+[SenderBuffer]: last_acked: 0, receiving for the 1 th time.
+[SenderTCP]: Received ACK for DATA(0): packet 0 from 0
+[SenderBuffer]: last_acked: 0, receiving for the 2 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 1 at position 0 and retransmit.
+[SenderTCP]: Received ACK for DATA(0): packet 0 from 0
+[SenderBuffer]: last_acked: 0, receiving for the 3 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 1 at position 0 and retransmit.
+[SenderTCP]: Received ACK for DATA(0): packet 0 from 0
+[SenderTCP]: Received SYNACK for SYN(1): packet 0 from 1
+[SenderTCP]: =================CONNECTION ESTABLISHED================
+[SenderBuffer]: Pass packet 0 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000005 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000006 on to IP
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: #ADDITIVE INCREASE#, window_size = 1, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 2 on to IP
+[SenderTCP]: Received ACK for DATA(2): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000007 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000008 on to IP
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: #ADDITIVE INCREASE#, window_size = 2, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 3 on to IP
+[SenderBuffer]: Pass packet 4 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000009 on to IP
+[SenderTCP]: Received ACK for DATA(3): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(4): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000010 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000011 on to IP
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: #ADDITIVE INCREASE#, window_size = 3, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 5 on to IP
+[SenderBuffer]: Pass packet 6 on to IP
+[SenderBuffer]: Pass packet 7 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000012 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000013 on to IP
+[SenderTCP]: Need Retransmission.
+[SenderTCP]: 【【FAST RECOVERY!】, window_size changed from 3 to 1
+[SenderBuffer]: Retransmit ALL
+[SenderBuffer]: Read out packet 5 at position 4 and retransmit.
+[SenderBuffer]: Read out packet 6 at position 5 and retransmit.
+[SenderBuffer]: Read out packet 7 at position 6 and retransmit.
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000014 on to IP
+[SenderBuffer]: last_acked: 4, receiving for the 1 th time.
+[SenderTCP]: Received ACK for DATA(4): packet 0 from 0
+[SenderBuffer]: last_acked: 4, receiving for the 2 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 5 at position 4 and retransmit.
+[SenderTCP]: Received ACK for DATA(4): packet 0 from 0
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000015 on to IP
+[SenderBuffer]: last_acked: 5, receiving for the 1 th time.
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 0
+[SenderBuffer]: last_acked: 5, receiving for the 2 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 6 at position 5 and retransmit.
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 0
+[SenderBuffer]: last_acked: 5, receiving for the 3 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 6 at position 5 and retransmit.
+[SenderTCP]: Received ACK for DATA(5): packet 0 from 0
+[SenderTCP]: Received ACK for DATA(6): packet 0 from 1
+[SenderBuffer]: last_acked: 6, receiving for the 1 th time.
+[SenderTCP]: Received ACK for DATA(6): packet 0 from 1
+[SenderBuffer]: last_acked: 6, receiving for the 2 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 7 at position 6 and retransmit.
+[SenderTCP]: Received ACK for DATA(6): packet 0 from 0
+[SenderBuffer]: last_acked: 6, receiving for the 3 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 7 at position 6 and retransmit.
+[SenderTCP]: Received ACK for DATA(6): packet 0 from 0
+[SenderTCP]: Received ACK for DATA(7): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000016 on to IP
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: #ADDITIVE INCREASE#, window_size = 1, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 8 on to IP
+[SenderTCP]: Received ACK for DATA(8): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000017 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000018 on to IP
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: #ADDITIVE INCREASE#, window_size = 2, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 9 on to IP
+[SenderBuffer]: Pass packet 10 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000019 on to IP
+[SenderBuffer]: last_acked: 8, receiving for the 1 th time.
+[SenderTCP]: Received ACK for DATA(8): packet 0 from 0
+[SenderBuffer]: last_acked: 8, receiving for the 2 th time.
+[SenderBuffer]: FAST RETRANSMIT
+[SenderBuffer]: Read out packet 9 at position 8 and retransmit.
+[SenderTCP]: Received ACK for DATA(8): packet 0 from 0
+[SenderTCP]: Received ACK for DATA(9): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(10): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000020 on to IP
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000021 on to IP
+[SenderTCP]: -------Sending DATA packets #ADDITIVE INCREASE#-------
+[SenderTCP]: #ADDITIVE INCREASE#, window_size = 3, SenderBuffer = 999, ReceiverBuffer = 999
+[SenderBuffer]: Pass packet 11 on to IP
+[SenderBuffer]: Pass packet 12 on to IP
+[SenderBuffer]: Pass packet 13 on to IP
+[SenderBuffer]: last_acked: 10, receiving for the 1 th time.
+[SenderTCP]: Received ACK for DATA(10): packet 0 from 0
+[SenderTCP]: Received ACK for DATA(11): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(12): packet 0 from 1
+[SenderTCP]: Received ACK for DATA(13): packet 0 from 1
+[SenderTCP]: Sending new Hello packet
+[SenderBuffer]: Pass packet 1000022 on to IP
+^C[SenderBuffer]: Killing a SenderBuffer object.
+[SenderTCP]: Killing a SenderTCP object.
+[BasicIP]: Killing a BasicIP object.
+comnetsii@comnetsII:~/TCP-IP/TCP-IP$ 
+
